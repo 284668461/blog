@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+
+    <title>首页</title>
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+
+    <script src="Semantic/semantic.min.js"></script>
+    <link href="Semantic/semantic.min.css" rel="stylesheet">
+
+
+
+    <script src="js/index.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+<!--导航start-->
+
+<nav class="ui attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui secondary stackable menu">
+            <h1 class="ui pink header item">blog</h1>
+            <a href="/" class="m-item item blue m-mobile-hide active"><i class=" home icon"></i>首页</a>
+            <a href="/types/-1" class="m-item violet item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+            <a href="/tags/-1" class="m-item pink item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+            <a href="/archives" class="m-item orange item m-mobile-hide"><i class=" clone icon"></i>时间线</a>
+            <div class="right m-item item m-mobile-hide">
+                <form name="search" action="/search" method="post" target="_blank">
+                    <div class="ui icon  transparent input m-margin-tb-tiny">
+                        <input type="text" name="query" placeholder="Search...." value="">
+                        <i class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <a class="ui button" id="sidebar">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<!-- 导航end -->
+
+<!-- 中间start -->
+
+<div id="center" class="ui container stackable">
+
+    <div class="ui grid stackable">
+        <!--left 博文列表 start-->
+        <div class="eleven wide column stackable">
+
+            <div class="ui top attached segment">
+                <div class="ui one column grid stackable">
+                    <div class="column">
+                        <h3 class="ui teal header">博文列表</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui attached segment">
+
+                <div class="ui segment">
+
+                    <div class="ui  grid stackable  mobile reversed">
+
+                        <div class="ui eleven wide column">
+
+                            <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+
+                            <p>
+                                不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                            </p>
+
+                            <div class="ui grid">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+
+                                        <div class="item">
+                                            <i class="clock outline icon"></i><span>2020-03-21</span>
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i> <span>0</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="comment alternate icon"></i> <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right aligned five wide column">
+                                    <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ui five wide column">
+                            <a href="">
+                                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ui segment">
+
+                    <div class="ui  grid stackable  mobile reversed">
+
+                        <div class="ui eleven wide column">
+
+                            <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+
+                            <p>
+                                不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                            </p>
+
+                            <div class="ui grid">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+
+                                        <div class="item">
+                                            <i class="clock outline icon"></i><span>2020-03-21</span>
+                                        </div>
+                                        <div class="item">
+                                            <i class="eye icon"></i> <span>0</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="comment alternate icon"></i> <span>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right aligned five wide column">
+                                    <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="ui five wide column">
+                            <a href="">
+                                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="ui bottom attached segment">
+
+                <div class="ui aligned two column grid">
+                    <div class="column">
+                        <button class="ui button  basic" >上一页</button>
+
+                    </div>
+
+
+                    <div class="column">
+                        <button class="ui right aligned button  basic">下一页</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--left 博文列表   end-->
+
+
+        <!--right start-->
+
+
+        <div class="five wide column stackable">
+
+
+            <div class="ui wide column card stackable">
+
+
+                <div class="ui list stackable" id="info">
+                    <div class="item">
+                        <img class="ui medium circular image"
+                             id="icon"
+                             src="img/photo.jpg">
+                    </div>
+                    <div class="item">Mine_希冀</div>
+                    <div class="item">但行好事 莫问前程</div>
+                    <div class="item">
+
+                        <i class="paper plane icon"></i> &nbsp;广东
+
+                    </div>
+                </div>
+
+                <br>
+
+
+
+
+            </div>
+
+
+            <div class="ui card wide stackable  column" id="hot">
+                <!--gripfire-->
+
+                <span>
+                        <i class="gripfire icon"></i> &nbsp; 热文排行
+                </span>
+                <div class="ui horizontal divider">-</div>
+                <div class="ui wide  column">
+
+                    <a class="item">
+                        <i class="angle right icon"></i> &nbsp;SpringBoot之从零搭建博客网站 &nbsp;
+
+                        <div class="ui mini horizontal link list">
+                            <i class=" item eye icon"></i> <span>0</span>
+                        </div>
+                    </a>
+
+
+                    <a class="item">
+                        <i class="angle right icon"></i> &nbsp;SpringBoot之从零搭建博客网站 &nbsp;
+
+                        <div class="ui mini horizontal link list">
+                            <i class=" item eye icon"></i> <span>0</span>
+                        </div>
+                    </a>
+
+                    <a class="item">
+                        <i class="angle right icon"></i> &nbsp;SpringBoot之从零搭建博客网站 &nbsp;
+
+                        <div class="ui mini horizontal link list">
+                            <i class=" item eye icon"></i> <span>0</span>
+                        </div>
+                    </a>
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="ui card wide stackable  column">
+
+
+                    <span>
+                        <i class="cloudversify icon"></i> &nbsp; 标签云
+                    </span>
+                <p>
+                <div class="ui horizontal divider">-</div>
+
+
+                <div class="item"></div>
+
+                </p>
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <!--right end-->
+    </div>
+
+
+</div>
+
+<!-- 中间end -->
+
+
+<!-- 脚部start -->
+
+<footer>
+
+</footer>
+<!-- 脚部end -->
+
+
+
+
+</body>
+</html>

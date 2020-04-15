@@ -1,0 +1,60 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+}
+
+li{
+    list-style: none;
+}
+
+
+#icon{
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid gray;
+    /*margin-top: 10px;*/
+}
+
+#info>.item{
+
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+#hot a.item{
+    display:inline-block ;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+    line-height: 100%;
+}
+
+
+#sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none !important;
+}
+
+
+
+@media screen and (max-width: 768px){
+    #sidebar{
+        display: block !important;
+    }
+
+    .m-mobile-hide{
+
+        display: none !important;
+
+    }
+}
