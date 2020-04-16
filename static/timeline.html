@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间线</title>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="Semantic/semantic.min.js"></script>
+    <link href="Semantic/semantic.min.css" rel="stylesheet">
+
+    <script src="js/classify.js"></script>
+    <link href="css/classify.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<!--导航start-->
+
+<nav class="ui attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui secondary stackable menu">
+            <h1 class="ui pink header item">blog</h1>
+            <a href="/" class="m-item item blue m-mobile-hide active"><i class=" home icon"></i>首页</a>
+            <a href="/types/-1" class="m-item violet item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+            <a href="/tags/-1" class="m-item pink item m-mobile-hide"><i class=" tags icon"></i>标签</a>
+            <a href="/archives" class="m-item orange item m-mobile-hide"><i class=" clone icon"></i>时间线</a>
+            <div class="right m-item item m-mobile-hide">
+                <form name="search" action="/search" method="post" target="_blank">
+                    <div class="ui icon  transparent input m-margin-tb-tiny">
+                        <input type="text" name="query" placeholder="Search...." value="">
+                        <i class="search link icon"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <a class="ui button" id="sidebar">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<!-- 导航end -->
+
+<!-- 中间start -->
+
+<div class="ui container">
+
+
+    <section class="timeline">
+        <div class="wrapper">
+            <div class="timelineItem timelineItem0">
+                <div class="timelineItemStation"></div>
+                <div class="timelineItemContent">
+                    <h2 class="timelineItemContentDate">1977 Aug. 20</h2>
+                    <p class="timelineItemContentDescription">Voyager 2 launched from Kennedy Space Flight Center</p>
+                </div>
+            </div>
+            <div class="timelineItem timelineItem1">
+                <div class="timelineItemStation"></div>
+                <div class="timelineItemContent">
+                    <h2 class="timelineItemContentDate">1977 Sept. 5</h2>
+                    <p class="timelineItemContentDescription">Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon</p>
+                </div>
+            </div>
+            <div class="timelineItem timelineItem2">
+                <div class="timelineItemStation"></div>
+                <div class="timelineItemContent">
+                    <h2 class="timelineItemContentDate">1979 Mar. 5</h2>
+                    <p class="timelineItemContentDescription">Voyager 1 makes its closest approach to Jupiter</p>
+                </div>
+            </div>
+            <div class="timelineItem timelineItem3">
+                <div class="timelineItemStation"></div>
+                <div class="timelineItemContent">
+                    <h2 class="timelineItemContentDate">1979 July 9</h2>
+                    <p class="timelineItemContentDescription">Voyager 2 makes its closest approach to Jupiter</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+</div>
+
+<!-- 中间end -->
+
+
+
+</body>
+</html>
