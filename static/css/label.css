@@ -1,16 +1,3 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    min-width: 320px;
-}
-
-li{
-    list-style: none;
-}
-
-
 #icon{
     display: block;
     width: 100px;

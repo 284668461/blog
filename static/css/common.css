@@ -1,0 +1,61 @@
+/*通用样式*/
+
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+
+    /*background: url("../img/bg.jpg") no-repeat center top;*/
+    /*background-size: 100%;*/
+
+
+}
+
+
+li{
+    list-style: none;
+}
+
+
+.iOpacity{
+    opacity: .8;
+}
+
+
+
+
+.iMarginTop{
+    display: block;
+    margin-top: 10px;
+}
+
+
+.iMarginLeft{
+    display: block;
+    margin-left: 10px;
+}
+
+.iMarginRight{
+    display: block;
+    margin-Right: 10px;
+}
+
+
+
+
+.iLeft{
+    float: left;
+}
+
+
+.iBolgListImg{
+    display: block;
+    width: 100px;
+    margin-top: 30px;
+}
+
+

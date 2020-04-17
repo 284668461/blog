@@ -1,15 +1,3 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    min-width: 320px;
-}
-
-li{
-    list-style: none;
-}
-
 
 #icon{
     display: block;
@@ -48,6 +36,41 @@ li{
 }
 
 
+#search{
+    padding-left: 15%;
+}
+
+
+#iEditormd{
+    z-index: 2 !important;
+}
+
+#upImg{
+    margin-left: 50px;
+}
+
+#wrapper img{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+
+#fileUpload{
+    display: none;
+}
+
+
+
 @media screen and (max-width: 768px){
+
+
+
+    .iBolgListImg{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
 
 }

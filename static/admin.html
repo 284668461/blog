@@ -8,8 +8,22 @@
     <script src="Semantic/semantic.min.js"></script>
     <link href="Semantic/semantic.min.css" rel="stylesheet">
 
+
+    <!--md编辑器-->
+
+    <link rel="stylesheet" href="lib/editor/css/editormd.css" />
+
+    <script src="lib/editor/editormd.js"></script>
+    <!--md编辑器-->
+
+    <link href="css/common.css" rel="stylesheet">
+
     <script src="js/admin.js"></script>
     <link href="css/admin.css" rel="stylesheet">
+
+
+
+
 
 </head>
 <body>
@@ -22,27 +36,24 @@
     <div class="ui container">
         <div class="ui secondary stackable menu">
             <h1 class="ui pink header item">blog</h1>
-            <a href="/" class="m-item item blue m-mobile-hide active"><i class=" home icon"></i>首页</a>
-            <a href="/types/-1" class="m-item violet item m-mobile-hide"><i class=" idea icon"></i>分类</a>
-            <a href="/tags/-1" class="m-item pink item m-mobile-hide"><i class=" tags icon"></i>标签</a>
-            <a href="/archives" class="m-item orange item m-mobile-hide"><i class=" clone icon"></i>时间线</a>
-            <div class="right item">
+
+            <div class="right item ui inline dropdown">
 
 
-                <div class="ui inline dropdown">
-                    <div class="text">
-                        <img class="ui avatar image" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg">
-                        珍妮赫斯
+
+
+                <img class="ui avatar image" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg">
+                珍妮赫斯
+
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">
+                        注销
                     </div>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div class="item">
-                           注销
-                        </div>
 
 
-                    </div>
                 </div>
+
 
 
 
@@ -60,12 +71,377 @@
 
 
 
+    <div class="ui top attached tabular menu">
+        <a class="item active" data-tab="first">博客</a>
+        <a class="item" data-tab="second">发布</a>
+    </div>
+    <div class="ui bottom attached tab segment active " data-tab="first">
+
+        <div class=" from ui wide grid">
+
+            <div class="ui  sixteen wide column " id="search">
+
+
+                <div class="ui search iLeft  ">
+
+                    <span class=" input ui iMarginRight">
+                           <input type="text">
+                    </span>
+                    <div class="results"></div>
+                </div>
+
+
+                <div class="ui floating labeled icon dropdown button iLeft iMarginLeft">
+                    <i class=" tags icon"></i>
+                    <span class="text">标签</span>
+                    <div class="menu">
+
+                        <div class="item">
+                            重要
+                        </div>
+                        <div class="item">
+                            公告
+                        </div>
+                        <div class="item">
+                            讨论
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="ui floating labeled icon dropdown button item iMarginLeft">
+                    <i class=" idea  icon"></i>
+                    <span class="text">分类</span>
+                    <div class="menu">
+
+                        <div class="item">
+                            重要
+                        </div>
+                        <div class="item">
+                            公告
+                        </div>
+                        <div class="item">
+                            讨论
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <button class="ui basic button iMarginLeft">
+                    <i class="icon search "></i>
+                    搜索
+                </button>
+
+
+
+            </div>
+
+            <div class="ui sixteen wide column">
+
+
+                <div>
+
+
+
+                    <table class="ui celled padded table">
+
+                        <tbody>
+                        <tr>
+                            <td>
+
+
+                                <div class="ui segment">
+                                    <div class="ui  grid stackable  mobile reversed">
+                                        <div class="ui eleven wide column">
+                                            <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+                                            <p>
+                                                不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                                            </p>
+                                            <div class="ui grid">
+                                                <div class="eleven wide column">
+                                                    <div class="ui mini horizontal link list">
+
+                                                        <div class="item">
+                                                            <i class="clock outline icon"></i><span>2020-03-21</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="eye icon"></i> <span>0</span>
+                                                        </div>
+
+                                                        <div class="item">
+                                                            <i class="comment alternate icon"></i> <span>0</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="right aligned five wide column">
+                                                    <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="ui five wide column">
+                                            <a href="">
+                                                <img alt="" class="ui rounded image iMarginTop iBolgListImg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" >
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui basic green button">
+                                            <i class="icon pencil alternate"></i>
+                                        </div>
+                                        <div class="ui basic red button">
+                                            <i class="icon trash alternate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="ui bottom attached tab segment" data-tab="second">
+
+
+
+        <div class=" from ui wide grid">
+
+            <div class="ui  sixteen wide column ">
+
+                <div class=" from ui wide grid">
+
+
+                    <div class="ui sixteen wide column">
+
+                        <a class="ui teal ribbon label">标题</a>
+                        <span class="iMarginTop input ui ">
+
+
+                           <div class="ui selection compact teal basic dropdown labe">
+
+                              <i class="icon dropdown"></i>
+                               <div class="text">原创</div>
+
+                               <div class="menu">
+                                   <div class="item" data-value="原创">原创</div>
+                                   <div class="item" data-value="转载">转载</div>
+                                   <div class="item" data-value="翻译">翻译</div>
+                               </div>
+                           </div>
+                           <input type="text">
+
+                        </span>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="ui sixteen wide column">
+
+
+                        <a class="ui teal ribbon label">分类</a>
+                        <span class="iMarginTop">
+                                <div class="ui floating labeled icon dropdown button ">
+                            <i class=" idea  icon"></i>
+                            <span class="text">分类</span>
+                            <div class="menu">
+
+                                <div class="item">
+                                    重要
+                                </div>
+                                <div class="item">
+                                    公告
+                                </div>
+                                <div class="item">
+                                    讨论
+                                </div>
+                            </div>
+                        </div>
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="ui sixteen wide column">
+
+                        <a class="ui teal ribbon label">标签</a>
+                        <br>
+                        <span class="iMarginTop">
+
+                            <select class="ui fluid search dropdown " multiple="">
+                            <option value="">标签</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="ui sixteen wide column field">
+
+                        <a class="ui teal ribbon label ">封面</a>
+                        <div class="iMarginTop">
+
+
+                            <i class="icon cloud upload huge   " id="upImg"></i>
+                            <div id="wrapper">
+                                <input id="fileUpload" type="file" /><br />
+                                <div id="image-holder"> </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="ui sixteen wide column field">
+
+                        <a class="ui teal ribbon label">正文</a>
+                        <div class="iMarginTop">
+
+                            <p id="iEditormd" class="editormd ">
+                                <textarea style="display: none;"></textarea>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="ui sixteen wide column ui form " id="iEditormdBtn" >
+
+                      <span >
+
+                            <button class="ui button ">
+                            取消
+                        </button>
+
+                        <button class="ui secondary button ">
+                            确认
+                        </button>
+
+
+                      </span>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
 
 </div>
 
 <!-- 中间end -->
 
 
+
+
+
+</div>
 
 </body>
 </html>
