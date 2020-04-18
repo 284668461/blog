@@ -1,7 +1,6 @@
 /*通用样式*/
 
 
-
 html,
 body {
     padding: 0;
@@ -12,13 +11,46 @@ body {
     /*background: url("../img/bg.jpg") no-repeat center top;*/
     /*background-size: 100%;*/
 
-
 }
 
+body {
+    overflow-y: scroll;
+}
 
 li{
     list-style: none;
 }
+
+
+
+
+#center{
+    margin-top: 25px;
+    /*min-height:400px;*/
+    /*height: 100%;*/
+}
+
+
+nav .menu{
+    margin-top: -10px;
+}
+
+#sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top:33px;
+    display: none !important;
+}
+
+
+#info .item{
+
+    margin-top: 10px;
+    text-align: center;
+}
+
+
 
 
 .iOpacity{
@@ -42,10 +74,14 @@ li{
 .iMarginRight{
     display: block;
     margin-Right: 10px;
+
 }
 
 
 
+.iPaddingBottom{
+    padding-bottom: 25px;
+}
 
 .iLeft{
     float: left;
@@ -59,3 +95,44 @@ li{
 }
 
 
+
+
+
+@media screen and (max-width: 768px){
+
+
+
+    #sidebar{
+        display: block !important;
+    }
+
+    .m-mobile-hide{
+
+        display: none !important;
+    }
+
+
+    #login div.ui.vertical.divider{
+
+        display: none;
+    }
+
+    #login div.ui.placeholder.segment{
+        background: none;
+    }
+
+    .iFill{
+
+        width: calc(100% + 2px);
+    }
+
+
+    #info .ui.card{
+        width: 100%;
+        max-width: 768px
+    }
+
+
+
+
+}
