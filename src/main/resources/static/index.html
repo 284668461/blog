@@ -39,7 +39,7 @@
             <a class=" teal item m-item  m-mobile-hide " data-section="timeline"><i class=" hourglass end icon"></i>时光轴</a>
 
             <div class="right m-item item m-mobile-hide">
-                <a id="loginBtn" > <i class="icon  user circle"></i>  登录 </a>
+                <a id="loginBtn" > <i class="icon  pencil alternate circle"></i>  发布 </a>
             </div>
 
 
@@ -87,7 +87,7 @@
 
                             <div class="ui eleven wide column">
 
-                                <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+                                <h3 class="ui header"><a href="detail.html" target="_blank">安东尼经典语录</a></h3>
 
                                 <p>
                                     不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
@@ -96,6 +96,10 @@
                                 <div class="ui grid ">
                                     <div class="eleven wide column">
                                         <div class="ui mini horizontal link list">
+                                            <div class="item">
+                                                <img src="img/photo.jpg" alt="" class="ui avatar image">
+                                                <div class="content"><a href="#" class="header black">Mine_希冀</a></div>
+                                            </div>
 
                                             <div class="item">
                                                 <i class="clock outline icon"></i><span>2020-03-21</span>
@@ -109,15 +113,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="right aligned five wide column">
-                                        <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                                    <div class="right aligned five wide column iLabel">
+
+                                        <div class="right aligned five wide column">
+                                            <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
 
                             <div class="ui five wide column">
-                                <a href="">
+                                <a href="detail.html" target="_blank">
                                     <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
                                 </a>
                             </div>
@@ -142,6 +149,10 @@
                                 <div class="ui grid">
                                     <div class="eleven wide column">
                                         <div class="ui mini horizontal link list">
+                                            <div class="item">
+                                                <img src="img/photo.jpg" alt="" class="ui avatar image">
+                                                <div class="content"><a href="#" class="header black">Mine_希冀</a></div>
+                                            </div>
 
                                             <div class="item">
                                                 <i class="clock outline icon"></i><span>2020-03-21</span>
@@ -224,6 +235,25 @@
                         <div class="item">
 
                             <i class="paper plane icon"></i> &nbsp;广东
+
+                        </div>
+
+                        <!--<div class="item">-->
+
+                            <!--<a href="https://github.com/Mitsuha666/blog" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>-->
+                            <!--<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>-->
+                            <!--<a href="#" class="ui qq circular icon button" data-content="691639910" data-position="bottom center"><i class="qq icon"></i></a>-->
+
+                        <!--</div>-->
+
+
+                        <div class="item">
+                            <hr>
+
+                            <a href="https://github.com/284668461" target="_blank" ><i class="github icon large "></i></a>
+                            <a href="#" ><i class="weixin icon large "></i></a>
+                            <a href="#"  ><i class="qq icon large "></i></a>
+
 
                         </div>
                     </div>
@@ -653,7 +683,14 @@
 
 
 <!-- 脚部start -->
+<footer class="ui inverted vertical segment">
+    <div class="ui center aligned container">
 
+
+        <a href="http://www.beian.miit.gov.cn">备案号：xxxxxx号</a>
+
+    </div>
+</footer>
 
 <!-- 脚部end -->
 
@@ -672,7 +709,7 @@
 
 
 
-        <div class="ui placeholder segment">
+        <div class="ui placeholder segment" id="loginFun">
             <div class="ui two column very relaxed stackable grid">
                 <div class="column">
                     <div class="ui form">
@@ -704,14 +741,14 @@
 
 
 
-                        <div class="ui blue submit button">Login</div>
+                        <div class="ui teal submit button">Login</div>
                     </div>
                 </div>
-                <div class="middle aligned column">
-                    <a><i class="big wechat icon"></i></a>
-                    <a><i class="big qq icon"></i></a>
-                    <a><i class="big weibo icon"></i></a>
-                    <a><i class="big github icon"></i></a>
+                <div class="middle aligned column" id="otherLogin">
+                    <a><i class="big wechat icon teal"></i></a>
+                    <a><i class="big qq icon teal"></i></a>
+                    <a><i class="big weibo icon teal"></i></a>
+                    <a><i class="big github icon teal"></i></a>
                 </div>
             </div>
             <div class="ui vertical divider">
@@ -722,15 +759,7 @@
 
 
     </div>
-    <div class="actions">
-        <div class="ui  deny button">
-            取消
-        </div>
-        <div class="ui positive right labeled icon button">
-            确定
-            <i class="checkmark icon"></i>
-        </div>
-    </div>
+
 </div>
 
 

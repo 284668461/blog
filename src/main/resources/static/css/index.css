@@ -43,6 +43,16 @@ section.index{
 }
 
 
+#loginFun{
+    min-width: 320px;
+    margin-bottom: 10px;
+}
+
+#otherLogin :first-child{
+    margin-left: 25px;
+}
+
+
 /*index section 开始*/
 /*index section 结束*/
 
