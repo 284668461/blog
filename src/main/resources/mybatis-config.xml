@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+
+<!--mybatis 主配置文件-->
+<configuration>
+
+    <settings>
+        <!--让 mybatis  不过滤 value 为 null 的 key-->
+        <setting name="callSettersOnNulls" value="true"/>
+    </settings>
+
+    <environments default="mysql">
+
+        <environment id="mysql">
+            <!--指定事务管理的类型，这里简单使用Java的JDBC的提交和回滚设置-->
+            <transactionManager type="JDBC"></transactionManager>
+
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/blog?useTimezone=true&amp;serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="2546"></property>
+
+
+                <!--数据库连接池配置-->
+                <property name="poolMaximumIdleConnections" value="0"/>
+                <property name="poolMaximumActiveConnections" value="100"/>
+                <property name="poolPingQuery" value="SELECT 1 FROM DUAL" />
+                <property name="poolPingEnabled" value="true" />
+
+            </dataSource>
+
+        </environment>
+
+    </environments>
+
+
+    <mappers>
+
+        <!--<mapper resource="mappers/loginMapper.xml"></mapper>-->
+        <mapper class="com.blog.dao.UserMapper"></mapper>
+        <mapper class="com.blog.dao.BlogMapper"></mapper>
+        <mapper class="com.blog.dao.OtherMapper"></mapper>
+        <mapper class="com.blog.dao.AdminMapper"></mapper>
+
+
+    </mappers>
+
+
+
+
+</configuration>
+
+
+

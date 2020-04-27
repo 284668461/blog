@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理端</title>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="Semantic/semantic.min.js"></script>
+    <link href="Semantic/semantic.min.css" rel="stylesheet">
+
+
+    <!--md编辑器-->
+
+    <link rel="stylesheet" href="lib/editor/css/editormd.css"/>
+
+    <script src="lib/editor/editormd.js"></script>
+    <!--md编辑器-->
+
+    <link href="css/common.css" rel="stylesheet">
+
+    <script src="js/vue.js"></script>
+    <script src="js/admin.js"></script>
+    <link href="css/admin.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<!--导航start-->
+
+<nav class="ui attached segment m-padded-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui secondary stackable menu">
+            <h1 class="ui pink header item">blog</h1>
+
+            <div class="right item ui inline dropdown">
+
+
+                <img class="ui avatar image"
+                     src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg">
+                珍妮赫斯
+
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">
+                        注销
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- 导航end -->
+
+<!-- 中间start -->
+
+<div class="ui container" id="container">
+
+
+    <div class="ui top attached tabular menu" id="tab">
+        <a class="item active" data-tab="first">博客</a>
+        <a class="item" data-tab="second">发布</a>
+    </div>
+
+    <div class="ui bottom attached tab segment active" data-tab="first">
+
+        <div class=" from ui wide grid" id="blogList">
+
+            <div class="ui  sixteen wide column " id="search">
+
+
+                <div class="ui search iLeft  ">
+
+                    <span class=" input ui iMarginRight">
+                           <input type="text">
+                    </span>
+                    <div class="results"></div>
+                </div>
+
+
+                <div class="ui floating labeled icon dropdown button iLeft iMarginLeft">
+                    <i class=" tags icon"></i>
+                    <span class="text">标签</span>
+                    <div class="menu" id="blogListLabel">
+
+                        <div class="item">
+                            公告
+                        </div>
+                        <div class="item">
+                            讨论
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ui floating labeled icon dropdown button item iMarginLeft">
+                    <i class=" idea  icon"></i>
+                    <span class="text">分类</span>
+                    <div class="menu classify">
+
+                        <div class="item">
+                            重要
+                        </div>
+                        <div class="item">
+                            公告
+                        </div>
+                        <div class="item">
+                            讨论
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="ui basic button iMarginLeft">
+                    <i class="icon search "></i>
+                    搜索
+                </button>
+
+
+            </div>
+
+            <div class="ui sixteen wide column">
+
+
+                <div>
+
+
+                    <table class="ui celled padded table">
+
+                        <tbody>
+                        <tr>
+                            <td>
+
+
+                                <div class="ui segment">
+                                    <div class="ui  grid stackable  mobile reversed">
+                                        <div class="ui eleven wide column">
+                                            <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+                                            <p>
+                                                不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                                            </p>
+                                            <div class="ui grid">
+                                                <div class="eleven wide column">
+                                                    <div class="ui mini horizontal link list">
+
+                                                        <div class="item">
+                                                            <i class="clock outline icon"></i><span>2020-03-21</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="eye icon"></i> <span>0</span>
+                                                        </div>
+
+                                                        <div class="item">
+                                                            <i class="comment alternate icon"></i> <span>0</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="right aligned five wide column">
+                                                    <a href="/types/5" target="_blank"
+                                                       class="ui blue basic label">java</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="ui five wide column">
+                                            <a href="">
+                                                <img alt="" class="ui rounded image iMarginTop iBolgListImg"
+                                                     src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui basic green button">
+                                            <i class="icon pencil alternate"></i>
+                                        </div>
+                                        <div class="ui basic red button">
+                                            <i class="icon trash alternate"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="second">
+
+
+        <div class=" from ui wide grid" id="publish">
+
+            <div class="ui  sixteen wide column ">
+
+                <div class=" from ui wide grid">
+
+
+                    <div class="ui sixteen wide column">
+
+                        <a class="ui teal ribbon label">标题</a>
+                        <span class="iMarginTop input ui ">
+
+
+                           <div class="ui selection compact teal basic dropdown labe">
+
+                              <i class="icon dropdown"></i>
+                               <div class="text">原创</div>
+
+                               <div class="menu" id="blogOriginal">
+                                   <div class="item" data-value="原创">原创</div>
+                                   <div class="item" data-value="转载">转载</div>
+                                   <div class="item" data-value="翻译">翻译</div>
+                               </div>
+                           </div>
+                           <input type="text" id="blogTitle">
+
+                        </span>
+                    </div>
+
+
+                    <div class="ui sixteen wide column">
+
+
+                        <a class="ui teal ribbon label">分类</a>
+                        <span class="iMarginTop">
+                                <div class="ui floating labeled icon dropdown button ">
+                            <i class=" idea  icon"></i>
+                            <span class="text">分类</span>
+                            <div class="menu classify" id="blogClassify">
+
+                                <div class="item">
+                                    讨论
+                                </div>
+                                <!--<div class="item" v-for=" im in classify">-->
+                                <!--{{im.name}}-->
+                                <!--</div>-->
+
+                            </div>
+                        </div>
+                        </span>
+
+                    </div>
+
+
+                    <div class="ui sixteen wide column">
+
+                        <a class="ui teal ribbon label">标签</a>
+                        <br>
+                        <span class="iMarginTop">
+                            <div class="ui multiple selection dropdown">
+                              <input name="states" type="hidden">
+                              <i class="dropdown icon"></i>
+                              <div class="default text">States</div>
+                              <div class="menu" id="publishLabel">
+
+                              </div>
+                            </div>
+                        </span>
+
+                    </div>
+
+
+                    <div class="ui sixteen wide column field">
+
+                        <a class="ui teal ribbon label ">封面</a>
+                        <div class="iMarginTop">
+
+
+                            <i class="icon cloud upload huge   " id="upImg"></i>
+                            <div id="wrapper">
+                                <input id="fileUpload" type="file"/><br/>
+                                <div id="image-holder"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="ui sixteen wide column field">
+
+                        <a class="ui teal ribbon label">正文</a>
+                        <div class="iMarginTop">
+
+                            <p id="iEditormd" class="editormd ">
+                                <textarea style="display: none;" id="blogBody"></textarea>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="ui sixteen wide column ui form " id="iEditormdBtn">
+
+                        <div class="ui  checkbox teal">
+                            <input type="checkbox"  id="blogIsDraft">
+                            <label>草稿</label>
+                        </div>
+                        <div class="ui  checkbox teal iMarginLeft">
+                            <input type="checkbox" checked="checked" id="blogIsComment">
+                            <label>允许评论</label>
+                        </div>
+                        <div class="ui  checkbox teal iMarginLeft">
+                            <input type="checkbox" checked="checked" id="blogIsAdmire">
+                            <label>允许赞赏</label>
+                        </div>
+
+
+                      <span>
+
+
+
+
+
+
+                            <button class="ui button " id="publishCancel">
+                                取消
+                            </button>
+
+                            <button class="ui secondary button " id="publishConfirm">
+                                确认
+                            </button>
+
+
+                      </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- 中间end -->
+
+
+</div>
+
+</body>
+</html>

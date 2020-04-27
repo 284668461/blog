@@ -2,583 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="397446f7-49cc-4148-8dc8-b5340f06af19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/.versions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/accordion.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/accordion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/accordion.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/accordion.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/ad.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/ad.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/api.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/breadcrumb.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/breadcrumb.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/button.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/card.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/card.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/checkbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/checkbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/checkbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/checkbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/colorize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/colorize.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/comment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/comment.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/container.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/container.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dimmer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dimmer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dimmer.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dimmer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/divider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/divider.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dropdown.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dropdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dropdown.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/dropdown.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/embed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/embed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/embed.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/embed.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/feed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/feed.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/flag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/flag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/form.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/form.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/header.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/icon.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/icon.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/image.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/image.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/input.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/input.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/item.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/item.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/label.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/label.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/list.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/list.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/loader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/loader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/menu.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/message.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/message.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/modal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/modal.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/modal.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/nag.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/nag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/nag.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/nag.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/placeholder.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/placeholder.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/popup.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/progress.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/progress.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/progress.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/progress.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rail.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rating.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rating.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rating.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/rating.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/reset.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/reset.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/reveal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/reveal.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/search.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/search.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/segment.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/segment.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/shape.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/shape.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/shape.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/shape.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sidebar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sidebar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sidebar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/site.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/site.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/site.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/state.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/state.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/statistic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/statistic.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/step.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/step.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sticky.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sticky.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sticky.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/sticky.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/tab.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/tab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/tab.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/tab.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/table.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/transition.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/transition.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/transition.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/transition.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/video.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/video.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/video.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/visibility.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/visibility.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/visit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/components/visit.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/package.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/semantic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/semantic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/semantic.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/semantic.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/brand-icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/brand-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/brand-icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/brand-icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/brand-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/outline-icons.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/outline-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/outline-icons.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/outline-icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/fonts/outline-icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/Semantic/themes/default/assets/images/flags.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/common.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/photo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/qq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/weixin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/detail.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.logo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.logo.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.preview.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/css/editormd.preview.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/editormd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/editormd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/editormd-logo.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/editormd-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/editormd-logo.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/editormd-logo.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/loading@2x.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/loading@3x.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-favicon-16x16.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-favicon-24x24.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-favicon-32x32.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-favicon-48x48.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-favicon-64x64.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-114x114.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-120x120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-144x144.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-180x180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-240x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-24x24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-320x320.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-32x32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-48x48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-57x57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-64x64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-72x72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/editormd-logo-96x96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/images/logos/vi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/languages/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/languages/zh-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/AUTHORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/comment/comment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/comment/continuecomment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/dialog/dialog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/dialog/dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/display/fullscreen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/display/fullscreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/display/panel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/display/placeholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/display/rulers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/closebrackets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/closetag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/continuelist.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/matchbrackets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/matchtags.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/edit/trailingspace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/brace-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/comment-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/foldcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/foldgutter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/foldgutter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/indent-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/markdown-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/fold/xml-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/anyword-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/css-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/html-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/javascript-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/show-hint.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/show-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/sql-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/hint/xml-hint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/coffeescript-lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/css-lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/javascript-lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/json-lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/lint.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/lint/yaml-lint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/merge/merge.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/merge/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/mode/loadmode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/mode/multiplex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/mode/multiplex_test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/mode/overlay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/mode/simple.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/runmode/colorize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/runmode/runmode-standalone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/runmode/runmode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/runmode/runmode.node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/scroll/annotatescrollbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/scroll/scrollpastend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/scroll/simplescrollbars.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/scroll/simplescrollbars.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/search/match-highlighter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/search/matchesonscrollbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/search/matchesonscrollbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/search/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/search/searchcursor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/selection/active-line.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/selection/mark-selection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/selection/selection-pointer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/tern/tern.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/tern/tern.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/tern/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addon/wrap/hardwrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/addons.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/codemirror.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/codemirror.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/lib/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/lib/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/apl/apl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/apl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/asterisk/asterisk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/asterisk/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/clike/clike.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/clike/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/clike/scala.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/clojure/clojure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/clojure/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/cobol/cobol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/cobol/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/coffeescript/coffeescript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/coffeescript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/commonlisp/commonlisp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/commonlisp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/less.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/less_test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/scss.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/scss_test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/css/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/cypher/cypher.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/cypher/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/d/d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/d/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dart/dart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dart/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/diff/diff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/diff/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/django/django.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/django/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dockerfile/dockerfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dockerfile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dtd/dtd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dtd/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dylan/dylan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/dylan/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ebnf/ebnf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ebnf/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ecl/ecl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ecl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/eiffel/eiffel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/eiffel/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/erlang/erlang.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/erlang/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/forth/forth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/forth/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/fortran/fortran.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/fortran/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gas/gas.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gas/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gfm/gfm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gfm/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gfm/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gherkin/gherkin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/gherkin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/go/go.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/go/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/groovy/groovy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/groovy/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haml/haml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haml/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haskell/haskell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haskell/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haxe/haxe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/haxe/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/htmlembedded/htmlembedded.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/htmlembedded/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/htmlmixed/htmlmixed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/htmlmixed/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/http/http.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/http/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/idl/idl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/idl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/jade/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/jade/jade.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/javascript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/javascript/javascript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/javascript/json-ld.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/javascript/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/javascript/typescript.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/jinja2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/jinja2/jinja2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/julia/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/julia/julia.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/kotlin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/kotlin/kotlin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/livescript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/livescript/livescript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/lua/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/lua/lua.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/markdown/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/markdown/markdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/markdown/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/meta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/mirc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/mirc/mirc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/mllike/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/mllike/mllike.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/modelica/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/modelica/modelica.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/nginx/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/nginx/nginx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ntriples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ntriples/ntriples.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/octave/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/octave/octave.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pascal/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pascal/pascal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pegjs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pegjs/pegjs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/perl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/perl/perl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/php/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/php/php.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/php/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pig/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/pig/pig.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/properties/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/properties/properties.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/puppet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/puppet/puppet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/python/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/python/python.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/q/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/q/q.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/r/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/r/r.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rpm/changes/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rpm/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rpm/rpm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rst/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rst/rst.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ruby/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ruby/ruby.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/ruby/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rust/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/rust/rust.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sass/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sass/sass.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/scheme/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/scheme/scheme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/shell/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/shell/shell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/shell/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sieve/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sieve/sieve.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/slim/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/slim/slim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/slim/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smalltalk/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smalltalk/smalltalk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smarty/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smarty/smarty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smartymixed/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/smartymixed/smartymixed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/solr/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/solr/solr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/soy/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/soy/soy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sparql/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sparql/sparql.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/spreadsheet/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/spreadsheet/spreadsheet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sql/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/sql/sql.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/stex/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/stex/stex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/stex/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/stylus/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/stylus/stylus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tcl/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tcl/tcl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/textile/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/textile/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/textile/textile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiddlywiki/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiddlywiki/tiddlywiki.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiddlywiki/tiddlywiki.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiki/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiki/tiki.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tiki/tiki.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/toml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/toml/toml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tornado/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/tornado/tornado.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/turtle/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/turtle/turtle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/vb/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/vb/vb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/vbscript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/vbscript/vbscript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/velocity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/velocity/velocity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/verilog/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/verilog/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/verilog/verilog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xml/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xml/xml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xquery/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xquery/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/xquery/xquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/yaml/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/yaml/yaml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/z80/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/mode/z80/z80.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/modes.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/3024-day.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/3024-night.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/ambiance-mobile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/ambiance.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/base16-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/base16-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/blackboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/cobalt.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/colorforth.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/eclipse.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/elegant.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/erlang-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/lesser-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/mbo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/mdn-like.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/midnight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/monokai.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/neat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/neo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/night.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/paraiso-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/paraiso-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/pastel-on-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/rubyblue.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/solarized.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/the-matrix.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/tomorrow-night-bright.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/tomorrow-night-eighties.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/twilight.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/vibrant-ink.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/xq-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/xq-light.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/codemirror/theme/zenburn.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/flowchart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/jquery.flowchart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/marked.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/prettify.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/raphael.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/sequence-diagram.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/lib/underscore.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/code-block-dialog/code-block-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/emoji-dialog/emoji-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/emoji-dialog/emoji.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/goto-line-dialog/goto-line-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/help-dialog/help-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/help-dialog/help.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/html-entities-dialog/html-entities-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/html-entities-dialog/html-entities.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/image-dialog/image-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/link-dialog/link-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/plugin-template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/preformatted-text-dialog/preformatted-text-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/reference-link-dialog/reference-link-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/table-dialog/table-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/editor/plugins/test-plugin/test-plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/prism/prism.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/prism/prism.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/lib/typo/typo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -589,22 +22,126 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/admin.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.7876923">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="193">
+                  <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="12">
+                  <caret line="45" selection-start-line="45" selection-end-line="45" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="62">
+                  <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="288">
+                  <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#920#928#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="246">
+                  <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="69">
+                  <caret line="235" selection-start-line="235" selection-end-line="235" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>codemirror.mi</find>
+      <find>newSession</find>
+      <find>Map</find>
+      <find>List</find>
+      <find>@</find>
+      <find>getBlogByClassify</find>
+      <find>:class</find>
+      <find>tab</find>
+      <find>data</find>
+      <find>itemPath</find>
+      <find>classifyInfo</find>
+      <find>确</find>
+      <find>The error occurred while setting parameters</find>
+      <find>insertBlogClassify</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>List</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -612,9 +149,64 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/resources/templates/error.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/error/500.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/aspect/LogAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/error/404.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/other.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/_fragments.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/handler/TeatController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/handler/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/MyBatisUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/indexController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/blogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/UserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/UserServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/OtherServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/OtherMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/tool.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/toLoad.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/BlogService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/BlogServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/index.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/a.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/MyWebAppConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/common.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/admin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/other/upFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/other/tool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/adminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/adminServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/adminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/adminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java" />
       </list>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -623,15 +215,27 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="y" value="95" />
-    <option name="width" value="1720" />
-    <option name="height" value="865" />
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="blog" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-5" />
+    <option name="width" value="1864" />
+    <option name="height" value="1039" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -642,24 +246,174 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587265491821" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587998099671" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\javaProject\blog\src\main\resources\static" />
+      <recent name="D:\javaProject\blog\src\main\resources\templates" />
+      <recent name="D:\javaProject\blog\src\main\resources\templates\error" />
+      <recent name="D:\javaProject\blog\src\main\resources\static\blog" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.blog.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javaProject\blog\src\main\resources\static\js" />
+      <recent name="D:\javaProject\blog\src\main\java\com\blog" />
+      <recent name="D:\javaProject\blog\src\main\resources\templates\error" />
+      <recent name="D:\javaProject\blog\src\main\resources" />
       <recent name="D:\javaProject\blog\src\main\resources\static" />
     </key>
   </component>
@@ -675,6 +429,66 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.BlogApplication">
+    <configuration name="BlogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blog.BlogApplication" />
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blog" />
+      <option name="MAIN_CLASS_NAME" value="com.blog.BlogApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.blog" />
+      <option name="MAIN_CLASS_NAME" value="com.blog.BlogApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.blog.BlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BlogApplication" />
+        <item itemvalue="JUnit.BlogApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.BlogApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -687,61 +501,473 @@
       <updated>1587263192284</updated>
       <workItem from="1587263196416" duration="1090000" />
       <workItem from="1587265656486" duration="368000" />
+      <workItem from="1587266054293" duration="9534000" />
+      <workItem from="1587287993061" duration="2342000" />
+      <workItem from="1587347515743" duration="7145000" />
+      <workItem from="1587452462470" duration="11565000" />
+      <workItem from="1587520097487" duration="1065000" />
+      <workItem from="1587521218227" duration="2405000" />
+      <workItem from="1587537303505" duration="6109000" />
+      <workItem from="1587543773724" duration="3722000" />
+      <workItem from="1587718283538" duration="455000" />
+      <workItem from="1587721614414" duration="7403000" />
+      <workItem from="1587780595783" duration="6430000" />
+      <workItem from="1587806787226" duration="3462000" />
+      <workItem from="1587863047906" duration="8581000" />
+      <workItem from="1587872162929" duration="18206000" />
+      <workItem from="1587951579143" duration="17576000" />
+      <workItem from="1587991690585" duration="6319000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 21h 52m 29s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 21h 53m 25s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 21h 58m 50s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 08m 55s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 09m 59s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 20m 47s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 26m 52s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 27m 33s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 28m 57s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BlogApplicationTests_contextLoads - 2020.04.27 at 22h 30m 28s.xml">
+      <configuration name="BlogApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1458000" />
+    <option name="totallyTimeSpent" value="113777000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06568365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="UI Designer" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.46033993" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23796034" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.42917848" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2082153" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.35835695" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Flutter Inspector" order="5" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Flutter Inspector" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.3297587" />
       <window_info anchor="right" id="Flutter Outline" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/lib/editor/lib/codemirror/mode/gfm/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2961">
+          <caret line="142" column="48" selection-start-line="142" selection-start-column="48" selection-end-line="142" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/admin.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/_fragments.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/pojo/Tag.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/pojo/Blog.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/lib/editor/lib/codemirror/modes.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12570" selection-start-line="2" selection-start-column="12570" selection-end-line="2" selection-end-column="12570" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/handler/UserController.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.24/tomcat-embed-core-9.0.24.jar!/javax/servlet/http/Cookie.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+          <folding>
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1236#1237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="8479" lean-forward="true" selection-start-line="2" selection-start-column="8479" selection-end-line="2" selection-end-column="8479" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/vue.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/MyBatisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="77" selection-start-line="24" selection-start-column="77" selection-end-line="24" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/detail.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/axios.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        <state relative-caret-position="1302">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/UserServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/OtherServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="55" lean-forward="true" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/OtherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/OtherMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/tool.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3297">
+          <caret line="157" column="24" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/toLoad.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/MyWebAppConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/files/1587909329010.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/OtherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/admin.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="68" column="12" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="318" column="30" lean-forward="true" selection-start-line="318" selection-start-column="30" selection-end-line="318" selection-end-column="30" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#textarea#0;n#p#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/upFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/BlogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/files/1587909237873.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/BlogServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#920#928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

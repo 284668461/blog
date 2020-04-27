@@ -6,37 +6,7 @@ $(()=>{
 
 
     //初始化tab
-    $('.menu .item')
-        .tab()
-    ;
-
-
-
-//     var testEditor;
-//     testEditor = editormd("test-editormd", {
-//         placeholder:'本编辑器支持Markdown编辑，左边编写，右边预览',  //默认显示的文字，这里就不解释了
-//         width: "90%",
-//         height: 640,
-//         syncScrolling: "single",
-//         path: "lib/editor/lib/",   //你的path路径（原资源文件中lib包在我们项目中所放的位置）
-//         // theme: "dark",//工具栏主题
-//         // previewTheme: "dark",//预览主题
-//         // editorTheme: "pastel-on-dark",//编辑主题
-//         // saveHTMLToTextarea: true,
-//         // emoji: false,
-//         // taskList: true,
-//         // tocm: true,         // Using [TOCM]
-//         // tex: true,                   // 开启科学公式TeX语言支持，默认关闭
-//         // flowChart: true,             // 开启流程图支持，默认关闭
-//         // sequenceDiagram: true,       // 开启时序/序列图支持，默认关闭,
-//         // toolbarIcons : function() {  //自定义工具栏，后面有详细介绍
-//         //     return editormd.toolbarModes['simple']; // full, simple, mini
-//         // },
-//     });
-// //上面的挑有用的写上去就行
-
-
-
+    $('#tab .item').tab();
 
 
     let  testEditor = editormd("iEditormd",{
@@ -45,14 +15,12 @@ $(()=>{
         height:500,
         syncScrolling: "single",
         path:"lib/editor/lib/",
-
-
         saveHTMLToTextarea : true,//注意3：这个配置，方便post提交表单
 
         /**上传图片相关配置如下*/
         imageUpload : true,
         imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-        imageUploadURL : "/smart-api/upload/editormdPic/",//注意你后端的上传图片服务地址
+        imageUploadURL : "/admin/uploadImg",//注意你后端的上传图片服务地址
 
     });
 
@@ -84,6 +52,200 @@ $(()=>{
 
     });
 //    封面上传预览end
+
+
+    //初始化
+    toLoadClassify();
+    toLoadLabel();
+
+
+// 发布 start  -------------------------
+
+    /*
+     * @Description 加载标签
+     * @Author 284668461@qq.com
+     * @Date 15:55 2020/4/26
+     * @Param
+     * @return
+     **/
+    function toLoadClassify(){
+
+        $.post({
+            url:"/blog/getClassify",
+            success:(data)=>{
+
+                loadClassify(JSON.parse(data));
+            }
+        });
+    }
+
+
+    /*
+     * @Description 加载标签到界面
+     * @Author 284668461@qq.com
+     * @Date 15:55 2020/4/26
+     * @Param
+     * @return
+     **/
+    function loadClassify(info){
+
+        var htmlTemp = ``;
+
+
+        for(var i=0;i<info.length;i++){
+
+
+            htmlTemp += `<div class=\"item\"> ${info[i].name}  </div>`
+
+        }
+
+        $(".classify").empty().append(htmlTemp);
+
+    }
+
+
+
+
+    /*
+     * @Description 加载标签
+     * @Author 284668461@qq.com
+     * @Date 15:55 2020/4/26
+     * @Param
+     * @return
+     **/
+    function toLoadLabel(){
+        $.post({
+            url:"/blog/getTag",
+            success:(data)=>{
+
+                LoadLabel(JSON.parse(data));
+            }
+        });
+    }
+
+
+    /*
+     * @Description 显示标签到界面
+     * @Author 284668461@qq.com
+     * @Date 15:54 2020/4/26
+     * @Param
+     * @return
+     **/
+    function LoadLabel(info){
+
+
+        var blogListLabelHtmlTemp = ``;
+        var publishLabelHtmlTemp="";
+        LabelHtmlTemp = ``;
+
+
+        for(var i=0;i<info.length;i++){
+
+            blogListLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name}"> ${info[i].name}  </div>`;
+            // publishLabelHtmlTemp += ` <option value="${info[i].name}">${info[i].name}</option>`;
+            publishLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name} ">${info[i].name} </div>`;
+        }
+
+        $("#blogListLabel").empty().append(blogListLabelHtmlTemp);
+        $("#publishLabel").empty().append(blogListLabelHtmlTemp);
+
+
+        $('#publishLabel').dropdown();
+
+
+    }
+
+
+
+
+    //发布按钮点击事件
+    $("#publishConfirm").on("click",()=>{
+
+
+        console.log("点击事件");
+
+
+    //    获得输入信息
+        var title = $("#blogTitle");
+        var original = $("#blogOriginal>div.active");
+        var classify = $("#blogClassify>div.active");
+        var label = $("#publishLabel>div.active");
+        var coverImg = $("#fileUpload");
+        var publishBody = $("#blogBody");
+
+        var blogIsDraft = $("#blogIsDraft").is(':checked');
+        var blogIsComment = $("#blogIsComment").is(':checked');
+        var blogIsAdmire = $("#blogIsAdmire").is(':checked');
+
+
+
+        console.log(title.val());
+        console.log($( original[0] ).attr("data-value"));
+        console.log($( classify[0] ).text());
+        console.log($(label).text());
+        console.log($(coverImg).prop('files'));//获取到文件列表);
+        console.log(publishBody.val());
+        console.log(blogIsDraft);
+        console.log(blogIsComment);
+        console.log(blogIsAdmire);
+
+
+    //    验证信息完整性
+
+        if(title.val().length<=0){
+
+            Toast("请输入标题");
+            return;
+        }
+
+    //    发送请求
+
+
+        var formData = new FormData();
+        formData.append('file',  $(coverImg).prop('files')[0] );
+        formData.append('title',  title.val() );
+
+        if( $( original[0] ).attr("data-value") != undefined){
+
+            formData.append('original',  $( original[0] ).attr("data-value") );
+        }else{
+
+            formData.append('original',  "原创" );
+        }
+
+
+        formData.append('classify',  $( classify[0] ).text() );
+        formData.append('tab',  $(label).text() );
+        formData.append('body',  publishBody.val() );
+        formData.append('blogIsDraft',  blogIsDraft );
+        formData.append('blogIsComment',  blogIsComment );
+        formData.append('blogIsAdmire',  blogIsAdmire );
+
+
+
+
+        $.post({
+            url:"/admin/insertBlog",
+            data: formData,
+            processData: false,
+            contentType: false,
+
+            success:(data)=>{
+
+                // LoadLabel(JSON.parse(data));
+
+                console.log(data);
+            }
+        });
+
+
+    })
+
+
+
+// 发布 end  ---------------------------
+
+
 
 
 
