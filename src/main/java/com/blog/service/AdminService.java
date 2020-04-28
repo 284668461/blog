@@ -46,4 +46,15 @@ public interface AdminService {
      * @return int
      **/
     int selectBolgId(Map m);
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 17:45 2020/4/28
+     * @Param [blogId]
+     * @return int
+     **/
+    int delBlog(int blogId);
+
 }

@@ -25,24 +25,24 @@ public class Tool {
      **/
     public String wipeOffStr(String str){
 
-        System.out.println("传入的字符串");
-        System.out.println(str);
-        System.out.println("截取后的字符串");
-
-
         String temp = str.replaceAll(" ","")
                 .replaceAll("\n","")
                 .trim();
-        System.out.println(temp);
-        return temp;
 
+        return temp;
 
     }
 
 
 
+    /*
+     * @Description 去除数组中的空元素
+     * @Author 284668461@qq.com
+     * @Date 22:37 2020/4/27
+     * @Param [arr]
+     * @return java.lang.String[]
+     **/
     public String[] removeArrayNull(String[] arr){
-
 
         List<String> strList= Arrays.asList(arr);
         List<String> newArr=new ArrayList<String>();

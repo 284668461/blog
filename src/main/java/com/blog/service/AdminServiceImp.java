@@ -92,9 +92,27 @@ public class AdminServiceImp implements AdminService {
 
         AdminMapper m = session.getMapper(AdminMapper.class);
 
-        int resNum = m.insertBlog(hm);
+        int resNum = m.selectBolgId(hm);
 
         return resNum;
 
     }
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 17:48 2020/4/28
+     * @Param [blogId]
+     * @return int
+     **/
+    @Override
+    public int delBlog(int blogId) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+        int delNum = m.delBlog(blogId);
+        return delNum;
+    }
+
 }

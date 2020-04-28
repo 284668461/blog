@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="397446f7-49cc-4148-8dc8-b5340f06af19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/BlogApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/lib/editor/editormd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,95 +22,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7876923">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="12">
-                  <caret line="45" selection-start-line="45" selection-end-line="45" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="62">
-                  <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#920#928#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="235" selection-start-line="235" selection-end-line="235" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="434" column="36" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#textarea#0;n#p#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="307" column="34" lean-forward="true" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
+              <folding>
+                <element signature="e#7243#9495#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,6 +80,9 @@
       <find>确</find>
       <find>The error occurred while setting parameters</find>
       <find>insertBlogClassify</find>
+      <find>blogList</find>
+      <find>blogClassify</find>
+      <find>分类</find>
     </findStrings>
     <replaceStrings>
       <replace>List</replace>
@@ -177,16 +122,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/toLoad.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/service/BlogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/service/BlogServiceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/a.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/MyWebAppConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/common.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/admin.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/other/upFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/other/tool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/service/adminService.java" />
@@ -194,11 +135,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/adminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/adminMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/blog/BlogApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/admin.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/admin.html" />
       </list>
     </option>
   </component>
@@ -228,8 +174,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-5" />
-    <option name="width" value="1864" />
-    <option name="height" value="1039" />
+    <option name="width" value="1865" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -239,6 +185,132 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controller" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="dao" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="other" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,68 +395,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="blog" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="blog" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="blog" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="blog" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
-              <item name="static" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,7 +402,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587998099671" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588084875067" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -516,7 +526,8 @@
       <workItem from="1587863047906" duration="8581000" />
       <workItem from="1587872162929" duration="18206000" />
       <workItem from="1587951579143" duration="17576000" />
-      <workItem from="1587991690585" duration="6319000" />
+      <workItem from="1587991690585" duration="6486000" />
+      <workItem from="1588037161446" duration="20161000" />
     </task>
     <servers />
   </component>
@@ -553,7 +564,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113777000" />
+    <option name="totallyTimeSpent" value="134105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,7 +579,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06568365" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.121983916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -578,12 +589,12 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.46033993" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23796034" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42634562" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.42917848" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2082153" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.18271954" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
@@ -610,13 +621,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/lib/editor/lib/codemirror/mode/gfm/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2961">
-          <caret line="142" column="48" selection-start-line="142" selection-start-column="48" selection-end-line="142" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/admin.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/_fragments.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/pojo/Tag.java" />
@@ -762,21 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/toLoad.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -788,16 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -851,17 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="318" column="30" lean-forward="true" selection-start-line="318" selection-start-column="30" selection-end-line="318" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#textarea#0;n#p#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/upFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -869,13 +837,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -889,25 +850,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/files/1587909237873.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="633">
           <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="235" selection-start-line="235" selection-end-line="235" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/BlogServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -918,41 +862,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/BlogServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="46" column="49" lean-forward="true" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+        <state relative-caret-position="346">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#920#928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.41/fastjson-1.2.41.jar!/com/alibaba/fastjson/JSON.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/other/Tool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="359" column="14" lean-forward="true" selection-start-line="359" selection-start-column="14" selection-end-line="359" selection-end-column="14" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#section#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        <state relative-caret-position="503">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -961,10 +916,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/AdminMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="310">
+          <caret line="74" selection-start-line="74" selection-end-line="75" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="114" column="22" lean-forward="true" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/Controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1155">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/blog/dao/BlogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="307" column="34" lean-forward="true" selection-start-line="307" selection-start-column="34" selection-end-line="307" selection-end-column="34" />
+          <folding>
+            <element signature="e#7243#9495#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="434" column="36" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#textarea#0;n#p#0;n#div#0;n#div#4;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

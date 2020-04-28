@@ -1,5 +1,6 @@
 package com.blog.dao;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
@@ -19,8 +20,8 @@ public interface AdminMapper {
      * @Param [map]
      * @return int
      **/
-    @Insert("insert into blog(title,cover_img_path,blog_body,author,publish_date,update_date,admire_flag,Comment_flag) " +
-            "values(#{title},#{coverPath},#{body},#{auther},now(),now(),#{blogIsAdmire},#{blogIsComment})")
+    @Insert("insert into blog(title,cover_img_path,blog_body,author,publish_date,update_date,admire_flag,Comment_flag,draft_flag) " +
+            "values(#{title},#{coverPath},#{body},#{auther},now(),now(),#{blogIsAdmire},#{blogIsComment},#{blogIsDraft})")
     int insertBlog(Map map);
 
     /*
@@ -59,8 +60,20 @@ public interface AdminMapper {
      * @Param [hm]
      * @return int
      **/
-    @Select("select id from blog where" +
-            "title = #{title}")
+    @Select("select id from blog where title = #{title}")
     int selectBolgId(Map m);
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 17:42 2020/4/28
+     * @Param [blogId]
+     * @return int
+     **/
+    @Delete("update blog set del_flag = true where id = #{blogId}")
+    int delBlog(int blogId);
+
+
 
 }

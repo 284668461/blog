@@ -57,9 +57,126 @@ $(()=>{
     //初始化
     toLoadClassify();
     toLoadLabel();
+    toloadBlog();
+
+
+// 博客 start  -------------------------
+
+//    删除博客按钮点击事件
+    $("body").on("click",".delBlog",function(){
+
+
+        var blogid = $(this).data("blogid");
+        console.log(blogid);
+
+
+        $('#hint').modal({
+                closable : false,
+                onDeny   : function(){
+                    console.log("取消按钮点击事件");
+                    // return false;
+                },
+                onApprove: function() {
+
+                   console.log("确定按钮点击事件");
+                    // return false;
+                }
+            }).modal('show');
+
+    });
+
+
+
+
+
+// 博客 end  -------------------------
+
+
+
+
+
+
 
 
 // 发布 start  -------------------------
+
+
+    function toloadBlog(){
+        $.post({
+            url:"/blog/getAllBlog",
+            success:(data)=>{
+
+                loadBlog(JSON.parse(data));
+            }
+        });
+
+    }
+
+
+    function loadBlog(blogInfo){
+
+        var temp = "";
+        for(var i=0;i<blogInfo.length;i++){
+
+            temp += `<tr>
+                            <td>
+                                <div class="ui segment">
+                                    <div class="ui  grid stackable  mobile reversed">
+                                        <div class="ui eleven wide column">
+                                            <h3 class="ui header"><a href="/detail/${blogInfo[i].blog_id}">${blogInfo[i].title}</a></h3>
+                                            <p>
+                                              ${blogInfo[i].blog_body}
+                                            </p>
+                                            <div class="ui grid">
+                                                <div class="eleven wide column">
+                                                    <div class="ui mini horizontal link list">
+                                                        <div class="item">
+                                                            <i class="clock outline icon"></i><span>${blogInfo[i].publish_date}</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="eye icon"></i> <span>${blogInfo[i].visitor_num}</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="comment alternate icon"></i> <span>${blogInfo[i].comment_num}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="right aligned five wide column">
+                                                    <a href="detail/tab/${blogInfo[i].classify_id}" target="_blank" class="ui blue basic label">${blogInfo[i].classify_name}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ui five wide column">
+                                            <a href="">
+                                                <img alt="" class="ui rounded image iMarginTop iBolgListImg" src="${blogInfo[i].cover_img_path}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <div class="ui basic green button editBlog" data-blogId="${blogInfo[i].blogid}">
+                                            <i class="icon pencil alternate"></i>
+                                        </div>
+                                        <div class="ui basic red button delBlog" data-blogId="${blogInfo[i].blogid}">
+                                            <i class="icon trash alternate "></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>`;
+
+        }
+
+
+        $("#blogListBody").empty().append(temp);
+
+
+    }
+
+
 
     /*
      * @Description 加载标签
@@ -158,6 +275,52 @@ $(()=>{
 
 
 
+
+
+
+
+    //新增分类点击事件
+    $("#addClassify").on("click",()=>{
+
+
+        $('#hint_addClassify').modal({
+            closable : false,
+            onDeny   : function(){
+                console.log("取消按钮点击事件");
+                // return false;
+            },
+            onApprove: function() {
+
+                Toast("确定按钮点击事件");
+                console.log("确定按钮点击事件");
+                return false;
+            }
+        }).modal('show');
+
+    });
+
+
+    //新增分类点击事件
+    $("#addTab").on("click",()=>{
+
+        $('#hint_addTab').modal({
+            closable : false,
+            onDeny   : function(){
+                console.log("取消按钮点击事件");
+                // return false;
+            },
+            onApprove: function() {
+
+                Toast("确定按钮点击事件");
+                console.log("确定按钮点击事件");
+                return false;
+            }
+        }).modal('show');
+
+
+    });
+
+
     //发布按钮点击事件
     $("#publishConfirm").on("click",()=>{
 
@@ -165,7 +328,7 @@ $(()=>{
         console.log("点击事件");
 
 
-    //    获得输入信息
+        //    获得输入信息
         var title = $("#blogTitle");
         var original = $("#blogOriginal>div.active");
         var classify = $("#blogClassify>div.active");
@@ -190,7 +353,7 @@ $(()=>{
         console.log(blogIsAdmire);
 
 
-    //    验证信息完整性
+        //    验证信息完整性
 
         if(title.val().length<=0){
 
@@ -198,7 +361,7 @@ $(()=>{
             return;
         }
 
-    //    发送请求
+        //    发送请求
 
 
         var formData = new FormData();
@@ -213,8 +376,14 @@ $(()=>{
             formData.append('original',  "原创" );
         }
 
+        var classifyTemp = $( classify[0] ).text();
 
-        formData.append('classify',  $( classify[0] ).text() );
+        if(classifyTemp.length<1){
+            classifyTemp = "技术文章"
+        }
+
+
+        formData.append('classify',  classifyTemp );
         formData.append('tab',  $(label).text() );
         formData.append('body',  publishBody.val() );
         formData.append('blogIsDraft',  blogIsDraft );
@@ -232,9 +401,12 @@ $(()=>{
 
             success:(data)=>{
 
-                // LoadLabel(JSON.parse(data));
+                if(data === "true"){
+                    Toast("发布博客成功");
 
-                console.log(data);
+                    // location.replace(document.referrer);
+
+                }
             }
         });
 

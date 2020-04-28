@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("blog")
@@ -22,10 +24,11 @@ public class BlogController {
 
     @PostMapping("getAllBlog")
     @ResponseBody
-    public String getAllBlog(@RequestBody JSONObject json){
+    public String getAllBlog(String page){
 
 
-        String page = json.getString("page");
+
+
 
         if(page == null){
 
@@ -34,7 +37,10 @@ public class BlogController {
 
         List m =  blogService.getAllBlog(Integer.parseInt(page));
 
-        String jsonString = JSON.toJSONString(m);
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+
+        String jsonString = JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat);
 
         return jsonString;
 

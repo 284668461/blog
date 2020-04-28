@@ -94,6 +94,7 @@ public class AdminController {
         Boolean blogIsAdmire = Boolean.parseBoolean( req.getParameter("blogIsAdmire"));
 
 
+
         String flag ="";
 
         if(file!=null){
@@ -121,17 +122,22 @@ public class AdminController {
 //        查询出博客id
         int blodId = ad.selectBolgId(m);
 
-        System.out.println("查询出的 博客id");
 
 //        新增博客分类
+
         int insertBlogClassifyResNum = ad.insertBlogClassify(blodId,classify);
 
-//        新增博客标签
+
+
+        //        新增博客标签
         //分割标签并清洗后保存为数组
         String[] tabArr = tool.removeArrayNull( tab.split(" ") );
 
+        if(tabArr.length>0){
+            ad.insertBlogTab(blodId,tabArr);
+        }
 
-        ad.insertBlogTab(blodId,tabArr);
+
 
 
         return "true";
