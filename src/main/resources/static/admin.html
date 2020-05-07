@@ -81,7 +81,7 @@
                 <div class="ui search iLeft  ">
 
                     <span class=" input ui iMarginRight">
-                           <input type="text">
+                           <input type="text" id="searchInput">
                     </span>
                     <div class="results"></div>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="ui floating labeled icon dropdown button item iMarginLeft">
                     <i class=" idea  icon"></i>
                     <span class="text">分类</span>
-                    <div class="menu classify">
+                    <div class="menu classify" id="searchClassify">
 
                         <div class="item">
                             重要
@@ -122,7 +122,7 @@
                 </div>
 
 
-                <button class="ui basic button iMarginLeft">
+                <button class="ui basic button iMarginLeft" id="searchBlog">
                     <i class="icon search "></i>
                     搜索
                 </button>
@@ -280,7 +280,7 @@
                               </div>
                             </div>
 
-                              <button class="circular ui icon button" id="addTab">
+                              <button class="circular ui icon button" id="addTag">
                               <i class="icon plus square outline"></i>
                             </button>
 
@@ -398,7 +398,7 @@
 <!--新增分类-->
 <div class="ui basic modal" id="hint_addClassify">
     <div class="ui icon header">
-        提示
+        新增分类
     </div>
     <div class="content aligned center">
         <p>
@@ -426,9 +426,9 @@
 
 
 <!--新增标签-->
-<div class="ui basic modal" id="hint_addTab">
+<div class="ui basic modal" id="hint_addTag">
     <div class="ui icon header">
-        提示
+        新增标签
     </div>
     <div class="content">
         <p>
@@ -436,7 +436,7 @@
             <div class="ui label">
                 <i class=" tags icon"></i>标签名称
             </div>
-            <input type="text" id="addTabInput">
+            <input type="text" id="addTagInput">
         </div>
         </p>
     </div>
@@ -445,7 +445,7 @@
             <i class="remove icon"></i>
             否
         </div>
-        <div class="ui green ok  button">
+        <div class="ui green ok  button" >
             <i class="checkmark icon"></i>
             是
         </div>

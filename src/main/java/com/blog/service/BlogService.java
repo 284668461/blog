@@ -3,6 +3,7 @@ package com.blog.service;
 
 import java.util.List;
 import java.util.List;
+import java.util.Map;
 
 public interface BlogService {
 
@@ -23,7 +24,7 @@ public interface BlogService {
      * @Param [tag]
      * @return java.util.List
      **/
-    List  getBlogByTag(String tag);
+    List  getBlogByTag(int tagId);
 
 
     /*
@@ -69,6 +70,39 @@ public interface BlogService {
      * @return java.util.List
      **/
     List  getClassify();
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 16:34 2020/5/3
+     * @Param [id]
+     * @return int
+     **/
+    int delBlog(int id);
+
+
+
+    /*
+     * @Description 查询博客
+     * @Author 284668461@qq.com
+     * @Date 10:18 2020/5/4
+     * @Param [title]
+     * @return java.util.List
+     **/
+    List getBlogByQuery(String title);
+
+
+
+    /*
+     * @Description 混合查询博文
+     * @Author 284668461@qq.com
+     * @Date 10:22 2020/5/4
+     * @Param [tagId, classifyId, title]
+     * @return java.util.List
+     **/
+    List getBlogByMixtureQuery(int tagId,int classifyId,String title);
+
 
 
 

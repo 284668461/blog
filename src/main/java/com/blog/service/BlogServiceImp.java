@@ -43,14 +43,14 @@ public class BlogServiceImp implements BlogService {
      * @return java.util.Map
      **/
     @Override
-    public List getBlogByTag(String tag) {
+    public List getBlogByTag(int tagId) {
 
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getBlogByTag(tag);
+        List ls=  bm.getBlogByTag(tagId);
 
         return ls;
 
@@ -123,6 +123,7 @@ public class BlogServiceImp implements BlogService {
      **/
     @Override
     public List getClassify() {
+
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
@@ -130,5 +131,57 @@ public class BlogServiceImp implements BlogService {
         List ls=  bm.getClassify();
 
         return ls;
+    }
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 10:26 2020/5/4
+     * @Param [id]
+     * @return int
+     **/
+    @Override
+    public int delBlog(int id) {
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.delBlog(id);
+    }
+
+
+    /*
+     * @Description 查询博客
+     * @Author 284668461@qq.com
+     * @Date 10:26 2020/5/4
+     * @Param [title]
+     * @return java.util.List
+     **/
+    @Override
+    public List getBlogByQuery(String title) {
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogByQuery(title);
+    }
+
+    /*
+     * @Description 混合查询博客
+     * @Author 284668461@qq.com
+     * @Date 10:26 2020/5/4
+     * @Param [tagId, classifyId, title]
+     * @return java.util.List
+     **/
+    @Override
+    public List getBlogByMixtureQuery(int tagId, int classifyId, String title) {
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogByMixtureQuery(tagId,classifyId,title);
     }
 }

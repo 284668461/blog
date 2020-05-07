@@ -59,7 +59,6 @@ $(()=>{
             user:"",
             pass:"",
             rememberPassFlag:"false"
-
         },
         methods:{
 
@@ -67,7 +66,6 @@ $(()=>{
 
                 if((this.user.length<=0)||(this.pass.length<=0)){
                     Toast("请输入账户或密码");
-
                     return;
                 }
 
@@ -81,7 +79,7 @@ $(()=>{
                     })
                     .then((res)=>{
 
-                        if(res.data === false){
+                        if(!res.data){
                             Toast("登录失败，账户或密码错误");
                         }else{
                             window.location.href = "admin.html";
@@ -91,12 +89,9 @@ $(()=>{
                     .catch(function (error) { // 请求失败处理
                         console.log(error);
                     });
-
             }
         }
     });
-
-
 
 
 //登录 end   ---------------------------
@@ -110,6 +105,118 @@ $(()=>{
 
 //home  start   ---------------------------
 
+    var home = new Vue({
+        el:"#home",
+        data:{
+            homeBlogList : [],
+            hotBlogList : [],
+            tabCloud:[],
+            blogPage:0,
+            thisPage:0,
+            prePageBtn:'disabled',
+            nextPageBtn:false
+        },
+        created:function(){
+
+            this.loadHomeBlog();
+            this.loadHomeHot();
+            this.loadTagCloud();
+        },
+        methods:{
+            //加载首页博文列表函数
+            loadHomeBlog:function(){
+
+                $.post({
+                    url:"/blog/getAllBlog",
+                    success:(data)=>{
+
+                        var info = JSON.parse(data);
+
+                        info.map((item,index,arr)=>{
+
+                            //若评论数和查看人数为空则替换为0
+                            if(item.comment_num === null){
+                                item.comment_num = 0;
+                            }
+                            if(item.visitor_num === null){
+                                item.visitor_num = 0;
+                            }
+
+                        });
+
+                        this.homeBlogList =info;
+                    }
+                });
+            },
+            //加载热文
+            loadHomeHot:function(){
+
+                $.post({
+                    url:"/blog/getBlogByHot",
+                    success:(data)=>{
+
+                        var info = JSON.parse(data);
+
+                        info.map((item,index,arr)=>{
+
+                            //若评论数和查看人数为空则替换为0
+                            if(item.comment_num === null){
+                                item.comment_num = 0;
+                            }
+                            if(item.visitor_num === null){
+                                item.visitor_num = 0;
+                            }
+
+                        });
+
+
+                        this.hotBlogList =info;
+                    }
+                });
+
+            },
+
+            loadTagCloud:function(){
+
+
+                $.post({
+                    url:"/blog/getTag",
+                    success:(data)=>{
+
+                        var info = JSON.parse(data);
+
+                        var wordTemp = [];
+
+                        info.map((item)=>{
+                            wordTemp.push([item.name,parseInt(Math.random()*100)]);
+                        });
+
+
+
+                        var canvas = document.getElementById("tabCloudCanvas");
+                        var options = eval({
+                            "list": wordTemp,
+                            "fontWeight": 'normal',
+                            "fontFamily": 'Times, serif',
+                            "color": 'random-dark',
+                            "backgroundColor": 'white',
+                            "rotateRatio": 0.7
+                        });
+
+
+                        //生成词云
+                        WordCloud(canvas, options);
+                        this.tabCloud =info;
+
+                    }
+                });
+
+
+            }
+
+        }
+
+    });
 
 
 
@@ -124,7 +231,6 @@ $(()=>{
         data:{
             classifyOption:[],
             classifyBlog:[],
-
         },
         methods:{
 
@@ -207,8 +313,6 @@ $(()=>{
                         tab.loadTabOption(JSON.parse(data));
                     }
                 });
-
-
             },
             loadTabOption:function(info,id=info[0].id){
 
@@ -235,7 +339,8 @@ $(()=>{
 
                 var temp = [{"name":"web","id":3,"time":1587781812000},{"name":"jquery","id":4,"time":1587781822000},{"name":"js","id":5,"time":1587781851000},{"name":"mysql","id":6,"time":1587781848000}]
 
-                this.loadTabOption(temp,id);
+                // this.loadTabOption(temp,id);
+                this.loadTabOption(this.tabInfo,id);
             }
         }
     });

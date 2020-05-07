@@ -46,10 +46,7 @@ public class AdminController {
 
         JSONObject jsonObject = new JSONObject();
 
-
         String flag = uf.upImg(file);
-
-
 
         if(flag.equals("false")){
 
@@ -60,10 +57,7 @@ public class AdminController {
             jsonObject.put("url", flag);//图片回显地址，即文件存放地址，应为虚拟路径
             jsonObject.put("success", 1);//图片上传成功的信息码
             jsonObject.put("message", "upload success!");//信息
-
-
         }
-
 
         return jsonObject;
     }
@@ -87,7 +81,7 @@ public class AdminController {
         String title = req.getParameter("title");
         String original = req.getParameter("original");
         String classify = req.getParameter("classify");
-        String tab = req.getParameter("tab");
+        String Tag = req.getParameter("Tag");
         String body = req.getParameter("body");
         Boolean blogIsDraft = Boolean.parseBoolean( req.getParameter("blogIsDraft") );
         Boolean blogIsComment = Boolean.parseBoolean( req.getParameter("blogIsComment"));
@@ -124,27 +118,107 @@ public class AdminController {
 
 
 //        新增博客分类
-
         int insertBlogClassifyResNum = ad.insertBlogClassify(blodId,classify);
 
 
 
         //        新增博客标签
         //分割标签并清洗后保存为数组
-        String[] tabArr = tool.removeArrayNull( tab.split(" ") );
+        String[] TagArr = tool.removeArrayNull( Tag.split(" ") );
 
-        if(tabArr.length>0){
-            ad.insertBlogTab(blodId,tabArr);
+        if(TagArr.length>0){
+            ad.insertBlogTag(blodId,TagArr);
         }
 
-
-
-
         return "true";
+    }
 
 
+
+
+
+    /*
+     * @Description 查询标签是否已存在
+     * @Author 284668461@qq.com
+     * @Date 15:58 2020/4/29
+     * @Param [Tag]
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("queryTag")
+    @ResponseBody
+    public Boolean queryTag(String Tag){
+
+        if(ad.queryTag(tool.wipeOffStr(Tag))>0){
+            return false;
+        }else{
+            return  true;
+        }
 
     }
+
+
+
+    /*
+     * @Description 插入标签
+     * @Author 284668461@qq.com
+     * @Date 16:01 2020/4/29
+     * @Param [Tag]
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("insertTag")
+    @ResponseBody
+    public Boolean insertTag(String Tag){
+
+        if(ad.insertTag(tool.wipeOffStr(Tag))>0){
+            return true;
+        }else{
+            return  false;
+        }
+
+    }
+
+
+
+    /*
+     * @Description 查询分类是否存在
+     * @Author 284668461@qq.com
+     * @Date 16:00 2020/4/29
+     * @Param [classify]
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("queryClassify")
+    @ResponseBody
+    public Boolean queryClassify(String classify){
+
+        if(ad.queryClassify(tool.wipeOffStr(classify))>0){
+            return false;
+        }else{
+            return  true;
+        }
+
+    }
+
+
+
+    /*
+     * @Description 插入分类
+     * @Author 284668461@qq.com
+     * @Date 16:01 2020/4/29
+     * @Param [classify]
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("insertClassify")
+    @ResponseBody
+    public Boolean insertClassify(String classify){
+
+        if(ad.insertClassify(tool.wipeOffStr(classify))>0){
+            return true;
+        }else{
+            return  false;
+        }
+
+    }
+
 
 
 

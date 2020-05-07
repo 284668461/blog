@@ -3,6 +3,7 @@ package com.blog.Controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.blog.other.Tool;
 import com.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,16 +23,22 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
+    @Autowired
+    private Tool tool;
+
+
+    /*
+     * @Description 获得所有博客
+     * @Author 284668461@qq.com
+     * @Date 10:12 2020/5/4
+     * @Param [page]
+     * @return java.lang.String
+     **/
     @PostMapping("getAllBlog")
     @ResponseBody
     public String getAllBlog(String page){
 
-
-
-
-
         if(page == null){
-
             page = "1";
         }
 
@@ -39,10 +46,10 @@ public class BlogController {
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
+        System.out.println("--------------------------------");
+        System.out.println( JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteMapNullValue) );
 
-        String jsonString = JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat);
-
-        return jsonString;
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
 
     }
 
@@ -61,9 +68,9 @@ public class BlogController {
     public String getBlogByTag(@RequestBody JSONObject json){
 
 
-        String tag = json.getString("tag");
+        int tagId = Integer.parseInt( json.getString("tag") );
 
-        List m =  blogService.getBlogByTag(tag);
+        List m =  blogService.getBlogByTag(tagId);
 
         return JSON.toJSONString(m);
     }
@@ -93,19 +100,31 @@ public class BlogController {
 
 
 
-
+    /*
+     * @Description 获得热文
+     * @Author 284668461@qq.com
+     * @Date 10:13 2020/5/4
+     * @Param [json]
+     * @return java.lang.String
+     **/
     @PostMapping("getBlogByHot")
     @ResponseBody
-    public String getBlogByHot(@RequestBody JSONObject json) {
+    public String getBlogByHot() {
 
         List m =  blogService.getBlogByHot();
 
-        return JSON.toJSONString(m);
+        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
     }
 
 
 
-
+    /*
+     * @Description 获得所有标签
+     * @Author 284668461@qq.com
+     * @Date 10:13 2020/5/4
+     * @Param []
+     * @return java.lang.String
+     **/
     @PostMapping("getTag")
     @ResponseBody
     public String getTag(){
@@ -117,15 +136,89 @@ public class BlogController {
 
 
 
+    /*
+     * @Description 获得分类
+     * @Author 284668461@qq.com
+     * @Date 10:14 2020/5/4
+     * @Param []
+     * @return java.lang.String
+     **/
     @PostMapping("getClassify")
     @ResponseBody
     public String getClassify(){
 
         List ls =  blogService.getClassify();
 
-
         return JSONObject.toJSONString(ls, SerializerFeature.WriteMapNullValue);
     }
+
+
+
+
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 10:14 2020/5/4
+     * @Param [id]
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("delBlog")
+    @ResponseBody
+    public Boolean delBlog(int id){
+
+        if( blogService.delBlog(id)>0){
+            return  true;
+        }else{
+            return  false;
+        }
+
+    }
+
+
+    /*
+     * @Description 查询博客
+     * @Author 284668461@qq.com
+     * @Date 10:17 2020/5/4
+     * @Param [title]
+     * @return java.lang.String
+     **/
+    @PostMapping("getBlogByQuery")
+    @ResponseBody
+    public String getBlogByQuery(String title){
+
+
+        List ls =  blogService.getBlogByQuery(title);
+
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+        return JSON.toJSONString(ls, SerializerFeature.WriteDateUseDateFormat);
+    }
+
+
+
+    /*
+     * @Description 混合查询博文
+     * @Author 284668461@qq.com
+     * @Date 10:23 2020/5/4
+     * @Param [tagId, classifyId, title]
+     * @return java.lang.String
+     **/
+    @PostMapping("getBlogByMixtureQuery")
+    @ResponseBody
+    public String getBlogByMixtureQuery(int tagId,int classifyId,String title){
+
+
+
+
+        List ls =  blogService.getBlogByMixtureQuery(tagId,classifyId,tool.wipeOffStr(title));
+
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+        return JSON.toJSONString(ls, SerializerFeature.WriteDateUseDateFormat);
+    }
+
 
 
 

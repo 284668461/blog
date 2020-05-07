@@ -40,16 +40,12 @@
 
     <mappers>
 
-        <!--<mapper resource="mappers/loginMapper.xml"></mapper>-->
         <mapper class="com.blog.dao.UserMapper"></mapper>
         <mapper class="com.blog.dao.BlogMapper"></mapper>
         <mapper class="com.blog.dao.OtherMapper"></mapper>
         <mapper class="com.blog.dao.AdminMapper"></mapper>
 
-
     </mappers>
-
-
 
 
 </configuration>

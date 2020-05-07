@@ -58,17 +58,17 @@ public class AdminServiceImp implements AdminService {
      * @Description 插入博客标签
      * @Author 284668461@qq.com
      * @Date 16:20 2020/4/27
-     * @Param [blogId, tab]
+     * @Param [blogId, Tag]
      * @return int
      **/
     @Override
-    public int insertBlogTab(int blogId,String[] arr) {
+    public int insertBlogTag(int blogId,String[] arr) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
 
-        int resNum = m.insertBlogTab(blogId,arr);
+        int resNum = m.insertBlogTag(blogId,arr);
 
         session.commit();
 
@@ -112,7 +112,81 @@ public class AdminServiceImp implements AdminService {
 
         AdminMapper m = session.getMapper(AdminMapper.class);
         int delNum = m.delBlog(blogId);
+        session.commit();
         return delNum;
+    }
+
+
+
+    /*
+     * @Description 查询标签是否已存在
+     * @Author 284668461@qq.com
+     * @Date 10:40 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    @Override
+    public int queryTag(String Tag) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+        return  m.queryTag(Tag);
+
+    }
+
+
+
+    /*
+     * @Description 新增标签
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    @Override
+    public int insertTag(String Tag) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+        int dataNum = m.insertTag(Tag);
+
+        session.commit();
+        return dataNum;
+    }
+
+    /*
+     * @Description 新增分类
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    @Override
+    public int insertClassify(String classify) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+        int dataNum = m.insertClassify(classify);
+
+        session.commit();
+        return dataNum;
+
+    }
+
+
+    /*
+     * @Description 查询分类是否存在
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    @Override
+    public int queryClassify(String classify) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+        return  m.queryClassify(classify);
     }
 
 }

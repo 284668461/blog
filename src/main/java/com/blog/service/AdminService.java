@@ -1,5 +1,8 @@
 package com.blog.service;
 
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,10 +34,10 @@ public interface AdminService {
      * @Description 新增博客标签
      * @Author 284668461@qq.com
      * @Date 16:08 2020/4/27
-     * @Param [blogId, tab]
+     * @Param [blogId, Tag]
      * @return int
      **/
-    int insertBlogTab(int blogId,String[] arr);
+    int insertBlogTag(int blogId,String[] arr);
 
 
 
@@ -56,5 +59,46 @@ public interface AdminService {
      * @return int
      **/
     int delBlog(int blogId);
+
+
+
+
+    /*
+     * @Description 查询标签是否已存在
+     * @Author 284668461@qq.com
+     * @Date 10:40 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    int queryTag(String Tag);
+
+    /*
+     * @Description 新增标签
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    int insertTag(String Tag);
+
+
+    /*
+     * @Description 新增分类
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    int insertClassify(String classify);
+
+    /*
+     * @Description 查询分类是否存在
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    int queryClassify(String classify);
+
 
 }

@@ -40,7 +40,7 @@ public interface AdminMapper {
      * @Description 新增博客标签
      * @Author 284668461@qq.com
      * @Date 16:06 2020/4/27
-     * @Param [blogId, tab]
+     * @Param [blogId, Tag]
      * @return int
      **/
     @Insert("<script>" +
@@ -50,7 +50,7 @@ public interface AdminMapper {
             "(#{blogId}, (select id from b_tag where name= #{i}), now())" +
             "</foreach>"+
             "</script>")
-    int insertBlogTab(int blogId,String[] arr);
+    int insertBlogTag(int blogId,String[] arr);
 
 
     /*
@@ -74,6 +74,49 @@ public interface AdminMapper {
     @Delete("update blog set del_flag = true where id = #{blogId}")
     int delBlog(int blogId);
 
+
+
+
+    /*
+     * @Description 查询标签是否已存在
+     * @Author 284668461@qq.com
+     * @Date 10:40 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    @Select("select count(*) from b_tag where name = #{tag}")
+    int queryTag(String tag);
+
+    /*
+     * @Description 新增标签
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [Tag]
+     * @return int
+     **/
+    @Insert("insert into b_tag (name,time) values(#{tag},now()) ")
+    int insertTag(String tag);
+
+
+    /*
+     * @Description 新增分类
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    @Insert("insert into b_classify (name,time) values(#{classify},now()) ")
+    int insertClassify(String classify);
+
+    /*
+     * @Description 查询分类是否存在
+     * @Author 284668461@qq.com
+     * @Date 10:42 2020/4/29
+     * @Param [classify]
+     * @return int
+     **/
+    @Select("select count(*) from b_classify where name = #{classify} ")
+    int queryClassify(String classify);
 
 
 }

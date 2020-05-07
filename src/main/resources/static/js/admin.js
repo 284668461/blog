@@ -71,17 +71,18 @@ $(()=>{
 
 
         $('#hint').modal({
-                closable : false,
-                onDeny   : function(){
-                    console.log("取消按钮点击事件");
-                    // return false;
-                },
-                onApprove: function() {
+            closable : false,
+            onDeny   : function(){
+                console.log("取消按钮点击事件");
+                // return false;
+            },
+            onApprove: function() {
 
-                   console.log("确定按钮点击事件");
-                    // return false;
-                }
-            }).modal('show');
+                console.log("确定按钮点击事件");
+                console.log($(this));
+                // return false;
+            }
+        }).modal('show');
 
     });
 
@@ -212,7 +213,7 @@ $(()=>{
         for(var i=0;i<info.length;i++){
 
 
-            htmlTemp += `<div class=\"item\"> ${info[i].name}  </div>`
+            htmlTemp += `<div class=\"item\" data-id=" ${info[i].id}"> ${info[i].name}  </div>`
 
         }
 
@@ -258,9 +259,9 @@ $(()=>{
 
         for(var i=0;i<info.length;i++){
 
-            blogListLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name}"> ${info[i].name}  </div>`;
+            blogListLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name}" data-id=" ${info[i].id}"> ${info[i].name}  </div>`;
             // publishLabelHtmlTemp += ` <option value="${info[i].name}">${info[i].name}</option>`;
-            publishLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name} ">${info[i].name} </div>`;
+            publishLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name} " data-id=" ${info[i].id}" >${info[i].name} </div>`;
         }
 
         $("#blogListLabel").empty().append(blogListLabelHtmlTemp);
@@ -275,8 +276,53 @@ $(()=>{
 
 
 
+    /*
+     * @Description 查询博客
+     * @Author 284668461@qq.com
+     * @Date 10:36 2020/5/5
+     * @Param
+     * @return
+     **/
+    function toLoadBlogByMixtureQuery(tagId = 0,classifyId = 0,title){
+
+        $.post({
+            url:"/blog/getBlogByMixtureQuery",
+            data:{
+                tagId:tagId,
+                classifyId:classifyId,
+                title:title
+            },
+            success:(data)=>{
+
+                loadBlog(JSON.parse(data));
+            }
+        });
+
+    }
 
 
+
+
+
+    $("#searchBlog").on("click",()=>{
+
+
+        var title  = $("#searchInput");
+        var tagId  = $($("#blogListLabel>div.active")[0]).data("id");
+        var classifyId  = $($("#searchClassify>div.active")[0]).data("id");
+
+
+        if( (title.val()<1)&&(typeof(tagId) === 'undefined')&&(typeof(classifyId) === 'undefined')){
+
+            Toast("请输入关键字，或选择标签，分类");
+
+            return ;
+        }
+
+        toLoadBlogByMixtureQuery(tagId,classifyId,title.val());
+
+
+    });
 
 
     //新增分类点击事件
@@ -291,19 +337,56 @@ $(()=>{
             },
             onApprove: function() {
 
-                Toast("确定按钮点击事件");
-                console.log("确定按钮点击事件");
-                return false;
+
+                var input = $("#addClassifyInput");
+                console.log(input.val());
+
+
+                if(input.val().length<1){
+                    Toast("请输入分类名称");
+                    return false;
+                }
+
+
+
+
+                $.post({
+                    url:"/admin/queryClassify",
+                    data:{classify:input.val()},
+                    success:(data)=>{
+
+                        if(data){
+
+                            $.post({
+                                url:"/admin/insertClassify",
+                                data:{classify:input.val()},
+                                success:(data)=>{
+
+                                    if(data){
+                                        Toast("新增分类成功");
+                                        toLoadClassify();
+                                    }else{
+                                        Toast("新增分类失败，请稍后重试");
+                                    }
+                                }
+                            });
+                        }else{
+                            Toast("该分类已存在");
+                            return false;
+                        }
+                    }
+                });
+
             }
         }).modal('show');
 
     });
 
 
-    //新增分类点击事件
-    $("#addTab").on("click",()=>{
+    //新增标签点击事件
+    $("#addTag").on("click",()=>{
 
-        $('#hint_addTab').modal({
+        $('#hint_addTag').modal({
             closable : false,
             onDeny   : function(){
                 console.log("取消按钮点击事件");
@@ -311,9 +394,43 @@ $(()=>{
             },
             onApprove: function() {
 
-                Toast("确定按钮点击事件");
-                console.log("确定按钮点击事件");
-                return false;
+
+                var input = $("#addTagInput");
+                console.log(input.val());
+
+
+                if(input.val().length<1){
+                    Toast("请输入标签名称");
+                    return false;
+                }
+
+
+                $.post({
+                    url:"/admin/queryTag",
+                    data:{Tag:input.val()},
+                    success:(data)=>{
+
+                        if(data){
+
+                            $.post({
+                                url:"/admin/insertTag",
+                                data:{Tag:input.val()},
+                                success:(data)=>{
+
+                                    if(data){
+                                        Toast("新增标签成功");
+                                        toLoadLabel();
+                                    }else{
+                                        Toast("新增标签失败，请稍后重试");
+                                    }
+                                }
+                            });
+                        }else{
+                            Toast("该标签已存在");
+                            return false;
+                        }
+                    }
+                });
             }
         }).modal('show');
 

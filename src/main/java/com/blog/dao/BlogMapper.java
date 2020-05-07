@@ -2,6 +2,7 @@ package com.blog.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 import java.util.Map;
@@ -43,8 +44,16 @@ public interface BlogMapper {
   * @Param [tag]
   * @return java.util.Map
   **/
- @Select("")
- List<Map>  getBlogByTag(String tag);
+ @Select("select *,b.id as blogid from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id \n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id \n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author \n" +
+         "left join( select * from blog_classify ) as bclassify on bclassify.blog_id = b.id \n" +
+         "left join( select id,name as classify_name from b_classify ) as c on c.id = bclassify.type_id \n" +
+         "inner join( select id,blog_id,tag_id from blog_tag  where tag_id = #{tagId}) as bt on bt.blog_id = b.id \n" +
+         "where ( b.del_flag <> '1' or b.del_flag is null  )\n" +
+         "order by b.publish_date desc ")
+ List<Map>  getBlogByTag(int tagId);
 
 
 
@@ -57,11 +66,14 @@ public interface BlogMapper {
   * @Param [tag]
   * @return java.util.Map
   **/
- @Select("select * from blog as b\n" +
-         "inner join ( select id,blog_id,del_flag from blog_classify) as bc on bc.blog_id = b.id\n" +
-         "where  bc.id = #{classifyId} " +
-         "and b.del_flag <> '1' or b.del_flag is null\n" +
-         "and bc.del_flag <> '1' or bc.del_flag is null")
+ @Select("select *,b.id as blogid from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id \n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id \n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author \n" +
+         "left join( select * from blog_classify ) as bclassify on bclassify.blog_id = b.id \n" +
+         "inner join( select id,name as classify_name from b_classify where id=#{classifyId} ) as c on c.id = bclassify.type_id \n" +
+         "where ( b.del_flag <> '1' or b.del_flag is null  )\n" +
+         "order by b.publish_date desc ")
  List<Map>  getBlogByClassify(int classifyId);
 
 
@@ -75,8 +87,42 @@ public interface BlogMapper {
   * @Param [title]
   * @return java.util.List<java.util.Map>
   **/
- @Select("")
+ @Select("select *,b.id as blogid from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id \n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id \n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author \n" +
+         "left join( select * from blog_classify ) as bclassify on bclassify.blog_id = b.id \n" +
+         "left join( select id,name as classify_name from b_classify ) as c on c.id = bclassify.type_id \n" +
+         "where ( b.del_flag <> '1' or b.del_flag is null  )\n" +
+         "and b.title like '%#{title}%'\n" +
+         "order by b.publish_date desc ")
  List<Map>  getBlogByQuery(String title);
+
+
+
+/*
+ * @Description 混合查询
+ * @Author 284668461@qq.com
+ * @Date 10:08 2020/5/4
+ * @Param [tagId, classifyId, title]
+ * @return java.util.List<java.util.Map>
+ **/
+ @Select("<script> " +
+         "select *,b.id as blogid from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id \n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id \n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author \n" +
+         "inner join( select * from blog_classify ) as bclassify on bclassify.blog_id = b.id \n" +
+         "left join( select id,name as classify_name from b_classify ) as c on c.id = bclassify.type_id \n" +
+         "inner join( select * from blog_tag ) as bt on bt.blog_id = b.id \n" +
+         "where ( b.del_flag != '1' or b.del_flag is null  ) \n" +
+         "<if test='title!=null'> and b.title like concat('%',#{title},'%') </if> \n" +
+         "<if test='classifyId &gt; 0'> and bclassify.type_id= #{classifyId} </if>\n" +
+         "<if test='tagId &gt; 0'> and bt.tag_id= #{tagId} </if>\n" +
+         "order by b.publish_date desc " +
+         " </script>")
+// @Select("")
+ List<Map> getBlogByMixtureQuery(int tagId,int classifyId,String title);
 
 
 
@@ -88,7 +134,15 @@ public interface BlogMapper {
  * @Param []
  * @return java.util.Map
  **/
- @Select("")
+ @Select("select *,b.id as blogid from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id \n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id \n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author \n" +
+         "left join( select * from blog_classify ) as bclassify on bclassify.blog_id = b.id \n" +
+         "left join( select id,name as classify_name from b_classify ) as c on c.id = bclassify.type_id \n" +
+         "where ( b.del_flag <> '1' or b.del_flag is null  )\n" +
+         "order by bv.visitor_num desc \n" +
+         "limit 0,5")
  List<Map>  getBlogByHot();
 
 
@@ -101,7 +155,7 @@ public interface BlogMapper {
   * @Param []
   * @return java.util.Map
   **/
- @Select("select * from b_tag where del_flag ='false' or del_flag is null ")
+ @Select("select * from b_tag where del_flag <> '1' or del_flag is null ")
  List<Map> getTag();
 
 
@@ -114,12 +168,8 @@ public interface BlogMapper {
   * @return
   **/
 
- @Select("select *  from b_classify as c\n" +
-         "left join( select *,count(type_id) as num from blog_classify ) as bc on bc.type_id = c.id\n" +
-         "left join( select id,del_flag from blog ) as b on b.id = bc.blog_id\n" +
-         "where c.del_flag <> '1' or c.del_flag is null\n" +
-         "and b.del_flag <> '1' or b.del_flag is null\n" +
-         "and bc.del_flag <> '1' or bc.del_flag is null")
+
+ @Select("select * from b_classify where del_flag <> '1' or del_flag is null ")
  List<Map>  getClassify();
 
 
@@ -134,6 +184,19 @@ public interface BlogMapper {
  **/
  @Select("select * from timeline order by date desc")
  List<Map>  getTimeLine();
+
+
+
+
+ /*
+  * @Description 删除博客，将删除标记改为true
+  * @Author 284668461@qq.com
+  * @Date 16:31 2020/5/3
+  * @Param [id]
+  * @return int
+  **/
+ @Update("update blog set del_flag = 1 where id = #{id}")
+ int delBlog(int id);
 
 
 
