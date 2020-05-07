@@ -3,7 +3,7 @@ $(()=>{
     $("#sidebar").on("click",()=>{
 
         $('.m-item').toggleClass("m-mobile-hide");
-    })
+    });
 
 
 
@@ -14,5 +14,13 @@ $(()=>{
             on    : 'click',
             position:"top center"
         });
+
+
+
+
+
+    let blog = new Vue({
+        el:"#center"
+    });
 
 });

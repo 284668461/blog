@@ -1,6 +1,8 @@
 package com.blog.service;
 
 
+import org.apache.ibatis.annotations.Select;
+
 import java.util.List;
 import java.util.List;
 import java.util.Map;
@@ -106,5 +108,56 @@ public interface BlogService {
 
 
 
+    /*
+     * @Description 获得时间轴
+     * @Author 284668461@qq.com
+     * @Date 15:23 2020/5/7
+     * @Param []
+     * @return java.util.List
+     **/
+    List getTimeLine();
+
+
+
+
+    /*
+     * @Description 获得博客详情
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    Map getBlogDetail(int blogId);
+
+
+    /*
+     * @Description 获得博客标签
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    List getBlogTag(int blogId);
+
+    /*
+     * @Description 获得博客评论
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    List getBlogComment(int blogId);
+
+
+    /*
+     * @Description 获得博客版权
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    List getBlogCopyright(int blogId);
+    
+    
 
 }

@@ -21,20 +21,15 @@ $(()=>{
         switch (thisLabel) {
 
             case "index":
-                // load().loadTag();
                 break;
-
             case "classify":
-
                 classify.toLoadClassify();
                 break;
             case "label":
-                tab.toLoadTag();
-
+                tag.toLoadTag();
                 break;
-
             case "timeline":
-                // loadTag();
+               timeLine.toLoadTimeLine();
                 break;
 
         }
@@ -69,7 +64,6 @@ $(()=>{
                     return;
                 }
 
-
                 axios.post(
                     '/user/login',
                     {
@@ -84,7 +78,6 @@ $(()=>{
                         }else{
                             window.location.href = "admin.html";
                         }
-
                     })
                     .catch(function (error) { // 请求失败处理
                         console.log(error);
@@ -105,7 +98,7 @@ $(()=>{
 
 //home  start   ---------------------------
 
-    var home = new Vue({
+    let home = new Vue({
         el:"#home",
         data:{
             homeBlogList : [],
@@ -141,7 +134,6 @@ $(()=>{
                             if(item.visitor_num === null){
                                 item.visitor_num = 0;
                             }
-
                         });
 
                         this.homeBlogList =info;
@@ -169,15 +161,14 @@ $(()=>{
 
                         });
 
-
                         this.hotBlogList =info;
                     }
                 });
 
             },
 
+            //加载词云
             loadTagCloud:function(){
-
 
                 $.post({
                     url:"/blog/getTag",
@@ -191,8 +182,6 @@ $(()=>{
                             wordTemp.push([item.name,parseInt(Math.random()*100)]);
                         });
 
-
-
                         var canvas = document.getElementById("tabCloudCanvas");
                         var options = eval({
                             "list": wordTemp,
@@ -203,21 +192,16 @@ $(()=>{
                             "rotateRatio": 0.7
                         });
 
-
                         //生成词云
                         WordCloud(canvas, options);
                         this.tabCloud =info;
-
                     }
                 });
-
-
             }
 
         }
 
     });
-
 
 
 //home  end     ---------------------------
@@ -226,25 +210,37 @@ $(()=>{
 
 //classify   start     -------------------------
 
-    var classify = new Vue({
+    let classify = new Vue({
         el:"#classify",
         data:{
             classifyOption:[],
-            classifyBlog:[],
+            classifyBlog:[]
         },
         methods:{
-
+            //加载分类
             toLoadClassify:function(){
 
                 $.post({
                     url:"/blog/getClassify",
                     success:(data)=>{
-                        this.loadClassifyOption(JSON.parse(data));
+
+                        var info = JSON.parse(data);
+                        //若分类数量为空则替换为0
+                        info.map((item)=>{
+
+                            if(item.classifynum === null){
+                                item.classifynum = 0;
+                            }
+                        });
+
+                        this.classifyOption = info;
+                        this.switchClassifyOption();
                     }
                 });
 
             },
 
+            //按分类加载博文
             toclassifyBlog:function(classifyId){
 
                 $.post({
@@ -253,17 +249,32 @@ $(()=>{
                         classifyid:classifyId
                     },
                     success:(data)=>{
-                        console.log(data);
 
+                        var info = JSON.parse(data);
+
+                        info.map((item,index,arr)=>{
+
+                            //若评论数和查看人数为空则替换为0
+                            if(item.comment_num === null){
+                                item.comment_num = 0;
+                            }
+                            if(item.visitor_num === null){
+                                item.visitor_num = 0;
+                            }
+
+                        });
+
+
+                        this.classifyBlog = info;
                     }
                 });
             },
 
+            //切换分类选项
+            switchClassifyOption:function(id=this.classifyOption[0].id){
 
-            //分类选项
-            loadClassifyOption:function(info,id=info[0].id){
-                info.map((item,index,arr)=>{
-
+                var info = this.classifyOption;
+                info.map((item)=>{
                     //给json 添加一项选中标记
                     // 若循环 id 等于传入的点击id ,则替换为已选中
                     if(item.id === id){
@@ -281,42 +292,92 @@ $(()=>{
 
                 this.classifyOption = info;
                 this.toclassifyBlog(id);
+
             },
 
-            btnClick:function(id){
+            //分类点击事件
+            btnClick:function(id,classifynum){
 
-                var temp = [{"del_flag":"0","blog_id":1,"type_id":1,"num":2,"name":"技术文章","id":1,"time":1587784048000},{"del_flag":"0","blog_id":null,"type_id":null,"num":null,"name":"心情随笔","id":2,"time":1587784061000},{"del_flag":"0","blog_id":null,"type_id":null,"num":null,"name":"生活感悟","id":3,"time":1587802836000}]
 
-                this.loadClassifyOption(temp,id);
+                if(classifynum<1){
+
+                    Toast("该分类没有博文，请选择其他分类");
+                    return;
+                }
+
+
+                this.switchClassifyOption(id);
+                this.toclassifyBlog(id);
+
+
             }
         }
     });
 
 
-
 //classify   end     ---------------------------
 
-//tab   start     ---------------------------
+//tag   start     ---------------------------
 
-    var tab = new Vue({
-        el:"#tab",
+    let tag = new Vue({
+        el:"#tag",
         data:{
-            tabInfo:[]
+            tabOption:[],
+            tabBlog:[],
         },
         methods:{
+            //加载标签
             toLoadTag:function(){
 
                 $.post({
                     url:"/blog/getTag",
                     success:(data)=>{
-                        //通知vue 渲染界面
-                        tab.loadTabOption(JSON.parse(data));
+
+                        this.tabOption = JSON.parse(data);
+
+                        this.switchTagOption();
                     }
                 });
             },
-            loadTabOption:function(info,id=info[0].id){
+            //按标签加载博文
+            toLoadTagBlog:function(tagId){
 
-                info.map((item,index,arr)=>{
+
+                $.post({
+                    url:"/blog/getBlogByTag",
+                    data:{
+                        tagId:tagId
+                    },
+                    success:(data)=>{
+
+                        var info = JSON.parse(data);
+
+
+                        console.log(info);
+                        info.map((item,index,arr)=>{
+
+                            //若评论数和查看人数为空则替换为0
+                            if(item.comment_num === null){
+                                item.comment_num = 0;
+                            }
+                            if(item.visitor_num === null){
+                                item.visitor_num = 0;
+                            }
+
+                        });
+
+                        this.tabBlog = info;
+                        console.log( this.tabBlog );
+                    }
+                });
+
+            },
+            //切换标签
+            switchTagOption:function(id=this.tabOption[0].id){
+
+
+                var info = this.tabOption;
+                info.map((item)=>{
 
                     //给json 添加一项选中标记
                     // 若循环 id 等于传入的点击id ,则替换为已选中
@@ -326,25 +387,55 @@ $(()=>{
                         item.isSelected = "black";
                     }
 
-                    //当 num 为空时 替换为 0
-                    if(item.num === null){
-                        item.num = 0;
-                        return item ;
-                    }
                 });
 
-                this.tabInfo = info;
+                this.tagOption = info;
+                this.toLoadTagBlog(id);
+
+
             },
+            //标签点击事件
             tabClick: function(id){
 
-                var temp = [{"name":"web","id":3,"time":1587781812000},{"name":"jquery","id":4,"time":1587781822000},{"name":"js","id":5,"time":1587781851000},{"name":"mysql","id":6,"time":1587781848000}]
-
-                // this.loadTabOption(temp,id);
-                this.loadTabOption(this.tabInfo,id);
+                this.switchTagOption(id);
+                this.toLoadTagBlog(id);
             }
         }
     });
-//tab     end     ---------------------------
+//tag     end     ---------------------------
+
+
+
+
+
+//timeLine     start   ---------------------------
+    let timeLine = new Vue({
+        el:"#timeLine",
+        data:{
+            timeLineInfo:[]
+        },
+        methods:{
+            toLoadTimeLine:function(){
+
+                $.post({
+                    url:"/blog/getTimeLine",
+                    success:(data)=>{
+
+                        this.timeLineInfo = JSON.parse(data);
+                        console.log(this.timeLineInfo);
+
+                    }
+                });
+
+
+
+            }
+        }
+    });
+
+
+
+//timeLine     end     ---------------------------
 
 
 

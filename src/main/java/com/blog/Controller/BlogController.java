@@ -46,13 +46,31 @@ public class BlogController {
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
-        System.out.println("--------------------------------");
-        System.out.println( JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteMapNullValue) );
-
         return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
 
     }
 
+
+
+    /*
+     * @Description 获得博客详情
+     * @Author 284668461@qq.com
+     * @Date 16:07 2020/5/7
+     * @Param [id]
+     * @return java.lang.String
+     **/
+    @GetMapping("getBlogDetail")
+    @ResponseBody
+    public String getBlogDetail(int id){
+
+
+        Map m = blogService.getBlogDetail(id);
+
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+
+    }
 
 
 
@@ -65,14 +83,11 @@ public class BlogController {
      **/
     @PostMapping("getBlogByTag")
     @ResponseBody
-    public String getBlogByTag(@RequestBody JSONObject json){
-
-
-        int tagId = Integer.parseInt( json.getString("tag") );
+    public String getBlogByTag(int tagId){
 
         List m =  blogService.getBlogByTag(tagId);
 
-        return JSON.toJSONString(m);
+        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
     }
 
 
@@ -89,11 +104,9 @@ public class BlogController {
     @ResponseBody
     public String getBlogByClassify(int classifyid){
 
-//        int classifyid = Integer.parseInt(json.getString("classifyid"));
-
         List m =  blogService.getBlogByClassify(classifyid);
 
-        return JSON.toJSONString(m);
+        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
     }
 
 
@@ -221,5 +234,14 @@ public class BlogController {
 
 
 
+
+    @PostMapping("getTimeLine")
+    @ResponseBody
+    public String getTimeLine() {
+
+        List m =  blogService.getTimeLine();
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+    }
 
 }

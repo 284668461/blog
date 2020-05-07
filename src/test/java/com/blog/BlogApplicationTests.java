@@ -21,27 +21,14 @@ class BlogApplicationTests {
     @Autowired
     private BlogService bs;
 
+    @Autowired
+    private Tool tool;
+
     @Test
     void contextLoads() {
 
-        System.out.println("1---------------------");
 
-        System.out.println(
-                bs.getBlogByMixtureQuery(0,0,"1")
-        );
-
-
-        System.out.println("2---------------------");
-
-        System.out.println(
-                bs.getBlogByMixtureQuery(3,0,"1")
-        );
-
-        System.out.println("3---------------------");
-        System.out.println(
-                bs.getBlogByMixtureQuery(3,1,"1")
-        );
-//        SqlSession session = MyBatisUtil.getSessionFactory();
+        System.out.println( bs.getBlogDetail(43));
 
     }
 

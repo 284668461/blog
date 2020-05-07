@@ -145,57 +145,6 @@
 
                     </div>
 
-
-                    <!--<div class="ui segment   ">-->
-
-                        <!--<div class="ui  grid stackable  mobile reversed">-->
-
-                            <!--<div class="ui eleven wide column">-->
-
-                                <!--<h3 class="ui header"><a href="">安东尼经典语录</a></h3>-->
-
-                                <!--<p>-->
-                                    <!--不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......-->
-                                <!--</p>-->
-
-                                <!--<div class="ui grid">-->
-                                    <!--<div class="eleven wide column">-->
-                                        <!--<div class="ui mini horizontal link list">-->
-                                            <!--<div class="item">-->
-                                                <!--<img src="img/photo.jpg" alt="" class="ui avatar image">-->
-                                                <!--<div class="content"><a href="#" class="header black">Mine_希冀</a></div>-->
-                                            <!--</div>-->
-
-                                            <!--<div class="item">-->
-                                                <!--<i class="clock outline icon"></i><span>2020-03-21</span>-->
-                                            <!--</div>-->
-                                            <!--<div class="item">-->
-                                                <!--<i class="eye icon"></i> <span>0</span>-->
-                                            <!--</div>-->
-
-                                            <!--<div class="item">-->
-                                                <!--<i class="comment alternate icon"></i> <span>0</span>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                    <!--<div class="right aligned five wide column">-->
-                                        <!--<a href="/types/5" target="_blank" class="ui blue basic label">java</a>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-                            <!--</div>-->
-
-                            <!--<div class="ui five wide column">-->
-                                <!--<a href="">-->
-                                    <!--<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">-->
-                                <!--</a>-->
-                            <!--</div>-->
-
-                        <!--</div>-->
-
-                    <!--</div>-->
-
-
                 </div>
 
 
@@ -205,13 +154,13 @@
                 <div class="ui bottom attached segment">
 
                     <!--<div class="ui aligned two column grid">-->
-                        <!--<div class="column">-->
-                            <!--<button class="ui button  basic" >上一页</button>-->
-                        <!--</div>-->
+                    <!--<div class="column">-->
+                    <!--<button class="ui button  basic" >上一页</button>-->
+                    <!--</div>-->
 
-                        <!--<div class="column">-->
-                            <!--<button class="ui right aligned button  basic">下一页</button>-->
-                        <!--</div>-->
+                    <!--<div class="column">-->
+                    <!--<button class="ui right aligned button  basic">下一页</button>-->
+                    <!--</div>-->
 
                     <!--</div>-->
 
@@ -252,9 +201,9 @@
 
                         <!--<div class="item">-->
 
-                            <!--<a href="https://github.com/Mitsuha666/blog" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>-->
-                            <!--<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>-->
-                            <!--<a href="#" class="ui qq circular icon button" data-content="691639910" data-position="bottom center"><i class="qq icon"></i></a>-->
+                        <!--<a href="https://github.com/Mitsuha666/blog" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>-->
+                        <!--<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>-->
+                        <!--<a href="#" class="ui qq circular icon button" data-content="691639910" data-position="bottom center"><i class="qq icon"></i></a>-->
 
                         <!--</div>-->
 
@@ -279,12 +228,13 @@
 
                     <span class="iMarginTop iMarginLeft">
                         <i class="gripfire icon"></i> &nbsp; 热文排行
-                </span>
-                    <!--<div class="ui horizontal divider">-</div>-->
+                    </span>
+
                     <hr>
+
                     <div class="ui wide  column iPaddingBottom">
 
-                        <a  class="item"  :href="'detail.html/'+item.blogid"  v-for="item in hotBlogList" >
+                        <a  class="item hotItem"  :href="'detail.html/'+item.blogid"  v-for="item in hotBlogList" >
                             <i class="angle right icon"></i> &nbsp;
                             <span> {{item.title}} </span>&nbsp;&nbsp;
 
@@ -295,12 +245,12 @@
 
 
                         <!--<a class="item">-->
-                            <!--<i class="angle right icon"></i> &nbsp;-->
-                            <!--<span> SpringBoot之从零搭建博客网站 </span>&nbsp;-->
+                        <!--<i class="angle right icon"></i> &nbsp;-->
+                        <!--<span> SpringBoot之从零搭建博客网站 </span>&nbsp;-->
 
-                            <!--<div class="ui mini horizontal link list">-->
-                                <!--<i class=" item eye icon"></i> <span>0</span>-->
-                            <!--</div>-->
+                        <!--<div class="ui mini horizontal link list">-->
+                        <!--<i class=" item eye icon"></i> <span>0</span>-->
+                        <!--</div>-->
                         <!--</a>-->
 
 
@@ -320,7 +270,7 @@
                         <i class="cloudversify icon"></i> &nbsp; 标签云
                     </span>
                     <p>
-                    <!--<div class="ui horizontal divider">-</div>-->
+                        <!--<div class="ui horizontal divider">-</div>-->
 
                     <hr>
 
@@ -345,7 +295,7 @@
             <!--right end-->
         </div>
     </section>
-    <section class="classify ">
+    <section class="classify " id="classify">
 
         <!--header-->
         <div class="ui top attached segment">
@@ -364,25 +314,15 @@
             </div>
         </div>
         <!--分类框 start-->
-        <div class="ui attached segment" id="classify">
-            <div class="ui labeled button m-margin-tb-tiny" v-for="item in classifyOption" :data-id="item.id" @click="btnClick(item.id)" >
+        <div class="ui attached segment" >
+            <div class="ui labeled button m-margin-tb-tiny" v-for="item in classifyOption" :data-id="item.id" :data-classifynum="item.classifynum" @click="btnClick(item.id,item.classifynum)" >
                 <div class="ui basic  button " :class="item.isSelected" >{{item.name}}</div>
-                <div class="ui basic  left pointing label " :class="item.isSelected">{{item.num}}</div>
+                <div class="ui basic  left pointing label " :class="item.isSelected">{{item.classifynum}}</div>
             </div>
 
             <!--<div class="ui labeled button m-margin-tb-tiny">-->
-                <!--<a href="" class="ui basic  button ">中间件</a>-->
-                <!--<div class="ui basic  left pointing label ">16</div>-->
-            <!--</div>-->
-
-            <!--<div class="ui labeled button m-margin-tb-tiny">-->
-                <!--<a href="" class="ui basic  button ">中间件</a>-->
-                <!--<div class="ui basic  left pointing label ">16</div>-->
-            <!--</div>-->
-
-            <!--<div class="ui labeled button m-margin-tb-tiny">-->
-                <!--<a href="" class="ui basic  button ">中间件</a>-->
-                <!--<div class="ui basic  left pointing label ">16</div>-->
+            <!--<a href="" class="ui basic  button ">中间件</a>-->
+            <!--<div class="ui basic  left pointing label ">16</div>-->
             <!--</div>-->
 
 
@@ -393,44 +333,52 @@
         <!--博客列表 start-->
         <div class="ui attached segment top teal">
 
-            <div class="ui segment">
+
+
+
+            <div class="ui segment " v-for="item in classifyBlog">
 
                 <div class="ui  grid stackable  mobile reversed">
 
                     <div class="ui eleven wide column">
 
-                        <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+                        <h3 class="ui header"><a :href="'detail.html/'+item.blogid" target="_blank">{{item.title}}</a></h3>
 
                         <p>
-                            不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                            {{item.blog_body}}
+
                         </p>
 
-                        <div class="ui grid">
+                        <div class="ui grid ">
                             <div class="eleven wide column">
                                 <div class="ui mini horizontal link list">
 
+
                                     <div class="item">
-                                        <i class="clock outline icon"></i><span>2020-03-21</span>
+                                        <i class="clock outline icon"></i><span>{{item.time}}</span>
                                     </div>
                                     <div class="item">
-                                        <i class="eye icon"></i> <span>0</span>
+                                        <i class="eye icon"></i> <span>{{item.visitor_num}}</span>
                                     </div>
 
                                     <div class="item">
-                                        <i class="comment alternate icon"></i> <span>0</span>
+                                        <i class="comment alternate icon"></i> <span>{{item.comment_num}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="right aligned five wide column">
-                                <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                            <div class="right aligned five wide column iLabel">
+
+                                <div class="right aligned five wide column">
+                                    <a href="" target="_blank" class="ui blue basic label">{{item.classify_name}}</a>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="ui five wide column">
-                        <a href="">
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
+                        <a href="detail.html" target="_blank">
+                            <img :src="item.cover_img_path" alt="" class="ui rounded image">
                         </a>
                     </div>
 
@@ -439,50 +387,53 @@
             </div>
 
 
-            <div class="ui segment">
+            <!--<div class="ui segment">-->
 
-                <div class="ui  grid stackable  mobile reversed">
+            <!--<div class="ui  grid stackable  mobile reversed">-->
 
-                    <div class="ui eleven wide column">
+            <!--<div class="ui eleven wide column">-->
 
-                        <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+            <!--<h3 class="ui header"><a href="">安东尼经典语录</a></h3>-->
 
-                        <p>
-                            不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
-                        </p>
+            <!--<p>-->
+            <!--不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......-->
+            <!--</p>-->
 
-                        <div class="ui grid">
-                            <div class="eleven wide column">
-                                <div class="ui mini horizontal link list">
+            <!--<div class="ui grid">-->
+            <!--<div class="eleven wide column">-->
+            <!--<div class="ui mini horizontal link list">-->
 
-                                    <div class="item">
-                                        <i class="clock outline icon"></i><span>2020-03-21</span>
-                                    </div>
-                                    <div class="item">
-                                        <i class="eye icon"></i> <span>0</span>
-                                    </div>
+            <!--<div class="item">-->
+            <!--<i class="clock outline icon"></i><span>2020-03-21</span>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<i class="eye icon"></i> <span>0</span>-->
+            <!--</div>-->
 
-                                    <div class="item">
-                                        <i class="comment alternate icon"></i> <span>0</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned five wide column">
-                                <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
-                            </div>
-                        </div>
+            <!--<div class="item">-->
+            <!--<i class="comment alternate icon"></i> <span>0</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="right aligned five wide column">-->
+            <!--<a href="/types/5" target="_blank" class="ui blue basic label">java</a>-->
+            <!--</div>-->
+            <!--</div>-->
 
-                    </div>
+            <!--</div>-->
 
-                    <div class="ui five wide column">
-                        <a href="">
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
-                        </a>
-                    </div>
+            <!--<div class="ui five wide column">-->
+            <!--<a href="">-->
+            <!--<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">-->
+            <!--</a>-->
+            <!--</div>-->
 
-                </div>
+            <!--</div>-->
 
-            </div>
+            <!--</div>-->
+
+
+
 
 
         </div>
@@ -491,13 +442,13 @@
 
 
     </section>
-    <section class="label ">
+    <section class="label " id="tag">
 
         <!--header-->
         <div class="ui top attached segment">
             <div class="ui middle aligned two column grid">
                 <div class="column">
-                    <h3 class="ui teal header">分类</h3>
+                    <h3 class="ui teal header">标签</h3>
 
                     <!--<div class="ui breadcrumb">-->
                     <!--<div class="section">主页</div>-->
@@ -510,10 +461,10 @@
             </div>
         </div>
         <!--分类框 start-->
-        <div class="ui attached segment " id="tab">
+        <div class="ui attached segment ">
 
 
-            <div class="ui labeled button m-margin-tb-tiny" v-for="item in tabInfo" :data-id="item.id" @click="tabClick(item.id)">
+            <div class="ui labeled button m-margin-tb-tiny" v-for="item in tabOption" :data-id="item.id" @click="tabClick(item.id)">
                 <div   class="ui  basic label" :class="item.isSelected">
                     <i class=" tags icon left"></i>
                     {{item.name}}
@@ -529,44 +480,50 @@
         <!--博客列表 start-->
         <div class="ui attached segment top teal">
 
-            <div class="ui segment">
+
+            <div class="ui segment " v-for="item in tabBlog">
 
                 <div class="ui  grid stackable  mobile reversed">
 
                     <div class="ui eleven wide column">
 
-                        <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+                        <h3 class="ui header"><a :href="'detail.html/'+item.blogid" target="_blank">{{item.title}}</a></h3>
 
                         <p>
-                            不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
+                            {{item.blog_body}}
+
                         </p>
 
-                        <div class="ui grid">
+                        <div class="ui grid ">
                             <div class="eleven wide column">
                                 <div class="ui mini horizontal link list">
 
+
                                     <div class="item">
-                                        <i class="clock outline icon"></i><span>2020-03-21</span>
+                                        <i class="clock outline icon"></i><span>{{item.time}}</span>
                                     </div>
                                     <div class="item">
-                                        <i class="eye icon"></i> <span>0</span>
+                                        <i class="eye icon"></i> <span>{{item.visitor_num}}</span>
                                     </div>
 
                                     <div class="item">
-                                        <i class="comment alternate icon"></i> <span>0</span>
+                                        <i class="comment alternate icon"></i> <span>{{item.comment_num}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="right aligned five wide column">
-                                <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
+                            <div class="right aligned five wide column iLabel">
+
+                                <div class="right aligned five wide column">
+                                    <a href="" target="_blank" class="ui blue basic label">{{item.classify_name}}</a>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="ui five wide column">
-                        <a href="">
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
+                        <a href="detail.html" target="_blank">
+                            <img :src="item.cover_img_path" alt="" class="ui rounded image">
                         </a>
                     </div>
 
@@ -575,87 +532,83 @@
             </div>
 
 
-            <div class="ui segment">
+            <!--<div class="ui segment">-->
 
-                <div class="ui  grid stackable  mobile reversed">
+            <!--<div class="ui  grid stackable  mobile reversed">-->
 
-                    <div class="ui eleven wide column">
+            <!--<div class="ui eleven wide column">-->
 
-                        <h3 class="ui header"><a href="">安东尼经典语录</a></h3>
+            <!--<h3 class="ui header"><a href="">安东尼经典语录</a></h3>-->
 
-                        <p>
-                            不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......
-                        </p>
+            <!--<p>-->
+            <!--不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......-->
+            <!--</p>-->
 
-                        <div class="ui grid">
-                            <div class="eleven wide column">
-                                <div class="ui mini horizontal link list">
+            <!--<div class="ui grid">-->
+            <!--<div class="eleven wide column">-->
+            <!--<div class="ui mini horizontal link list">-->
 
-                                    <div class="item">
-                                        <i class="clock outline icon"></i><span>2020-03-21</span>
-                                    </div>
-                                    <div class="item">
-                                        <i class="eye icon"></i> <span>0</span>
-                                    </div>
+            <!--<div class="item">-->
+            <!--<i class="clock outline icon"></i><span>2020-03-21</span>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+            <!--<i class="eye icon"></i> <span>0</span>-->
+            <!--</div>-->
 
-                                    <div class="item">
-                                        <i class="comment alternate icon"></i> <span>0</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="right aligned five wide column">
-                                <a href="/types/5" target="_blank" class="ui blue basic label">java</a>
-                            </div>
-                        </div>
+            <!--<div class="item">-->
+            <!--<i class="comment alternate icon"></i> <span>0</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="right aligned five wide column">-->
+            <!--<a href="/types/5" target="_blank" class="ui blue basic label">java</a>-->
+            <!--</div>-->
+            <!--</div>-->
 
-                    </div>
+            <!--</div>-->
 
-                    <div class="ui five wide column">
-                        <a href="">
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">
-                        </a>
-                    </div>
+            <!--<div class="ui five wide column">-->
+            <!--<a href="">-->
+            <!--<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">-->
+            <!--</a>-->
+            <!--</div>-->
 
-                </div>
+            <!--</div>-->
 
-            </div>
+            <!--</div>-->
+
+
+
 
 
         </div>
         <!--博客列表   end-->
 
     </section>
-    <section class="timeline ">
+    <section class="timeline" id="timeLine">
 
         <div class="wrapper">
-            <div class="timelineItem timelineItem0 ">
+            <div class="timelineItem timelineItem0 " v-for="item in timeLineInfo">
                 <div class="timelineItemStation"></div>
                 <div class="timelineItemContent">
-                    <h2 class="timelineItemContentDate">1977 Aug. 20</h2>
-                    <p class="timelineItemContentDescription">Voyager 2 launched from Kennedy Space Flight Center</p>
+                    <h2 class="timelineItemContentDate">{{item.date}}</h2>
+                    <p class="timelineItemContentDescription">
+                        {{item.content}}
+                    </p>
                 </div>
             </div>
-            <div class="timelineItem timelineItem1">
-                <div class="timelineItemStation"></div>
-                <div class="timelineItemContent ">
-                    <h2 class="timelineItemContentDate">1977 Sept. 5</h2>
-                    <p class="timelineItemContentDescription">Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon</p>
-                </div>
-            </div>
-            <div class="timelineItem timelineItem2">
-                <div class="timelineItemStation"></div>
-                <div class="timelineItemContent">
-                    <h2 class="timelineItemContentDate">1979 Mar. 5</h2>
-                    <p class="timelineItemContentDescription">Voyager 1 makes its closest approach to Jupiter</p>
-                </div>
-            </div>
-            <div class="timelineItem timelineItem3">
-                <div class="timelineItemStation"></div>
-                <div class="timelineItemContent">
-                    <h2 class="timelineItemContentDate">1979 July 9</h2>
-                    <p class="timelineItemContentDescription">Voyager 2 makes its closest approach to Jupiter</p>
-                </div>
-            </div>
+
+
+
+
+
+            <!--<div class="timelineItem timelineItem1">-->
+            <!--<div class="timelineItemStation"></div>-->
+            <!--<div class="timelineItemContent ">-->
+            <!--<h2 class="timelineItemContentDate">1977 Sept. 5</h2>-->
+            <!--<p class="timelineItemContentDescription">Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon</p>-->
+            <!--</div>-->
+            <!--</div>-->
 
         </div>
 

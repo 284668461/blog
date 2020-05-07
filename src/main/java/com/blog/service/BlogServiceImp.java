@@ -2,14 +2,19 @@ package com.blog.service;
 
 import com.blog.MyBatisUtil;
 import com.blog.dao.BlogMapper;
+import com.blog.other.Tool;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Configuration
 public class BlogServiceImp implements BlogService {
 
+    @Autowired
+    private Tool tool;
 
     /*
      * @Description 获得指定页数博文
@@ -21,14 +26,11 @@ public class BlogServiceImp implements BlogService {
     @Override
     public List getAllBlog(int page) {
 
-
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getAllBlog(page);
-
-        return ls;
+        return bm.getAllBlog(page);
 
     }
 
@@ -50,9 +52,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getBlogByTag(tagId);
-
-        return ls;
+        return bm.getBlogByTag(tagId);
 
 
     }
@@ -72,8 +72,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getBlogByClassify(classifyid);
-        return ls;
+        return bm.getBlogByClassify(classifyid);
 
     }
 
@@ -90,9 +89,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getBlogByHot();
-
-        return ls;
+        return bm.getBlogByHot();
     }
 
     /*
@@ -108,9 +105,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getTag();
-
-        return ls;
+        return  bm.getTag();
     }
 
 
@@ -128,9 +123,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        List ls=  bm.getClassify();
-
-        return ls;
+        return bm.getClassify();
     }
 
     /*
@@ -183,5 +176,100 @@ public class BlogServiceImp implements BlogService {
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
         return  bm.getBlogByMixtureQuery(tagId,classifyId,title);
+    }
+
+    /*
+     * @Description 获得时间轴
+     * @Author 284668461@qq.com
+     * @Date 15:23 2020/5/7
+     * @Param []
+     * @return java.util.List
+     **/
+    @Override
+    public List getTimeLine() {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getTimeLine();
+    }
+
+
+
+    /*
+     * @Description 获得博客详情
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    @Override
+    public Map getBlogDetail(int blogId) {
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+
+        Map m = new HashMap();
+        //获得博文详情
+        m.put("blogDetail",bm.getBlogDetail(blogId));
+        //获得博文标签
+        m.put("blogTag",bm.getBlogTag(blogId));
+        //获得博文评论
+        m.put("comment",bm.getBlogComment(blogId));
+        // 获得并生成版权信息
+        m.put("copyright",tool.generateCopyright(bm.getBlogCopyright(blogId)));
+
+
+        return m;
+    }
+
+    /*
+     * @Description 获得博客标签
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    @Override
+    public List getBlogTag(int blogId) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogTag(blogId);
+    }
+
+    /*
+     * @Description 获得博客评论
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    @Override
+    public List getBlogComment(int blogId) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogComment(blogId);
+    }
+
+    /*
+     * @Description 获得博客版权
+     * @Author 284668461@qq.com
+     * @Date 16:13 2020/5/7
+     * @Param [blogId]
+     * @return java.util.List
+     **/
+    @Override
+    public List getBlogCopyright(int blogId) {
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogCopyright(blogId);
     }
 }
