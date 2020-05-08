@@ -189,4 +189,38 @@ public class AdminServiceImp implements AdminService {
         return  m.queryClassify(classify);
     }
 
+
+
+    /*
+     * @Description 插入博客版权信息
+     * @Author 284668461@qq.com
+     * @Date 21:08 2020/5/8
+     * @Param [blogId, copyrightFlag, author, path]
+     * @return int
+     **/
+    public int insertCopyright(int blogId,String copyrightFlag,String author,String path){
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        AdminMapper m = session.getMapper(AdminMapper.class);
+
+        int dataNum ;
+        if(copyrightFlag.equals("原创")){
+
+             dataNum =  m.insertCopyright(blogId,0,author,path);
+
+        }else if(copyrightFlag.equals("转载")){
+
+            dataNum = m.insertCopyright(blogId,1,author,path);
+
+        }else{
+
+            dataNum =  m.insertCopyright(blogId,2,author,path);
+
+        }
+
+        session.commit();
+        return dataNum;
+
+    }
 }

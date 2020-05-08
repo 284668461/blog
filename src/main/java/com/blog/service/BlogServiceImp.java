@@ -210,10 +210,14 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-
         Map m = new HashMap();
-        //获得博文详情
-        m.put("blogDetail",bm.getBlogDetail(blogId));
+
+
+        //获得博文详情,并将博文内容转换为 html
+        Map blogDetail = (Map)bm.getBlogDetail(blogId).get(0);
+        blogDetail.put("blog_body",tool.markDownStrTohtml( (String)blogDetail.get("blog_body") ));
+
+        m.put("blogDetail",blogDetail);
         //获得博文标签
         m.put("blogTag",bm.getBlogTag(blogId));
         //获得博文评论

@@ -2,6 +2,16 @@ $(()=>{
 
     //初始化 下拉
     $(".ui.dropdown").dropdown();
+    $("#titleDropDown").dropdown({
+        onChange:function(item){
+            console.log(item);
+            if(item !== "原创"){
+                $("#hintCopyright").slideDown();
+            }else{
+                $("#hintCopyright").slideUp();
+            }
+        }
+    });
 
 
 
@@ -453,6 +463,13 @@ $(()=>{
         var coverImg = $("#fileUpload");
         var publishBody = $("#blogBody");
 
+
+
+        var author = $("#author");
+        var path = $("#path");
+
+
+
         var blogIsDraft = $("#blogIsDraft").is(':checked');
         var blogIsComment = $("#blogIsComment").is(':checked');
         var blogIsAdmire = $("#blogIsAdmire").is(':checked');
@@ -472,11 +489,33 @@ $(()=>{
 
         //    验证信息完整性
 
+        if(original.val()!="原创"){
+
+
+            if(author.val().length<1){
+                Toast("请输入原作者名称");
+                return;
+
+            }
+
+            if(path.val().length<1){
+                Toast("请输入原文地址");
+                return;
+            }
+
+        }
+
+
+
+
         if(title.val().length<=0){
 
             Toast("请输入标题");
             return;
         }
+
+
+
 
         //    发送请求
 
@@ -506,6 +545,8 @@ $(()=>{
         formData.append('blogIsDraft',  blogIsDraft );
         formData.append('blogIsComment',  blogIsComment );
         formData.append('blogIsAdmire',  blogIsAdmire );
+        formData.append('author',  author.val() );
+        formData.append('path',  path.val() );
 
 
 
@@ -518,10 +559,9 @@ $(()=>{
 
             success:(data)=>{
 
-                if(data === "true"){
+                if(data){
                     Toast("发布博客成功");
-
-                    // location.replace(document.referrer);
+                    location.replace(document.referrer);
 
                 }
             }

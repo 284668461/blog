@@ -73,7 +73,7 @@ public class AdminController {
      **/
     @PostMapping("insertBlog")
     @ResponseBody
-    public String insertBlog(HttpServletRequest req,
+    public Boolean insertBlog(HttpServletRequest req,
                              HttpServletResponse res,
                              MultipartFile file){
 
@@ -87,15 +87,16 @@ public class AdminController {
         Boolean blogIsComment = Boolean.parseBoolean( req.getParameter("blogIsComment"));
         Boolean blogIsAdmire = Boolean.parseBoolean( req.getParameter("blogIsAdmire"));
 
+        String author = req.getParameter("author");
+        String path = req.getParameter("path");
 
 
         String flag ="";
 
         if(file!=null){
-            //        保存上传的图片
+            //保存上传的首图
             flag = uf.upImg(file);
         }
-
 
 
         Map m = new HashMap();
@@ -116,21 +117,25 @@ public class AdminController {
 //        查询出博客id
         int blodId = ad.selectBolgId(m);
 
-
 //        新增博客分类
         int insertBlogClassifyResNum = ad.insertBlogClassify(blodId,classify);
 
-
-
-        //        新增博客标签
+        //新增博客标签
         //分割标签并清洗后保存为数组
-        String[] TagArr = tool.removeArrayNull( Tag.split(" ") );
+        if(Tag!=null){
+            String[] TagArr = tool.removeArrayNull( Tag.split(" ") );
 
-        if(TagArr.length>0){
-            ad.insertBlogTag(blodId,TagArr);
+            if(TagArr.length>0){
+                ad.insertBlogTag(blodId,TagArr);
+            }
+
         }
 
-        return "true";
+        //新增博客版权信息
+        ad.insertCopyright(blodId,original,author,path);
+
+
+        return true;
     }
 
 

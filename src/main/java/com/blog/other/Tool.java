@@ -2,6 +2,9 @@ package com.blog.other;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import org.commonmark.node.Node;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.*;
@@ -73,16 +76,12 @@ public class Tool {
         System.out.println("copyrightInfotoList");
 
 
-
-
-        Map tempMap = (Map)copyrightInfo.get(0);
-
-
-        int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
-
-
-
         if(copyrightInfo!=null){
+
+            Map tempMap = (Map)copyrightInfo.get(0);
+
+            int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
+
 
             if(copyrightFlag == 0){
                 m.put("copyrightFlag","原创");
@@ -106,6 +105,25 @@ public class Tool {
 
         return m;
 
+
+    }
+
+
+    /*
+     * @Description Markdown字符串 转 html
+     * @Author 284668461@qq.com
+     * @Date 15:08 2020/5/8
+     * @Param [str]
+     * @return java.lang.String
+     **/
+    public String markDownStrTohtml(String str){
+
+        //  标题# 后面需要有空格才会正确渲染标题
+        Parser parser = Parser.builder().build();
+        Node document = parser.parse(str);
+        HtmlRenderer renderer = HtmlRenderer.builder().build();
+
+        return renderer.render(document);
 
     }
 

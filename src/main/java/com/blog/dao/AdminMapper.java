@@ -119,4 +119,15 @@ public interface AdminMapper {
     int queryClassify(String classify);
 
 
+    /*
+     * @Description 插入博客版权信息
+     * @Author 284668461@qq.com
+     * @Date 21:07 2020/5/8
+     * @Param [blogId, copyrightFlag, author, path]
+     * @return int
+     **/
+    @Insert("insert into blog_copyright " +
+            "(blog_id,copyright_flag,author,path,time) " +
+            "values(#{blogId},#{copyrightFlag},#{author},#{path},now()) ")
+    int insertCopyright(int blogId,int copyrightFlag,String author,String path);
 }

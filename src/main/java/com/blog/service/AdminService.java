@@ -101,4 +101,14 @@ public interface AdminService {
     int queryClassify(String classify);
 
 
+
+
+    /*
+     * @Description 插入博客版权信息
+     * @Author 284668461@qq.com
+     * @Date 21:08 2020/5/8
+     * @Param [blogId, copyrightFlag, author, path]
+     * @return int
+     **/
+    int insertCopyright(int blogId,String copyrightFlag,String author,String path);
 }
