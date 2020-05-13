@@ -157,9 +157,11 @@
 
             </div>
 
-            <div class="ui attached segment center aligned" id="PlayTour">
+            <!--<div class="ui attached segment center aligned" id="PlayTour">-->
+            <div class="ui attached segment center aligned ">
 
-                <div  class=" payShow ui label flowing popup transition " >
+
+                <div  class=" payShow ui label flowing transition backInDown iMarginBottom"  id="PlayTourBody" v-show="admireFlag">
                     <div class="ui images">
 
                         <div class="image">
@@ -172,10 +174,15 @@
                     </div>
                 </div>
 
-
-                <button class="ui basic button orange PlayTourBtn"  >
+                <br>
+                <button class="ui basic button orange PlayTourBtn" @click="admireClick()">
                     赞赏
                 </button>
+
+
+
+
+
             </div>
 
         </div>

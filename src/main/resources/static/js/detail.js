@@ -6,15 +6,6 @@ $(()=>{
     });
 
 
-    $('button.PlayTourBtn')
-        .popup({
-            popup : $('div.payShow'),
-            on    : 'click',
-            position:"top center"
-        });
-
-
-
 
 
     let blog = new Vue({
@@ -23,7 +14,8 @@ $(()=>{
             blogInfo:{},
             blogTag:[],
             comment:[],
-            copyright:{}
+            copyright:{},
+            admireFlag:false
         },
         created:function(){
             this.toLoadBlogDetail();
@@ -93,6 +85,11 @@ $(()=>{
             //渲染博文信息到界面
             loadBlogDetail: function () {
 
+            },
+
+            admireClick:function(){
+                this.admireFlag = !this.admireFlag;
+                console.log("dianji");
             }
 
         }

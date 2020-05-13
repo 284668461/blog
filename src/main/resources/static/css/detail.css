@@ -47,11 +47,16 @@
 }
 
 
-#PlayTour .label img{
+
+#PlayTourBody  img{
     display: block;
     width: 120px;
 }
 
+
+.coverImg img{
+    margin: 0 auto;
+}
 
 
 

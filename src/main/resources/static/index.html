@@ -97,7 +97,7 @@
 
                             <div class="ui eleven wide column">
 
-                                <h3 class="ui header"><a :href="'detail.html/'+item.blogid" target="_blank">{{item.title}}</a></h3>
+                                <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
                                 <p>
                                     {{item.blog_body}}
@@ -136,7 +136,7 @@
                             </div>
 
                             <div class="ui five wide column">
-                                <a href="detail.html" target="_blank">
+                                <a :href="'detail.html?id='+item.blogid" target="_blank">
                                     <img :src="item.cover_img_path" alt="" class="ui rounded image">
                                 </a>
                             </div>
@@ -234,7 +234,7 @@
 
                     <div class="ui wide  column iPaddingBottom">
 
-                        <a  class="item hotItem"  :href="'detail.html/'+item.blogid"  v-for="item in hotBlogList" >
+                        <a  class="item hotItem"  :href="'detail.html?id='+item.blogid" target="_blank"  v-for="item in hotBlogList" >
                             <i class="angle right icon"></i> &nbsp;
                             <span> {{item.title}} </span>&nbsp;&nbsp;
 
@@ -342,7 +342,7 @@
 
                     <div class="ui eleven wide column">
 
-                        <h3 class="ui header"><a :href="'detail.html/'+item.blogid" target="_blank">{{item.title}}</a></h3>
+                        <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
                         <p>
                             {{item.blog_body}}
@@ -377,7 +377,7 @@
                     </div>
 
                     <div class="ui five wide column">
-                        <a href="detail.html" target="_blank">
+                        <a :href="'detail.html?id='+item.blogid" target="_blank">
                             <img :src="item.cover_img_path" alt="" class="ui rounded image">
                         </a>
                     </div>
@@ -487,7 +487,7 @@
 
                     <div class="ui eleven wide column">
 
-                        <h3 class="ui header"><a :href="'detail.html/'+item.blogid" target="_blank">{{item.title}}</a></h3>
+                        <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
                         <p>
                             {{item.blog_body}}
@@ -522,7 +522,7 @@
                     </div>
 
                     <div class="ui five wide column">
-                        <a href="detail.html" target="_blank">
+                        <a :href="'detail.html?id='+item.blogid" target="_blank">
                             <img :src="item.cover_img_path" alt="" class="ui rounded image">
                         </a>
                     </div>

@@ -234,7 +234,13 @@ public class BlogController {
 
 
 
-
+    /*
+     * @Description 获得时间线
+     * @Author 284668461@qq.com
+     * @Date 11:00 2020/5/13
+     * @Param []
+     * @return java.lang.String
+     **/
     @PostMapping("getTimeLine")
     @ResponseBody
     public String getTimeLine() {
@@ -242,6 +248,22 @@ public class BlogController {
         List m =  blogService.getTimeLine();
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
         return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+    }
+
+
+
+    /*
+     * @Description 添加博客评论
+     * @Author 284668461@qq.com
+     * @Date 11:00 2020/5/13
+     * @Param []
+     * @return java.lang.Boolean
+     **/
+    @PostMapping("insertBlogComment")
+    @ResponseBody
+    public Boolean insertBlogComment(){
+
+        return true;
     }
 
 }

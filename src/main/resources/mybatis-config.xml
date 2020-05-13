@@ -27,7 +27,7 @@
 
                 <!--数据库连接池配置-->
                 <property name="poolMaximumIdleConnections" value="0"/>
-                <property name="poolMaximumActiveConnections" value="10"/>
+                <property name="poolMaximumActiveConnections" value="1000"/>
                 <property name="poolPingQuery" value="SELECT 1 FROM DUAL" />
                 <property name="poolPingEnabled" value="true" />
 
