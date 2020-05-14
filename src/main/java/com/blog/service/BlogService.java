@@ -3,6 +3,7 @@ package com.blog.service;
 
 import org.apache.ibatis.annotations.Select;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.List;
 import java.util.Map;
@@ -127,7 +128,7 @@ public interface BlogService {
      * @Param [blogId]
      * @return java.util.List
      **/
-    Map getBlogDetail(int blogId);
+    Map getBlogDetail(int blogId, HttpServletRequest req);
 
 
     /*
@@ -157,7 +158,18 @@ public interface BlogService {
      * @return java.util.List
      **/
     List getBlogCopyright(int blogId);
-    
+
+
+
+
+    /*
+     * @Description 插入博客评论
+     * @Author 284668461@qq.com
+     * @Date 10:06 2020/5/14
+     * @Param [map]
+     * @return boolean
+     **/
+    boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, String ip);
     
 
 }

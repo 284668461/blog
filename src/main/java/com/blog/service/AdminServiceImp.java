@@ -29,7 +29,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
 
         int resNum = m.insertBlog(hm);
-        session.commit();
+
         return resNum;
     }
 
@@ -49,7 +49,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
 
         int resNum = m.insertBlogClassify(blogId,tool.wipeOffStr(classify));
-        session.commit();
+
         return resNum;
     }
 
@@ -70,7 +70,7 @@ public class AdminServiceImp implements AdminService {
 
         int resNum = m.insertBlogTag(blogId,arr);
 
-        session.commit();
+
 
         return resNum;
 
@@ -112,7 +112,7 @@ public class AdminServiceImp implements AdminService {
 
         AdminMapper m = session.getMapper(AdminMapper.class);
         int delNum = m.delBlog(blogId);
-        session.commit();
+
         return delNum;
     }
 
@@ -150,7 +150,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
         int dataNum = m.insertTag(Tag);
 
-        session.commit();
+
         return dataNum;
     }
 
@@ -168,7 +168,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
         int dataNum = m.insertClassify(classify);
 
-        session.commit();
+
         return dataNum;
 
     }
@@ -219,7 +219,6 @@ public class AdminServiceImp implements AdminService {
 
         }
 
-        session.commit();
         return dataNum;
 
     }

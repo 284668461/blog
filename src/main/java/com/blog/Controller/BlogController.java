@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,10 +62,10 @@ public class BlogController {
      **/
     @GetMapping("getBlogDetail")
     @ResponseBody
-    public String getBlogDetail(int id){
+    public String getBlogDetail(int id,HttpServletRequest req){
 
 
-        Map m = blogService.getBlogDetail(id);
+        Map m = blogService.getBlogDetail(id,req);
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
@@ -252,18 +253,45 @@ public class BlogController {
 
 
 
+
+
+
+    /*
+     * @Description 获得博客评论
+     * @Author 284668461@qq.com
+     * @Date 15:45 2020/5/14
+     * @Param [blogId]
+     * @return java.lang.String
+     **/
+    @PostMapping("getBlogComment")
+    @ResponseBody
+    public String getBlogComment(int blogId){
+        List m =  blogService.getBlogComment(blogId);
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+    }
+
+
+
+
     /*
      * @Description 添加博客评论
      * @Author 284668461@qq.com
      * @Date 11:00 2020/5/13
-     * @Param []
+     * @Param [blogId, nickName, commentBody, replyCommentId, ip]
      * @return java.lang.Boolean
      **/
     @PostMapping("insertBlogComment")
     @ResponseBody
-    public Boolean insertBlogComment(){
+    public Boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, HttpServletRequest req){
 
-        return true;
+
+       if(blogService.insertBlogComment(nickName,commentBody,blogId,replyCommentId,tool.getIRealIPAddr(req))){
+           return true;
+       }else{
+           return false;
+       }
+
     }
 
 }

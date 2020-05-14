@@ -30,9 +30,9 @@ class BlogApplicationTests {
     @Test
     void contextLoads() {
 
-        ad.insertCopyright(43,"原创","aaaa","path");
-
-
+        System.out.println(
+                tool.getIcon()
+        );
 
     }
 

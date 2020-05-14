@@ -37,7 +37,8 @@ public class MyBatisUtil {
     * @return org.apache.ibatis.session.SqlSession
     **/
     public static SqlSession  getSessionFactory() {
-        return sessionFactory.openSession();
+
+        return sessionFactory.openSession(true);
     }
 
 

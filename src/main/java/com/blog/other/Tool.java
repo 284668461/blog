@@ -7,6 +7,7 @@ import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 /*
@@ -78,24 +79,36 @@ public class Tool {
 
         if(copyrightInfo!=null){
 
-            Map tempMap = (Map)copyrightInfo.get(0);
+            Map tempMap = null;
+            try {
+                tempMap = (Map)copyrightInfo.get(0);
 
-            int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
+
+                int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
 
 
-            if(copyrightFlag == 0){
+                if(copyrightFlag == 0){
+                    m.put("copyrightFlag","原创");
+                    m.put("copyrightInfo","本文为博主的原创文章，转载请附上原文出处链接及本声明。");
+                }else if(copyrightFlag == 1){
+                    m.put("copyrightFlag","转载");
+                    m.put("copyrightInfo","本文为博主的转载文章，转载请附上原文出处链接。");
+                    m.put("copyrightAuthor",tempMap.get("authorauthor"));
+                }else{
+                    m.put("copyrightFlag","翻译");
+                    m.put("copyrightInfo","本文为博主的翻译文章，转载请附上原文出处链接及本声明。");
+                }
+
+                m.put("path",tempMap.get("path"));
+
+
+
+            } catch (Exception e) {
                 m.put("copyrightFlag","原创");
                 m.put("copyrightInfo","本文为博主的原创文章，转载请附上原文出处链接及本声明。");
-            }else if(copyrightFlag == 1){
-                m.put("copyrightFlag","转载");
-                m.put("copyrightInfo","本文为博主的转载文章，转载请附上原文出处链接。");
-                m.put("copyrightAuthor",tempMap.get("authorauthor"));
-            }else{
-                m.put("copyrightFlag","翻译");
-                m.put("copyrightInfo","本文为博主的翻译文章，转载请附上原文出处链接及本声明。");
             }
 
-            m.put("path",tempMap.get("path"));
+
         }else{
 
             m.put("copyrightFlag","原创");
@@ -128,5 +141,36 @@ public class Tool {
     }
 
 
+
+
+
+
+    /*
+     * @Description 获得IP地址
+     * @Author 284668461@qq.com
+     * @Date 10:21 2020/5/14
+     * @Param [request]
+     * @return java.lang.String
+     **/
+    public String getIRealIPAddr(HttpServletRequest request) {
+        return request.getRemoteAddr();
+    }
+
+
+
+
+    /*
+     * @Description 随机获得一张头像
+     * @Author 284668461@qq.com
+     * @Date 17:33 2020/5/14
+     * @Param []
+     * @return java.lang.String
+     **/
+    public String getIcon(){
+
+        return "img/icon/icon_"
+                + new Random().nextInt(20)
+                +".jpg";
+    }
 
 }

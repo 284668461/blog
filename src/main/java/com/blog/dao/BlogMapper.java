@@ -1,5 +1,6 @@
 package com.blog.dao;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -242,8 +243,10 @@ public interface BlogMapper {
   * @return java.util.List<java.util.Map>
   **/
  @Select("SELECT *  FROM  blog_comment as  bc \n" +
+         "left join (select id,nickname as replyCommentName from blog_comment ) as bc2  on bc2.id = bc.comment_id\n" +
          "where ( bc.del_flag <> '1' OR bc.del_flag IS NULL ) \n" +
-         "and bc.blog_id = #{blogId}")
+         "and bc.blog_id = #{blogId} \n" +
+         "order by time")
  List<Map> getBlogComment(int blogId);
 
 
@@ -258,4 +261,60 @@ public interface BlogMapper {
  List<Map> getBlogCopyright(int blogId);
 
 
+
+
+
+ /*
+  * @Description 插入博客评论
+  * @Author 284668461@qq.com
+  * @Date 10:11 2020/5/14
+  * @Param [nickName, commentBody, blogId]
+  * @return int
+  **/
+ @Insert("insert into blog_comment " +
+         "(blog_id,icon_path,comment_id,nickname,body,ip,time) " +
+         "values(#{blogId},#{iconPath},#{replyCommentId},#{nickName},#{commentBody},#{ip},now() ) ")
+ int insertBlogComment(Map map);
+
+
+
+ /*
+  * @Description 查询该ip 是否已经在本条博客评论过
+  * @Author 284668461@qq.com
+  * @Date 17:27 2020/5/14
+  * @Param [blogId,ip]
+  * @return java.util.List<java.util.Map>
+  **/
+ @Select("select * from blog_comment " +
+         "where  blog_id = #{blogId} " +
+         "and ip = #{ip} ")
+ List<Map> queryCommentByBlog(int blogId,String ip);
+
+ /*
+  * @Description 获得该ip评论本条博客时生成的头像
+  * @Author 284668461@qq.com
+  * @Date 17:29 2020/5/14
+  * @Param [blogId, ip]
+  * @return java.lang.String
+  **/
+ @Select("select icon_path from blog_comment " +
+         "where  blog_id = #{blogId} " +
+         "and ip = #{ip} " +
+         "limit 0,1")
+ String getCommentBlogIcon(int blogId,String ip);
+
+
+
+
+ /*
+  * @Description 插入博客访问人数
+  * @Author 284668461@qq.com
+  * @Date 21:42 2020/5/14
+  * @Param [ip, blogId]
+  * @return int
+  **/
+ @Insert("insert into blog_visitor " +
+         "(blog_id,ip,time) " +
+         "values(#{blogId},#{ip},now() ) ")
+ int  insertBlogVisitor(int blogId,String ip);
 }

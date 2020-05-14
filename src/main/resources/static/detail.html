@@ -128,7 +128,7 @@
 
                 <a  target="_blank" class="ui blue basic label" v-for="item in blogTag ">
                     <i class=" tags icon left"></i>
-                   {{item.name}}
+                    {{item.name}}
                 </a>
 
             </div>
@@ -201,125 +201,39 @@
                 <h3 class="ui teal header center aligned">评论区</h3>
 
 
-                <div class="ui threaded comments" style="max-width: 100%;">
-                    <div class="comment">
+                <div class="ui threaded comments" id="commentList">
+                    <div class="comment" v-for="(item,index) in comment">
                         <a class="avatar">
-                            <img src="img/photo.jpg">
+                            <img :src="item.icon_path">
                         </a>
                         <div class="content">
-                            <a class="author">
-                                <span>Dylan</span>
 
+
+                            <a class="author">
+                                <span>{{item.nickname}}</span>
                             </a>
                             <div class="metadata">
-                                <span class="date">2020-04-09 11:47</span>
+                                <span class="date">{{item.time}}</span>
                             </div>
-                            <div class="text">为啥我直接输入admin 123456 就登录进来了  哈哈
-                            </div>
-                            <div class="actions">
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="comment">
-                        <a class="avatar">
-                            <img src="img/photo.jpg">
-                        </a>
-                        <div class="content">
-                            <a class="author">
-                                <span>Dylan</span>
-
-                            </a>
-                            <div class="metadata">
-                                <span class="date">2020-04-09 11:46</span>
-                            </div>
-                            <div class="text">真的厉害</div>
-                            <div class="actions">
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="comment">
-                        <a class="avatar">
-                            <img src="img/photo.jpg">
-                        </a>
-                        <div class="content">
-                            <a class="author">
-                                <span>bm</span>
-
-                            </a>
-                            <div class="metadata">
-                                <span class="date">2020-04-07 02:13</span>
-                            </div>
-                            <div class="text">不错不错</div>
-                            <div class="actions">
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="comment">
-                        <a class="avatar">
-                            <img src="img/photo.jpg">
-                        </a>
-                        <div class="content">
-                            <a class="author">
-                                <span>123</span>
-
-                            </a>
-                            <div class="metadata">
-                                <span class="date">2020-03-30 22:49</span>
-                            </div>
-                            <div class="text">做的太好了
-                            </div>
-                            <div class="actions">
-
-                                <a class="viewReply" onclick="viewReply(this)" data-commentid="34" data-commentreplynums="1">查看回复(1)</a>
-                            </div>
-                        </div>
-                        <div id="replyList" style="display: none;" class="comments">
-                            <div class="comment">
-                                <a class="avatar">
-                                    <img src="img/photo.jpg">
+                            <div class="text">
+                                <a class="iPaddingBottom" v-show="item.comment_id>0"  >
+                                    回复 {{item.replyCommentName}}
                                 </a>
-                                <div class="content">
-                                    <a class="author">
-                                        <span>123</span>
 
-                                        &nbsp;<span class="m-teal">@ 123</span>
-                                    </a>
-                                    <div class="metadata">
-                                        <span class="date">2020-03-30 22:49</span>
-                                    </div>
-                                    <div class="text">123</div>
-                                    <div class="actions">
 
-                                    </div>
-                                </div>
+
+                                <p class="commentContainer">
+                                    {{item.body}}
+                                </p>
+
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <a class="avatar">
-                            <img src="img/photo.jpg">
-                        </a>
-                        <div class="content">
-                            <a class="author">
-                                <span>Koueisen</span>
-
-                            </a>
-                            <div class="metadata">
-                                <span class="date">2020-03-30 10:49</span>
-                            </div>
-                            <div class="text">点赞</div>
                             <div class="actions">
+                               <span class="right">
 
-
+                                   <a class="left "> {{index+1}} 楼</a>
+                                   <a class="right iPaddingLeft" @click="replyClick(item.id,item.nickname)"> 回复</a>
+                               </span>
                             </div>
                         </div>
 
@@ -328,29 +242,33 @@
 
 
 
-                <div class="ui threaded comments" style="max-width: 100%;">
-                    <h3 class="ui dividing header">评论</h3>
 
-                </div>
             </div></div>
             <div id="comment-form" class="ui form">
 
                 <div class="field">
-                    <textarea name="content" placeholder="请输入评论信息..."></textarea>
+                    <textarea name="content" :placeholder="defaultCommentBody" v-model="commentBody">
+                        {{ commentBody }}
+                    </textarea>
                 </div>
                 <div class="fields">
                     <div class="m-margin-bottom-small m-mobile-wide  field">
                         <div class="ui m-margin-bottom-small m-mobile-wide left icon input">
                             <i class="user icon"></i>
-                            <input type="text" name="name" placeholder="昵称" value="">
+                            <input type="text" name="name" placeholder="昵称"  v-model="commentNickName">
                         </div>
                     </div>
 
                     <div class=" m-margin-bottom-small m-mobile-wide  filed">
-                        <button type="button" id="commentpost-btn" class="ui m-margin-bottom-small m-mobile-wide  teal button">
+                        <button type="button" id="commentpost-btn"
+                                class="ui m-margin-bottom-small m-mobile-wide  teal button"
+                                @click="commentAddClick()">
                             <i class="edit icon"></i>发布
                         </button>
-                        <button type="button" id="clear-btn" class="ui m-margin-bottom-small m-mobile-wide grey button">
+                        <button type="button" id="clear-btn"
+                                class="ui m-margin-bottom-small m-mobile-wide grey button"
+                                @click="commentClearClick()">
+
                             <i class="edit icon"></i>清除
                         </button>
                     </div>

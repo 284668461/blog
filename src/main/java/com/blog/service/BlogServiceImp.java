@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -204,14 +205,12 @@ public class BlogServiceImp implements BlogService {
      * @return java.util.List
      **/
     @Override
-    public Map getBlogDetail(int blogId) {
+    public Map getBlogDetail(int blogId,HttpServletRequest req) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
-
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
         Map m = new HashMap();
-
 
         //获得博文详情,并将博文内容转换为 html
         Map blogDetail = (Map)bm.getBlogDetail(blogId).get(0);
@@ -224,6 +223,11 @@ public class BlogServiceImp implements BlogService {
         m.put("comment",bm.getBlogComment(blogId));
         // 获得并生成版权信息
         m.put("copyright",tool.generateCopyright(bm.getBlogCopyright(blogId)));
+
+
+
+        //保存博客访问记录
+        bm.insertBlogVisitor(blogId,tool.getIRealIPAddr(req));
 
 
         return m;
@@ -275,5 +279,56 @@ public class BlogServiceImp implements BlogService {
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
         return  bm.getBlogCopyright(blogId);
+    }
+
+
+    /*
+     * @Description 插入博客评论
+     * @Author 284668461@qq.com
+     * @Date 16:08 2020/5/14
+     * @Param [blogId, nickName, commentBody, replyCommentId, ip]
+     * @return boolean
+     **/
+    @Override
+    public boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, String ip){
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        Map m = new HashMap();
+
+        m.put("blogId",blogId);
+        m.put("nickName",nickName);
+        m.put("commentBody",commentBody);
+        m.put("replyCommentId",replyCommentId);
+        m.put("ip",ip);
+
+
+//       若该用户是匿名
+        if((nickName == null)|| (nickName == "")){
+            m.put("nickName","匿名");
+            m.put("iconPath","img/icon/anonymity.png");
+        }else{
+
+//       判断该用户是否已在本条博客评论过
+
+            if(bm.queryCommentByBlog(blogId,ip).size()>0){
+                //博客评论过，使用以前生成的头像
+                m.put("iconPath",bm.getCommentBlogIcon(blogId,ip));
+
+            }else{
+                //没评论过,则生成头像
+                m.put("iconPath",tool.getIcon());
+            }
+
+        }
+
+
+        if(bm.insertBlogComment(m)>0){
+            return true;
+        }
+
+        return false;
     }
 }

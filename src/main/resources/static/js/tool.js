@@ -36,3 +36,5 @@ function Toast(msg,time){
         setTimeout(function() { document.body.removeChild(m) }, d * 1000);
     }, time);
 }
+
+

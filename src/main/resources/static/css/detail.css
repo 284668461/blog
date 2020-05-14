@@ -60,6 +60,47 @@
 
 
 
+#commentList{
+
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+
+#commentList .comment>.avatar{
+    width: 75px !important;
+
+}
+
+
+#commentList .comment{
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 0px 5px 2px 5px !important;
+    border: 1px solid transparent !important;
+}
+
+
+
+/*#commentList .commentContainer{*/
+    /*text-indent:2em !important;*/
+/*}*/
+
+
+#commentList .text{
+
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+
+#commentList .comment:hover{
+
+    border: 1px solid gray !important;
+}
+
+
 @media screen and (max-width: 768px){
     #sidebar{
         display: block !important;
