@@ -37,7 +37,7 @@ public interface AdminService {
      * @Param [blogId, Tag]
      * @return int
      **/
-    int insertBlogTag(int blogId,String[] arr);
+    int insertBlogTag(int blogId,int[] arr);
 
 
 

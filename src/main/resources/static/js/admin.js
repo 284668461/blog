@@ -14,10 +14,8 @@ $(()=>{
     });
 
 
-
     //初始化tab
     $('#tab .item').tab();
-
 
     let  testEditor = editormd("iEditormd",{
 
@@ -40,7 +38,6 @@ $(()=>{
 
     $("#upImg").on('click', ()=>{
         $("#fileUpload").click();
-
     });
 
 
@@ -117,7 +114,22 @@ $(()=>{
             url:"/blog/getAllBlog",
             success:(data)=>{
 
-                loadBlog(JSON.parse(data));
+
+                var info = JSON.parse(data);
+
+                info.map((item,index,arr)=>{
+
+                    //若评论数和查看人数为空则替换为0
+                    if(item.comment_num === null){
+                        item.comment_num = 0;
+                    }
+                    if(item.visitor_num === null){
+                        item.visitor_num = 0;
+                    }
+                });
+
+
+                loadBlog(info);
             }
         });
 
@@ -135,8 +147,8 @@ $(()=>{
                                     <div class="ui  grid stackable  mobile reversed">
                                         <div class="ui eleven wide column">
                                             <h3 class="ui header"><a href="/detail/${blogInfo[i].blog_id}">${blogInfo[i].title}</a></h3>
-                                            <p>
-                                              ${blogInfo[i].blog_body}
+                                            <p class="iBlogBreviary">
+                                              ${blogInfo[i].blog_intro}
                                             </p>
                                             <div class="ui grid">
                                                 <div class="eleven wide column">
@@ -459,15 +471,14 @@ $(()=>{
         var title = $("#blogTitle");
         var original = $("#blogOriginal>div.active");
         var classify = $("#blogClassify>div.active");
-        var label = $("#publishLabel>div.active");
+        var tag = $("#publishLabel").children("div.active");
         var coverImg = $("#fileUpload");
         var publishBody = $("#blogBody");
-
+        var blogIntro = $("#blogIntro");
 
 
         var author = $("#author");
         var path = $("#path");
-
 
 
         var blogIsDraft = $("#blogIsDraft").is(':checked');
@@ -476,26 +487,20 @@ $(()=>{
 
 
 
-        console.log(title.val());
-        console.log($( original[0] ).attr("data-value"));
-        console.log($( classify[0] ).text());
-        console.log($(label).text());
-        console.log($(coverImg).prop('files'));//获取到文件列表);
-        console.log(publishBody.val());
-        console.log(blogIsDraft);
-        console.log(blogIsComment);
-        console.log(blogIsAdmire);
+        //将选中的标签保存到数组
+        var tagArr = new Array();
+        for (let i = 0; i < tag.length; i++) {
+            tagArr.push( $(tag[i]).attr("data-id")  )
+        }
 
 
         //    验证信息完整性
-
-        if(original.val()!="原创"){
+        if((original.val()!="原创") && (original.val()!= undefined)){
 
 
             if(author.val().length<1){
                 Toast("请输入原作者名称");
                 return;
-
             }
 
             if(path.val().length<1){
@@ -514,12 +519,16 @@ $(()=>{
             return;
         }
 
+        if(blogIntro.val().length<=0){
+
+            Toast("请输入简介");
+            return;
+        }
+
 
 
 
         //    发送请求
-
-
         var formData = new FormData();
         formData.append('file',  $(coverImg).prop('files')[0] );
         formData.append('title',  title.val() );
@@ -540,15 +549,14 @@ $(()=>{
 
 
         formData.append('classify',  classifyTemp );
-        formData.append('tab',  $(label).text() );
+        formData.append('tagArr',  tagArr );
         formData.append('body',  publishBody.val() );
         formData.append('blogIsDraft',  blogIsDraft );
         formData.append('blogIsComment',  blogIsComment );
         formData.append('blogIsAdmire',  blogIsAdmire );
         formData.append('author',  author.val() );
         formData.append('path',  path.val() );
-
-
+        formData.append("blogIntro",  blogIntro.val() );
 
 
         $.post({
@@ -562,7 +570,6 @@ $(()=>{
                 if(data){
                     Toast("发布博客成功");
                     location.replace(document.referrer);
-
                 }
             }
         });

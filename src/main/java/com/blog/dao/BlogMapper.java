@@ -34,7 +34,8 @@ public interface BlogMapper {
          "left join( select * from blog_classify  ) as  bclassify  on bclassify.blog_id = b.id\n" +
          "left join( select id,name as classify_name from b_classify  ) as  c  on c.id = bclassify.type_id \n" +
          "where b.del_flag <> '1' or b.del_flag is null \n" +
-         "order by b.publish_date desc")
+         "order by b.publish_date desc" +
+         " limit #{page},10")
  List<Map> getAllBlog(int page);
 
 
@@ -317,4 +318,16 @@ public interface BlogMapper {
          "(blog_id,ip,time) " +
          "values(#{blogId},#{ip},now() ) ")
  int  insertBlogVisitor(int blogId,String ip);
+
+
+ /*
+  * @Description 获得博客总数
+  * @Author 284668461@qq.com
+  * @Date 16:45 2020/5/15
+  * @Param []
+  * @return int
+  **/
+ @Select("select count(*)  from blog as b" +
+         " where b.del_flag <> '1' or b.del_flag is null ")
+ int getBlogNum();
 }

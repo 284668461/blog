@@ -89,9 +89,9 @@
                     </div>
                 </div>
 
-                <div class="ui attached segment">
+                <div class="ui attached segment blogList">
 
-                    <div class="ui segment " v-for="item in homeBlogList">
+                    <div class="ui segment blogItem" v-for="item in homeBlogList">
 
                         <div class="ui  grid stackable  mobile reversed">
 
@@ -99,8 +99,10 @@
 
                                 <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
-                                <p>
-                                    {{item.blog_body}}
+
+                                <p class="iBlogBreviary" >
+
+                                    {{ item.blog_intro}}
 
                                 </p>
 
@@ -136,8 +138,8 @@
                             </div>
 
                             <div class="ui five wide column">
-                                <a :href="'detail.html?id='+item.blogid" target="_blank">
-                                    <img :src="item.cover_img_path" alt="" class="ui rounded image">
+                                <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
+                                    <img :src="item.cover_img_path" alt="" class="ui rounded image ">
                                 </a>
                             </div>
 
@@ -166,8 +168,8 @@
 
 
                     <div class="ui two bottom attached buttons">
-                        <div class="ui button basic " :class="prePageBtn">上一页</div>
-                        <div class="ui button basic " :class="nextPageBtn">下一页</div>
+                        <div class="ui button basic " :class="prePageBtn" @click="prePage()">上一页</div>
+                        <div class="ui button basic " :class="nextPageBtn" @click="nextPage()">下一页</div>
                     </div>
 
 
@@ -331,12 +333,12 @@
 
 
         <!--博客列表 start-->
-        <div class="ui attached segment top teal">
+        <div class="ui attached segment top teal blogList">
 
 
 
 
-            <div class="ui segment " v-for="item in classifyBlog">
+            <div class="ui segment blogItem" v-for="item in classifyBlog">
 
                 <div class="ui  grid stackable  mobile reversed">
 
@@ -344,8 +346,8 @@
 
                         <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
-                        <p>
-                            {{item.blog_body}}
+                        <p class="iBlogBreviary">
+                            {{ item.blog_intro}}
 
                         </p>
 
@@ -377,7 +379,7 @@
                     </div>
 
                     <div class="ui five wide column">
-                        <a :href="'detail.html?id='+item.blogid" target="_blank">
+                        <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
                             <img :src="item.cover_img_path" alt="" class="ui rounded image">
                         </a>
                     </div>
@@ -478,10 +480,10 @@
 
 
         <!--博客列表 start-->
-        <div class="ui attached segment top teal">
+        <div class="ui attached segment top teal blogList">
 
 
-            <div class="ui segment " v-for="item in tabBlog">
+            <div class="ui segment blogItem" v-for="item in tabBlog">
 
                 <div class="ui  grid stackable  mobile reversed">
 
@@ -489,9 +491,8 @@
 
                         <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
-                        <p>
-                            {{item.blog_body}}
-
+                        <p class="iBlogBreviary">
+                            {{ item.blog_intro}}
                         </p>
 
                         <div class="ui grid ">
@@ -522,8 +523,8 @@
                     </div>
 
                     <div class="ui five wide column">
-                        <a :href="'detail.html?id='+item.blogid" target="_blank">
-                            <img :src="item.cover_img_path" alt="" class="ui rounded image">
+                        <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
+                            <img :src="item.cover_img_path" alt="" class=" iBolgListImg ui rounded image">
                         </a>
                     </div>
 

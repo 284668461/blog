@@ -17,7 +17,7 @@ public interface BlogService {
      * @Param []
      * @return java.util.List
      **/
-    List getAllBlog(int page);
+    Map getAllBlog(int page);
 
 
     /*
@@ -170,6 +170,15 @@ public interface BlogService {
      * @return boolean
      **/
     boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, String ip);
-    
 
+
+
+    /*
+     * @Description 获得博客总数
+     * @Author 284668461@qq.com
+     * @Date 16:46 2020/5/15
+     * @Param []
+     * @return int
+     **/
+    int getBlogNum();
 }

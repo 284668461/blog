@@ -20,8 +20,8 @@ public interface AdminMapper {
      * @Param [map]
      * @return int
      **/
-    @Insert("insert into blog(title,cover_img_path,blog_body,author,publish_date,update_date,admire_flag,Comment_flag,draft_flag) " +
-            "values(#{title},#{coverPath},#{body},#{auther},now(),now(),#{blogIsAdmire},#{blogIsComment},#{blogIsDraft})")
+    @Insert("insert into blog(title,cover_img_path,blog_intro,blog_body,author,publish_date,update_date,admire_flag,Comment_flag,draft_flag) " +
+            "values(#{title},#{coverPath},#{blogIntro},#{body},#{auther},now(),now(),#{blogIsAdmire},#{blogIsComment},#{blogIsDraft})")
     int insertBlog(Map map);
 
     /*
@@ -47,10 +47,10 @@ public interface AdminMapper {
             "insert into blog_tag(blog_id,tag_id,time)\n" +
             "values" +
             "<foreach collection='arr'  item='i' separator=','  >" +
-            "(#{blogId}, (select id from b_tag where name= #{i}), now())" +
+            "(#{blogId}, #{i}, now())" +
             "</foreach>"+
             "</script>")
-    int insertBlogTag(int blogId,String[] arr);
+    int insertBlogTag(int blogId,int[] arr);
 
 
     /*

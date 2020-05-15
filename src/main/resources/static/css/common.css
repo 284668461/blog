@@ -99,9 +99,7 @@ nav .menu{
 
 
 .iBolgListImg{
-    display: block;
-    width: 100px;
-    margin-top: 30px;
+    max-width: 100% !important;
 }
 
 .iLebal a{
@@ -110,6 +108,17 @@ nav .menu{
 }
 
 
+
+.iBlogBreviary{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+
+    height: 75px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 @media screen and (max-width: 768px){

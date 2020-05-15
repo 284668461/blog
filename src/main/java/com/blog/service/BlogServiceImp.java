@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +26,53 @@ public class BlogServiceImp implements BlogService {
      * @return java.util.Map
      **/
     @Override
-    public List getAllBlog(int page) {
+    public Map getAllBlog(int page) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return bm.getAllBlog(page);
+
+        if(page !=0){
+            page*=10;
+        }
+
+
+        //获得一页博客信息
+        // 将博客 内容格式化为 html
+        List ls = bm.getAllBlog(page);
+
+        List tempLs = new ArrayList();
+
+        for (int i = 0; i < ls.size(); i++) {
+
+            Map tempM = (Map)ls.get(i);
+            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            tempLs.add(tempM);
+        }
+
+        //获得博客总数量
+       int blogNum = bm.getBlogNum();
+
+        //计算博客页数
+        int blogPage = (int)Math.ceil((float)blogNum/10);
+
+
+        Map pageM = new HashMap();
+        pageM.put("blogTotal",blogNum);
+        pageM.put("blogPage",blogPage);
+
+
+        Map resM = new HashMap();
+
+        resM.put("blogList",tempLs);
+        resM.put("pageInfo",pageM);
+
+
+        return resM;
+
+
+
 
     }
 
@@ -53,7 +94,23 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return bm.getBlogByTag(tagId);
+
+
+        // 将博客 内容格式化为 html
+        List ls = bm.getBlogByTag(tagId);
+
+        List tempLs = new ArrayList();
+
+        for (int i = 0; i < ls.size(); i++) {
+
+            Map tempM = (Map)ls.get(i);
+            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            tempLs.add(tempM);
+        }
+
+
+        return tempLs;
+
 
 
     }
@@ -73,7 +130,22 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return bm.getBlogByClassify(classifyid);
+
+
+        // 将博客 内容格式化为 html
+        List ls = bm.getBlogByClassify(classifyid);
+
+        List tempLs = new ArrayList();
+
+        for (int i = 0; i < ls.size(); i++) {
+
+            Map tempM = (Map)ls.get(i);
+            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            tempLs.add(tempM);
+        }
+
+
+        return tempLs;
 
     }
 
@@ -331,4 +403,23 @@ public class BlogServiceImp implements BlogService {
 
         return false;
     }
+
+
+
+
+    /*
+     * @Description 获得博客总数
+     * @Author 284668461@qq.com
+     * @Date 16:46 2020/5/15
+     * @Param []
+     * @return int
+     **/
+    public int getBlogNum(){
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        return  bm.getBlogNum();
+    };
 }

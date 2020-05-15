@@ -29,6 +29,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
 
         int resNum = m.insertBlog(hm);
+        
 
         return resNum;
     }
@@ -50,6 +51,7 @@ public class AdminServiceImp implements AdminService {
 
         int resNum = m.insertBlogClassify(blogId,tool.wipeOffStr(classify));
 
+        
         return resNum;
     }
 
@@ -62,7 +64,7 @@ public class AdminServiceImp implements AdminService {
      * @return int
      **/
     @Override
-    public int insertBlogTag(int blogId,String[] arr) {
+    public int insertBlogTag(int blogId,int[] arr) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 

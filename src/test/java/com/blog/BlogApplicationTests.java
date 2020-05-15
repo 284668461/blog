@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.lang.reflect.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,9 +31,14 @@ class BlogApplicationTests {
     @Test
     void contextLoads() {
 
-        System.out.println(
-                tool.getIcon()
-        );
+        int a = 12;
+        int b = 10;
+
+        System.out.println((float)a/b);
+        System.out.println(Math.ceil((float)a/b));
+        System.out.println((int)Math.ceil((float)a/b));
+
+
 
     }
 

@@ -74,14 +74,14 @@ public class AdminController {
     @PostMapping("insertBlog")
     @ResponseBody
     public Boolean insertBlog(HttpServletRequest req,
-                             HttpServletResponse res,
-                             MultipartFile file){
+                              HttpServletResponse res,
+                              MultipartFile file){
 
 
         String title = req.getParameter("title");
         String original = req.getParameter("original");
         String classify = req.getParameter("classify");
-        String Tag = req.getParameter("Tag");
+        String tagStr = req.getParameter("tagArr");
         String body = req.getParameter("body");
         Boolean blogIsDraft = Boolean.parseBoolean( req.getParameter("blogIsDraft") );
         Boolean blogIsComment = Boolean.parseBoolean( req.getParameter("blogIsComment"));
@@ -89,6 +89,7 @@ public class AdminController {
 
         String author = req.getParameter("author");
         String path = req.getParameter("path");
+        String blogIntro = req.getParameter("blogIntro");
 
 
         String flag ="";
@@ -96,6 +97,16 @@ public class AdminController {
         if(file!=null){
             //保存上传的首图
             flag = uf.upImg(file);
+        }
+
+
+
+        // 将分割标签id字符串，并转换为int型数组
+        String [] tagArrStr = tagStr.split(",");
+        int [] tagArrInt = new int[tagArrStr.length];
+
+        for (int i = 0; i < tagArrStr.length; i++) {
+            tagArrInt[i] = Integer.valueOf(tool.wipeOffStr(tagArrStr[i])).intValue();
         }
 
 
@@ -110,6 +121,7 @@ public class AdminController {
         m.put("blogIsDraft",blogIsDraft);
         m.put("blogIsComment",blogIsComment);
         m.put("blogIsAdmire",blogIsAdmire);
+        m.put("blogIntro",blogIntro);
 
 //        插入博客
         int insertBolgResNum = ad.insertBolg(m);
@@ -121,15 +133,10 @@ public class AdminController {
         int insertBlogClassifyResNum = ad.insertBlogClassify(blodId,classify);
 
         //新增博客标签
-        //分割标签并清洗后保存为数组
-        if(Tag!=null){
-            String[] TagArr = tool.removeArrayNull( Tag.split(" ") );
-
-            if(TagArr.length>0){
-                ad.insertBlogTag(blodId,TagArr);
-            }
-
+        if(tagArrInt.length>0){
+            ad.insertBlogTag(blodId,tagArrInt);
         }
+
 
         //新增博客版权信息
         ad.insertCopyright(blodId,original,author,path);
@@ -174,7 +181,7 @@ public class AdminController {
     @ResponseBody
     public Boolean insertTag(String Tag){
 
-        if(ad.insertTag(tool.wipeOffStr(Tag))>0){
+        if(ad.insertTag(Tag)>0){
             return true;
         }else{
             return  false;

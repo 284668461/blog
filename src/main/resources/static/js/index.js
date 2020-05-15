@@ -29,9 +29,8 @@ $(()=>{
                 tag.toLoadTag();
                 break;
             case "timeline":
-               timeLine.toLoadTimeLine();
+                timeLine.toLoadTimeLine();
                 break;
-
         }
 
     });
@@ -117,15 +116,20 @@ $(()=>{
         },
         methods:{
             //加载首页博文列表函数
-            loadHomeBlog:function(){
+            loadHomeBlog:function(page=0){
 
                 $.post({
                     url:"/blog/getAllBlog",
+                    data:{
+                        page:page
+                    },
                     success:(data)=>{
 
                         var info = JSON.parse(data);
+                        var blogList = info["blogList"];
+                        var pageInfo = info["pageInfo"];
 
-                        info.map((item,index,arr)=>{
+                        blogList.map((item,index,arr)=>{
 
                             //若评论数和查看人数为空则替换为0
                             if(item.comment_num === null){
@@ -136,7 +140,8 @@ $(()=>{
                             }
                         });
 
-                        this.homeBlogList =info;
+                        this.homeBlogList =blogList;
+                        this.blogPage = pageInfo["blogPage"];
                     }
                 });
             },
@@ -166,7 +171,6 @@ $(()=>{
                 });
 
             },
-
             //加载词云
             loadTagCloud:function(){
 
@@ -189,7 +193,7 @@ $(()=>{
                             "fontFamily": 'Times, serif',
                             "color": 'random-dark',
                             "backgroundColor": 'white',
-                            "rotateRatio": 0.7
+                            "rotateRatio": 0.2
                         });
 
                         //生成词云
@@ -197,6 +201,43 @@ $(()=>{
                         this.tabCloud =info;
                     }
                 });
+            },
+
+            //上一页
+            prePage:function(){
+
+
+                this.thisPage--;
+
+                if(this.thisPage<=0){
+                    this.prePageBtn = 'disabled';
+                    this.nextPageBtn = false;
+                }
+
+                if(this.thisPage>0){
+                    this.prePageBtn = false;
+                }
+
+                this.loadHomeBlog(this.thisPage);
+
+
+            },
+            //下一页
+            nextPage:function(){
+
+                this.thisPage++;
+
+                if(this.thisPage>=this.blogPage-1){
+                    this.nextPageBtn = 'disabled';
+                    this.prePageBtn = false;
+                }
+
+                if(this.thisPage+1>0){
+                    this.prePageBtn = false;
+                }
+
+
+                this.loadHomeBlog(this.thisPage);
             }
 
         }
