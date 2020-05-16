@@ -10,7 +10,12 @@
 
     <link href="lib/animate.min.css" rel="stylesheet">
 
+    <!--md编辑器-->
 
+    <link rel="stylesheet" href="lib/editor/css/editormd.css"/>
+
+    <script src="lib/editor/editormd.js"></script>
+    <!--md编辑器-->
 
 
 </head>
@@ -26,6 +31,31 @@
 </div>
 
 
+<hr>
+<p id="iEditormd" class="editormd ">
+    <textarea style="display: none;" id="blogBody"></textarea>
+</p>
+
+
+<script>
+
+
+    //初始化mk编辑器
+    let  testEditor = editormd("iEditormd",{
+
+        width:"100%",
+        height:640,
+        syncScrolling: "single",
+        path:"lib/editor/lib/",
+        saveHTMLToTextarea : true,
+
+        /**上传图片相关配置如下*/
+        imageUpload : true,
+        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL : "/admin/uploadImg",//注意你后端的上传图片服务地址
+
+    });
+</script>
 
 
 </body>

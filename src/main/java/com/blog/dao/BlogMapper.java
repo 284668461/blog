@@ -34,9 +34,35 @@ public interface BlogMapper {
          "left join( select * from blog_classify  ) as  bclassify  on bclassify.blog_id = b.id\n" +
          "left join( select id,name as classify_name from b_classify  ) as  c  on c.id = bclassify.type_id \n" +
          "where b.del_flag <> '1' or b.del_flag is null \n" +
+         "order by b.publish_date desc")
+ List<Map> getAllBlog();
+
+
+
+
+
+
+ /*
+  * @Description 获得指定页数博文
+  * @Author 284668461@qq.com
+  * @Date 16:04 2020/4/22
+  * @Param [page]
+  * @return java.util.Map
+  **/
+
+ @Select("select *,b.id as blogid  from blog as b \n" +
+         "left join( select blog_id,count(blog_id) as visitor_num from blog_visitor group by blog_id) as bv on bv.blog_id = b.id\n" +
+         "left join( select blog_id,count(blog_id) as comment_num from blog_comment group by blog_id) as bc on bc.blog_id = b.id\n" +
+         "left join( select id,name,user_icon from b_user ) as bu on bu.id = b.author\n" +
+         "left join( select * from blog_classify  ) as  bclassify  on bclassify.blog_id = b.id\n" +
+         "left join( select id,name as classify_name from b_classify  ) as  c  on c.id = bclassify.type_id \n" +
+         "where b.del_flag <> '1' or b.del_flag is null \n" +
          "order by b.publish_date desc" +
          " limit #{page},10")
- List<Map> getAllBlog(int page);
+ List<Map> getBlogByPage(int page);
+
+
+
 
 
  /*
@@ -288,7 +314,8 @@ public interface BlogMapper {
   **/
  @Select("select * from blog_comment " +
          "where  blog_id = #{blogId} " +
-         "and ip = #{ip} ")
+         "and ip = #{ip} " +
+         "and nickname != '匿名' ")
  List<Map> queryCommentByBlog(int blogId,String ip);
 
  /*
@@ -300,7 +327,8 @@ public interface BlogMapper {
   **/
  @Select("select icon_path from blog_comment " +
          "where  blog_id = #{blogId} " +
-         "and ip = #{ip} " +
+         " and ip = #{ip} " +
+         " and nickname != '匿名' " +
          "limit 0,1")
  String getCommentBlogIcon(int blogId,String ip);
 

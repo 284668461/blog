@@ -18,6 +18,46 @@ public class BlogServiceImp implements BlogService {
     @Autowired
     private Tool tool;
 
+
+
+
+    /*
+     * @Description 获得所有博客
+     * @Author 284668461@qq.com
+     * @Date 10:33 2020/5/16
+     * @Param []
+     * @return java.util.List
+     **/
+    @Override
+    public List getAllBlog() {
+
+
+        SqlSession session = MyBatisUtil.getSessionFactory();
+
+        BlogMapper bm = session.getMapper(BlogMapper.class);
+
+        //获得博客信息
+        // 将博客 内容格式化为 html
+        List ls = bm.getAllBlog();
+
+        List tempLs = new ArrayList();
+
+        for (int i = 0; i < ls.size(); i++) {
+
+            Map tempM = (Map)ls.get(i);
+            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            tempLs.add( tempM );
+        }
+
+
+
+        return tempLs;
+
+
+
+
+    }
+
     /*
      * @Description 获得指定页数博文
      * @Author 284668461@qq.com
@@ -26,7 +66,7 @@ public class BlogServiceImp implements BlogService {
      * @return java.util.Map
      **/
     @Override
-    public Map getAllBlog(int page) {
+    public Map getBlogByPage(int page) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
@@ -40,7 +80,7 @@ public class BlogServiceImp implements BlogService {
 
         //获得一页博客信息
         // 将博客 内容格式化为 html
-        List ls = bm.getAllBlog(page);
+        List ls = bm.getBlogByPage(page);
 
         List tempLs = new ArrayList();
 

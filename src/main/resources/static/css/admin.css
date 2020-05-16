@@ -1,4 +1,9 @@
 
+html,body{
+    width: 100%;
+    min-width: 950px;
+}
+
 #icon{
     display: block;
     width: 100px;
@@ -66,15 +71,65 @@
     display: none;
 }
 
+.ui.table{
+    width: 100% !important;
+    table-layout:fixed!important;
+}
 
-@media screen and (max-width: 768px){
+#blogListBody{
+    width: 100% !important;
+}
+
+#blogListBody tr{
+    width: 90% !important;
+    border: none !important;
+}
+
+#blogListBody tr td{
+    padding: 0 !important;
+}
+
+#blogListBody tr td:first-child{
+    width: 85%;
+}
+
+
+#blogListBody tr td .ui.segment{
+    border: none !important;
+}
 
 
 
-    .iBolgListImg{
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-    }
+
+.ui.container{
+    width: 85% !important;
+    position:relative
+    /*min-width: 850px !important;*/
+}
+
+
+
+#blogListTab{
+    border-top: none;
+    position:absolute;
+    left:0;
+    top:29px;
+}
+
+#publishTab{
+    position:absolute;
+    left:0;
+    top:43px;
+    margin-top: 0px !important;
+    border-top: none;
 
 }
+
+
+.ihide{
+    z-index:-99999;
+    opacity:0;
+    height: 1310px !important;
+}
+
+

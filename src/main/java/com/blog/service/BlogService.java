@@ -10,6 +10,18 @@ import java.util.Map;
 
 public interface BlogService {
 
+
+
+
+    /*
+     * @Description 获得所有博文
+     * @Author 284668461@qq.com
+     * @Date 10:30 2020/5/16
+     * @Param []
+     * @return java.util.Map
+     **/
+    List getAllBlog();
+
     /*
      * @Description   获得指定页数博文
      * @Author 284668461@qq.com
@@ -17,7 +29,7 @@ public interface BlogService {
      * @Param []
      * @return java.util.List
      **/
-    Map getAllBlog(int page);
+    Map getBlogByPage(int page);
 
 
     /*

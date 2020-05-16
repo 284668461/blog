@@ -4,6 +4,7 @@ import com.blog.dao.BlogMapper;
 import com.blog.other.Tool;
 import com.blog.service.AdminService;
 import com.blog.service.BlogService;
+import com.blog.service.UserService;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,18 +26,19 @@ class BlogApplicationTests {
     @Autowired
     private BlogService bs;
 
+
+    @Autowired
+    private UserService us;
+
+
     @Autowired
     private Tool tool;
 
     @Test
     void contextLoads() {
 
-        int a = 12;
-        int b = 10;
 
-        System.out.println((float)a/b);
-        System.out.println(Math.ceil((float)a/b));
-        System.out.println((int)Math.ceil((float)a/b));
+        System.out.println(us.getUserInfo("2546"));
 
 
 

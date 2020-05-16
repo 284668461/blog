@@ -7,6 +7,8 @@ package com.blog.service;
  **/
 
 
+import java.util.Map;
+
 public interface UserService {
 
 
@@ -19,6 +21,17 @@ public interface UserService {
      **/
 
     Boolean login(String user, String pass);
+
+
+
+    /*
+     * @Description 获得用户信息
+     * @Author 284668461@qq.com
+     * @Date 20:15 2020/5/16
+     * @Param [user]
+     * @return java.util.Map
+     **/
+    Map getUserInfo(String user);
 
 
 

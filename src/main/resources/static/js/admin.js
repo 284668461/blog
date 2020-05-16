@@ -14,16 +14,15 @@ $(()=>{
     });
 
 
-    //初始化tab
-    $('#tab .item').tab();
 
+    //初始化mk编辑器
     let  testEditor = editormd("iEditormd",{
 
         width:"100%",
-        height:500,
+        height:640,
         syncScrolling: "single",
         path:"lib/editor/lib/",
-        saveHTMLToTextarea : true,//注意3：这个配置，方便post提交表单
+        saveHTMLToTextarea : true,
 
         /**上传图片相关配置如下*/
         imageUpload : true,
@@ -31,6 +30,27 @@ $(()=>{
         imageUploadURL : "/admin/uploadImg",//注意你后端的上传图片服务地址
 
     });
+
+
+
+//    tab start
+
+    $("#tab>a.item").on("click",function(){
+
+
+        var clickTab = $(this).attr("data-tab");
+
+        $(this).addClass("active").siblings().removeClass("active");
+
+        $("#"+clickTab).removeClass("ihide").siblings("section").addClass("ihide");
+
+    });
+
+//    tab end
+
+
+
+
 
 
 //    封面上传预览start
@@ -61,7 +81,12 @@ $(()=>{
 //    封面上传预览end
 
 
+
+
+
+
     //初始化
+    toLoadUserInfo();
     toLoadClassify();
     toLoadLabel();
     toloadBlog();
@@ -70,7 +95,16 @@ $(()=>{
 // 博客 start  -------------------------
 
 //    删除博客按钮点击事件
-    $("body").on("click",".delBlog",function(){
+    $("body").on("click",".delBlog",function(item){
+
+
+        console.log(item);
+        console.log($("this"));
+        console.log($("this")[0]);
+        console.log($("this").parent());
+
+
+        var that = $("this");
 
 
         var blogid = $(this).data("blogid");
@@ -86,8 +120,10 @@ $(()=>{
             onApprove: function() {
 
                 console.log("确定按钮点击事件");
-                console.log($(this));
-                // return false;
+
+                that.hide();
+
+
             }
         }).modal('show');
 
@@ -108,12 +144,30 @@ $(()=>{
 
 // 发布 start  -------------------------
 
+    //加载用户信息
+    function toLoadUserInfo(){
+        $.post({
+            url:"/user/getLoginInfo",
+            success:(data)=>{
 
+                if(data.length<1){
+                    location.replace("index.html");
+                }else{
+                    var info = JSON.parse(data);
+
+                    $("#userIcon").attr("src",info["user_icon"]);
+                    $("#userName").text(info["name"]);
+                }
+            }
+        });
+    }
+
+
+    //加载博客
     function toloadBlog(){
         $.post({
             url:"/blog/getAllBlog",
             success:(data)=>{
-
 
                 var info = JSON.parse(data);
 
@@ -136,6 +190,7 @@ $(()=>{
     }
 
 
+    //渲染博客信息
     function loadBlog(blogInfo){
 
         var temp = "";
@@ -202,7 +257,7 @@ $(()=>{
 
 
     /*
-     * @Description 加载标签
+     * @Description 加载分类
      * @Author 284668461@qq.com
      * @Date 15:55 2020/4/26
      * @Param
@@ -326,6 +381,21 @@ $(()=>{
 
 
 
+
+    //注销按钮点击事件
+    $("#loginOut").click(function() {
+
+        $.post({
+            url: "user/loginOut",
+            success:(data)=> {
+                if (data) {
+                    location.replace("index.html");
+                }
+            }
+        });
+    });
+
+    //搜索博客点击事件
     $("#searchBlog").on("click",()=>{
 
 
@@ -462,10 +532,6 @@ $(()=>{
 
     //发布按钮点击事件
     $("#publishConfirm").on("click",()=>{
-
-
-        console.log("点击事件");
-
 
         //    获得输入信息
         var title = $("#blogTitle");

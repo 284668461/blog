@@ -37,12 +37,24 @@ public class BlogController {
      **/
     @PostMapping("getAllBlog")
     @ResponseBody
-    public String getAllBlog(int page){
+    public String getAllBlog(){
 
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
-        return JSON.toJSONString(blogService.getAllBlog(page), SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(blogService.getAllBlog(), SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+    }
+
+
+
+    @PostMapping("getBlogByPage")
+    @ResponseBody
+    public String getBlogByPage(int page){
+
+
+        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+        return JSON.toJSONString(blogService.getBlogByPage(page), SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
     }
 
 

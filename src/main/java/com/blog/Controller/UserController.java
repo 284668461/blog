@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 /*
  * @Description 用户
@@ -37,30 +38,26 @@ public class UserController {
      **/
     @PostMapping(value = "login")
     @ResponseBody
-    public String loginHandler(
+    public Boolean loginHandler(
             @RequestBody JSONObject json,
             HttpSession session,
             HttpServletResponse res,
-            RedirectAttributes attributes
-    ){
+            RedirectAttributes attributes){
 
 
         String user = json.getString("user");
-        String pass = json.getString("user");
+        String pass = json.getString("pass");
         String rememberPassFlag = json.getString("rememberPassFlag");
 
 
-        System.out.println(json);
-        System.out.println(user);
+        System.out.println("获得的 pass");
         System.out.println(pass);
-
 
         Boolean flag =  userService.login(user,pass);
 
         if(flag){
 
             session.setAttribute("user",user);
-
 //          记住密码
             if(Boolean.parseBoolean(rememberPassFlag)){
 
@@ -72,14 +69,10 @@ public class UserController {
             }
 
 
-            return "true";
+            return true;
         }
 
-
-        // 发生消息 到前端
-//        attributes.addFlashAttribute("mesg","登录失败，用户名和密码错误");
-
-        return "false";
+        return false;
 
     }
 
@@ -93,15 +86,48 @@ public class UserController {
      * @return java.lang.String
      **/
     @PostMapping("loginOut")
-    public String loginOut( HttpSession session){
+    @ResponseBody
+    public Boolean loginOut( HttpSession session,HttpServletResponse res){
 
 
         session.removeAttribute("user");
 
+       if(session.getAttribute("user") == null){
 
-        return "redirect:index" ;
+           return true ;
+       }else{
+
+           return false ;
+       }
+
+
 
     }
+
+
+
+
+    /*
+     * @Description 获得当前登录用户信息
+     * @Author 284668461@qq.com
+     * @Date 20:11 2020/5/16
+     * @Param []
+     * @return java.lang.String
+     **/
+    @PostMapping("getLoginInfo")
+    @ResponseBody
+    public String getLogInfo(HttpSession session){
+
+        String user = (String)session.getAttribute("user");
+
+        if(user != null){
+            return JSON.toJSONString(userService.getUserInfo(user));
+        }else{
+            return null ;
+        }
+    }
+
+
 
 
 

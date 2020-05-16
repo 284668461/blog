@@ -51,13 +51,9 @@ $(()=>{
                     success: (data) => {
                         var info = JSON.parse(data);
 
-
-
-
-                        if(info["copyright"]["path"] === null){
+                        if(info["copyright"]["path"] === ""){
                             info["copyright"]["path"] = window.location.href;
                         }
-
 
 
                         //若评论数和查看人数为空则替换为0

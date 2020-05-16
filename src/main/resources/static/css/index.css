@@ -45,6 +45,12 @@ section.index{
 }
 
 
+#login {
+    width: 85% !important;
+    min-width: 320px !important;
+    max-width: 850px !important;
+    margin: 0 auto !important;
+}
 #loginFun{
     min-width: 320px;
     margin-bottom: 10px;
@@ -70,6 +76,22 @@ section.index{
 }
 #info .item{
     margin: 0;
+}
+
+
+
+
+#hot .hotItem>span{
+    display: inline-block;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+#logFrom{
+    width: 300px !important;
+    margin: 0 auto !important;
 }
 /*index section 结束*/
 

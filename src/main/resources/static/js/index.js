@@ -6,7 +6,6 @@ $(()=>{
     });
 
 
-
     //切换 section
     $("#nav a.item").click(function(){
 
@@ -15,7 +14,6 @@ $(()=>{
         $(this).addClass("active").siblings().removeClass("active");
 
         $(`section.${thisLabel}`).show(300).siblings().hide(300);
-
 
 
         switch (thisLabel) {
@@ -46,7 +44,6 @@ $(()=>{
 
     });
 
-
     let login = new Vue({
         el:"#login",
         data:{
@@ -67,15 +64,15 @@ $(()=>{
                     '/user/login',
                     {
                         user: this.user,
-                        pass: this.pass,
+                        pass: hex_md5(encodeURIComponent(this.pass)),
                         rememberPassFlag: this.rememberPassFlag,
                     })
                     .then((res)=>{
 
-                        if(!res.data){
-                            Toast("登录失败，账户或密码错误");
-                        }else{
+                        if(res.data){
                             window.location.href = "admin.html";
+                        }else{
+                            Toast("登录失败，账户或密码错误");
                         }
                     })
                     .catch(function (error) { // 请求失败处理
@@ -119,7 +116,7 @@ $(()=>{
             loadHomeBlog:function(page=0){
 
                 $.post({
-                    url:"/blog/getAllBlog",
+                    url:"/blog/getBlogByPage",
                     data:{
                         page:page
                     },
@@ -205,7 +202,6 @@ $(()=>{
 
             //上一页
             prePage:function(){
-
 
                 this.thisPage--;
 
@@ -304,8 +300,6 @@ $(()=>{
                             }
 
                         });
-
-
                         this.classifyBlog = info;
                     }
                 });
@@ -341,15 +335,12 @@ $(()=>{
 
 
                 if(classifynum<1){
-
                     Toast("该分类没有博文，请选择其他分类");
                     return;
                 }
 
-
                 this.switchClassifyOption(id);
                 this.toclassifyBlog(id);
-
 
             }
         }
@@ -375,7 +366,6 @@ $(()=>{
                     success:(data)=>{
 
                         this.tabOption = JSON.parse(data);
-
                         this.switchTagOption();
                     }
                 });
@@ -393,8 +383,6 @@ $(()=>{
 
                         var info = JSON.parse(data);
 
-
-                        console.log(info);
                         info.map((item,index,arr)=>{
 
                             //若评论数和查看人数为空则替换为0
@@ -432,12 +420,9 @@ $(()=>{
 
                 this.tagOption = info;
                 this.toLoadTagBlog(id);
-
-
             },
             //标签点击事件
             tabClick: function(id){
-
                 this.switchTagOption(id);
                 this.toLoadTagBlog(id);
             }
@@ -463,28 +448,14 @@ $(()=>{
                     success:(data)=>{
 
                         this.timeLineInfo = JSON.parse(data);
-                        console.log(this.timeLineInfo);
-
                     }
                 });
-
-
-
             }
         }
     });
 
 
-
 //timeLine     end     ---------------------------
-
-
-
-
-
-
-
-
 
 });
 

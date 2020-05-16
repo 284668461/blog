@@ -35,18 +35,17 @@
 <nav class="ui attached segment m-padded-tb-mini m-shadow-small">
     <div class="ui container">
         <div class="ui secondary stackable menu">
-            <h1 class="ui pink header item">blog</h1>
+            <h1 class="ui pink header item">blog控制台</h1>
 
             <div class="right item ui inline dropdown">
 
 
-                <img class="ui avatar image"
-                     src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg">
-                珍妮赫斯
+                <img id="userIcon" class="ui avatar image" src="">
+                <span id="userName"></span>
 
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                    <div class="item">
+                    <div class="item" id="loginOut">
                         注销
                     </div>
 
@@ -68,11 +67,11 @@
 
 
     <div class="ui top attached tabular menu" id="tab">
-        <a class="item active" data-tab="first">博客</a>
-        <a class="item" data-tab="second">发布</a>
+        <a class="item active" data-tab="blogListTab">博客</a>
+        <a class="item" data-tab="publishTab">发布</a>
     </div>
 
-    <div class="ui bottom attached tab segment active" data-tab="first">
+    <section id="blogListTab" class="ui  segment " >
 
         <div class=" from ui wide grid" id="blogList">
 
@@ -199,10 +198,8 @@
                             </td>
 
                         </tr>
-
                         </tbody>
                     </table>
-
 
                 </div>
 
@@ -212,8 +209,9 @@
         </div>
 
 
-    </div>
-    <div class="ui bottom attached tab segment" data-tab="second">
+    </section>
+
+    <section id="publishTab" class="ui segment  ihide">
 
 
         <div class=" from ui wide grid" id="publish">
@@ -398,10 +396,23 @@
 
         </div>
 
-    </div>
+
+
+
+
+    </section>
+
+
+
+
+
 
 
 </div>
+
+
+
+
 
 <!-- 中间end -->
 

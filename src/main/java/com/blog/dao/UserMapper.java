@@ -26,5 +26,8 @@ public interface UserMapper {
 
 
 
+    @Select("select id,user,name,user_icon from b_user where user = #{user}")
+    Map getUserInfo(String user);
+
 
 }

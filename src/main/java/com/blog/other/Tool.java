@@ -8,6 +8,7 @@ import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.MessageDigest;
 import java.util.*;
 
 /*
@@ -17,6 +18,12 @@ import java.util.*;
  **/
 @Configuration
 public class Tool {
+
+
+
+    private  final String KEY_MD5 = "MD5";
+    private  final String[] strDigits = {"0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
 
 
@@ -172,5 +179,58 @@ public class Tool {
                 + new Random().nextInt(20)
                 +".jpg";
     }
+
+
+
+
+
+
+
+
+    /*
+     * @Description  返回形式为数字跟字符串
+     * @Author 284668461@qq.com
+     * @Date 2020/05/16 17:59
+     * @Param [bByte]
+     * @return java.lang.String
+     **/
+    private  String byteToArrayString(byte bByte) {
+        int iRet = bByte;
+        if (iRet < 0) {
+            iRet += 256;
+        }
+        int iD1 = iRet / 16;
+        int iD2 = iRet % 16;
+        return strDigits[iD1] + strDigits[iD2];
+    }
+
+    /*
+     * @Description  转换字节数组为16进制字串
+     * @Author 284668461@qq.com
+     * @Date 2020/05/16 17:59
+     * @Param [bByte]
+     * @return java.lang.String
+     **/
+    private  String byteToString(byte[] bByte) {
+        StringBuffer sBuffer = new StringBuffer();
+        for (int i = 0; i < bByte.length; i++) {
+            sBuffer.append(byteToArrayString(bByte[i]));
+        }
+        return sBuffer.toString();
+    }
+
+    /*
+     * @Description  md5加密
+     * @Author 284668461@qq.com
+     * @Date 2020/05/16 17:58
+     * @Param [strObj]
+     * @return java.lang.String
+     **/
+    public  String getMD5Code(String strObj) throws Exception {
+        MessageDigest md = MessageDigest.getInstance(KEY_MD5);
+        return byteToString(md.digest(strObj.getBytes()));
+    }
+
+
 
 }
