@@ -1,15 +1,8 @@
 
-#catOff{
 
-    background: url("../img/bg.jpg") no-repeat center top;
-
-    background-size: 100%;
-
-    height: 100%;
-    width: 100%;
-
+nav{
+    z-index: 99 !important;
 }
-
 
 
 
@@ -61,6 +54,22 @@ section.index{
 }
 
 
+#loginContainer .ui.dropdown .menu a{
+
+    display: block;
+    width: 100%;
+
+}
+
+
+.iClassifyLabel{
+
+    width: 72px !important;
+}
+
+
+
+
 /*index section 开始*/
 
 #tabCloudCanvas{
@@ -70,9 +79,14 @@ section.index{
 }
 
 
+
+
+
 .hotItem{
     display: block !important;
     text-align: left !important;
+    height: 25px;
+    line-height: 25px;
 }
 #info .item{
     margin: 0;
@@ -84,8 +98,10 @@ section.index{
 #hot .hotItem>span{
     display: inline-block;
     width: 65%;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 
 }
 
@@ -239,7 +255,27 @@ section.index{
     font-weight: 300;
     color: #65adb7;
 }
+
+
+
+
 @media (min-width: 800px){
+
+
+    .blogItemImgContainer{
+        width: 100% !important;
+    }
+
+    .blogItemImgContainer>img{
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #hot .hotItem>span{
+        width: 65%;
+    }
+
+
     .timelineItemContentDescription{
         font-size: 19px;
         line-height: 28px;
@@ -274,6 +310,9 @@ section.index{
         left: 50%;
         margin-left: -2px;
     }
+
+
+
 }
 
 

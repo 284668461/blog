@@ -211,7 +211,6 @@ public class AdminController {
     }
 
 
-
     /*
      * @Description 插入分类
      * @Author 284668461@qq.com
@@ -231,6 +230,27 @@ public class AdminController {
 
     }
 
+
+
+
+
+    /*
+     * @Description 删除博客
+     * @Author 284668461@qq.com
+     * @Date 15:25 2020/5/17
+     * @Param [blogId]
+     * @return boolean
+     **/
+    @PostMapping("delBlog")
+    @ResponseBody
+    public boolean delBlog(int blogId){
+
+        if(ad.delBlog(blogId)>0){
+            return  true;
+        }else{
+            return  false;
+        }
+    }
 
 
 

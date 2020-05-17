@@ -41,7 +41,7 @@
 
 <!--导航start-->
 
-<nav class="ui attached segment  animated slideInDown ">
+<nav class="ui attached segment iOpacity  animated slideInDown ">
     <div class="ui container">
         <div class="ui secondary stackable menu" id="nav" >
             <h1 class="ui pink header item">blog</h1>
@@ -50,8 +50,29 @@
             <a class=" teal item m-item  m-mobile-hide " data-section="label"><i class=" tags icon"></i>标签</a>
             <a class=" teal item m-item  m-mobile-hide " data-section="timeline"><i class=" hourglass end icon"></i>时光轴</a>
 
-            <div class="right m-item item m-mobile-hide">
-                <a id="loginBtn" > <i class="icon  pencil alternate circle"></i>  发布 </a>
+            <div class="right m-item item m-mobile-hide" id="loginContainer">
+                <a id="loginBtn" v-show="!loginFlag"> <i class="icon user outline"></i> 登录 </a>
+
+
+                <div class="item ui inline dropdown " v-show="loginFlag">
+                    <img id="userIcon" class="ui avatar image" :src="userIcon">
+                    <span id="userName">{{userName}}</span>
+
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+
+                        <a class="item" href="admin.html" target="_blank" >
+                            <i class="icon  pencil alternate circle"></i>  写作
+                        </a>
+
+                        <a class="item" @click="loginOut()" >
+                            <i class="icon  sign-out alternate"></i>  注销
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
 
 
@@ -64,12 +85,7 @@
     </a>
 </nav>
 
-
 <!-- 导航end -->
-
-<!--<div id="catOff"></div>-->
-
-
 
 
 <!-- 中间start -->
@@ -95,9 +111,10 @@
 
                     <div class="ui segment blogItem" v-for="item in homeBlogList">
 
-                        <div class="ui  grid stackable  mobile reversed">
+                        <div class="ui  grid stackable  mobile reversed ">
 
-                            <div class="ui eleven wide column">
+                            <div class="ui eleven wide column iRelative">
+
 
                                 <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
@@ -108,9 +125,9 @@
 
                                 </p>
 
-                                <div class="ui grid ">
+                                <div class="ui grid  iInBottom">
                                     <div class="eleven wide column">
-                                        <div class="ui mini horizontal link list">
+                                        <div class="ui mini horizontal link list iBlogShortInfo">
                                             <div class="item">
                                                 <img :src=" item.user_icon "  alt="" class="ui avatar image">
 
@@ -132,7 +149,7 @@
                                     <div class="right aligned five wide column iLabel">
 
                                         <div class="right aligned five wide column">
-                                            <a href="" target="_blank" class="ui blue basic label">{{item.classify_name}}</a>
+                                            <a  class="ui blue basic label">{{item.classify_name}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -157,8 +174,10 @@
 
                 <div class="ui bottom attached segment">
 
-                    <div class="ui two bottom attached buttons">
+                    <!--<div class="ui two bottom attached buttons">-->
+                    <div class="ui three bottom attached buttons">
                         <div class="ui button basic " :class="prePageBtn" @click="prePage()">上一页</div>
+                        <div class="ui button basic" >{{thisPage+1}}/{{blogPage}}</div>
                         <div class="ui button basic " :class="nextPageBtn" @click="nextPage()">下一页</div>
                     </div>
 
@@ -170,14 +189,15 @@
             <!--right start-->
 
 
-            <div class="five wide column stackable  animated slideInDown" id="info">
+            <div class="five wide column stackable  animated slideInDown" id="info" >
 
 
                 <div class="sixteen ui wide column card stackable ">
 
 
                     <div class="ui list stackable sixteen" >
-                        <div class="item ">
+                        <br>
+                        <div class="item">
                             <img class="ui medium circular image"
                                  id="icon"
                                  src="img/photo.jpg">
@@ -189,15 +209,6 @@
                             <i class="paper plane icon"></i> &nbsp;广东
 
                         </div>
-
-                        <!--<div class="item">-->
-
-                        <!--<a href="https://github.com/Mitsuha666/blog" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>-->
-                        <!--<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>-->
-                        <!--<a href="#" class="ui qq circular icon button" data-content="691639910" data-position="bottom center"><i class="qq icon"></i></a>-->
-
-                        <!--</div>-->
-
 
                         <div class="item">
                             <hr>
@@ -234,22 +245,7 @@
                             </div>
                         </a>
 
-
-                        <!--<a class="item">-->
-                        <!--<i class="angle right icon"></i> &nbsp;-->
-                        <!--<span> SpringBoot之从零搭建博客网站 </span>&nbsp;-->
-
-                        <!--<div class="ui mini horizontal link list">-->
-                        <!--<i class=" item eye icon"></i> <span>0</span>-->
-                        <!--</div>-->
-                        <!--</a>-->
-
-
-
                     </div>
-
-
-
 
                 </div>
 
@@ -277,10 +273,6 @@
 
                 </div>
 
-
-
-
-
             </div>
 
             <!--right end-->
@@ -294,12 +286,6 @@
                 <div class="column">
                     <h3 class="ui teal header">分类</h3>
 
-                    <!--<div class="ui breadcrumb">-->
-                    <!--<div class="section">主页</div>-->
-                    <!--<div class="divider"> / </div>-->
-                    <!--<div class="active section">搜索</div>-->
-                    <!--</div>-->
-
                 </div>
 
             </div>
@@ -311,12 +297,6 @@
                 <div class="ui basic  left pointing label " :class="item.isSelected">{{item.classifynum}}</div>
             </div>
 
-            <!--<div class="ui labeled button m-margin-tb-tiny">-->
-            <!--<a href="" class="ui basic  button ">中间件</a>-->
-            <!--<div class="ui basic  left pointing label ">16</div>-->
-            <!--</div>-->
-
-
         </div>
         <!--分类框   end-->
 
@@ -324,14 +304,11 @@
         <!--博客列表 start-->
         <div class="ui attached segment top teal blogList">
 
-
-
-
             <div class="ui segment blogItem" v-for="item in classifyBlog">
 
                 <div class="ui  grid stackable  mobile reversed">
 
-                    <div class="ui eleven wide column">
+                    <div class="ui eleven wide column iRelative">
 
                         <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
@@ -340,7 +317,7 @@
 
                         </p>
 
-                        <div class="ui grid ">
+                        <div class="ui grid iInBottom">
                             <div class="eleven wide column">
                                 <div class="ui mini horizontal link list">
 
@@ -360,7 +337,7 @@
                             <div class="right aligned five wide column iLabel">
 
                                 <div class="right aligned five wide column">
-                                    <a href="" target="_blank" class="ui blue basic label">{{item.classify_name}}</a>
+                                    <a  class="ui blue basic label iClassifyLabel">{{item.classify_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -376,56 +353,6 @@
                 </div>
 
             </div>
-
-
-            <!--<div class="ui segment">-->
-
-            <!--<div class="ui  grid stackable  mobile reversed">-->
-
-            <!--<div class="ui eleven wide column">-->
-
-            <!--<h3 class="ui header"><a href="">安东尼经典语录</a></h3>-->
-
-            <!--<p>-->
-            <!--不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......-->
-            <!--</p>-->
-
-            <!--<div class="ui grid">-->
-            <!--<div class="eleven wide column">-->
-            <!--<div class="ui mini horizontal link list">-->
-
-            <!--<div class="item">-->
-            <!--<i class="clock outline icon"></i><span>2020-03-21</span>-->
-            <!--</div>-->
-            <!--<div class="item">-->
-            <!--<i class="eye icon"></i> <span>0</span>-->
-            <!--</div>-->
-
-            <!--<div class="item">-->
-            <!--<i class="comment alternate icon"></i> <span>0</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="right aligned five wide column">-->
-            <!--<a href="/types/5" target="_blank" class="ui blue basic label">java</a>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!--</div>-->
-
-            <!--<div class="ui five wide column">-->
-            <!--<a href="">-->
-            <!--<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">-->
-            <!--</a>-->
-            <!--</div>-->
-
-            <!--</div>-->
-
-            <!--</div>-->
-
-
-
-
 
         </div>
         <!--博客列表   end-->
@@ -476,7 +403,7 @@
 
                 <div class="ui  grid stackable  mobile reversed">
 
-                    <div class="ui eleven wide column">
+                    <div class="ui eleven wide column iRelative">
 
                         <h3 class="ui header"><a :href="'detail.html?id='+item.blogid" target="_blank">{{item.title}}</a></h3>
 
@@ -484,7 +411,7 @@
                             {{ item.blog_intro}}
                         </p>
 
-                        <div class="ui grid ">
+                        <div class="ui grid iInBottom">
                             <div class="eleven wide column">
                                 <div class="ui mini horizontal link list">
 
@@ -504,7 +431,7 @@
                             <div class="right aligned five wide column iLabel">
 
                                 <div class="right aligned five wide column">
-                                    <a href="" target="_blank" class="ui blue basic label">{{item.classify_name}}</a>
+                                    <a  class="ui blue basic label iClassifyLabel">{{item.classify_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -520,56 +447,6 @@
                 </div>
 
             </div>
-
-
-            <!--<div class="ui segment">-->
-
-            <!--<div class="ui  grid stackable  mobile reversed">-->
-
-            <!--<div class="ui eleven wide column">-->
-
-            <!--<h3 class="ui header"><a href="">安东尼经典语录</a></h3>-->
-
-            <!--<p>-->
-            <!--不论是我的世界车水马龙繁华盛世 还是它们都瞬间消失化为须臾 我都会坚定地走向你 不慌张 不犹豫......-->
-            <!--</p>-->
-
-            <!--<div class="ui grid">-->
-            <!--<div class="eleven wide column">-->
-            <!--<div class="ui mini horizontal link list">-->
-
-            <!--<div class="item">-->
-            <!--<i class="clock outline icon"></i><span>2020-03-21</span>-->
-            <!--</div>-->
-            <!--<div class="item">-->
-            <!--<i class="eye icon"></i> <span>0</span>-->
-            <!--</div>-->
-
-            <!--<div class="item">-->
-            <!--<i class="comment alternate icon"></i> <span>0</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="right aligned five wide column">-->
-            <!--<a href="/types/5" target="_blank" class="ui blue basic label">java</a>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!--</div>-->
-
-            <!--<div class="ui five wide column">-->
-            <!--<a href="">-->
-            <!--<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" class="ui rounded image">-->
-            <!--</a>-->
-            <!--</div>-->
-
-            <!--</div>-->
-
-            <!--</div>-->
-
-
-
-
 
         </div>
         <!--博客列表   end-->
@@ -618,7 +495,7 @@
 
 
 <!-- 脚部start -->
-<footer class="ui inverted vertical segment">
+<footer class="ui inverted vertical segment  iOpacity">
     <div class="ui center aligned container">
 
 

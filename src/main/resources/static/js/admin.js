@@ -1,22 +1,17 @@
 $(()=>{
 
-    //初始化 下拉
-    $(".ui.dropdown").dropdown();
-    $("#titleDropDown").dropdown({
-        onChange:function(item){
-            console.log(item);
-            if(item !== "原创"){
-                $("#hintCopyright").slideDown();
-            }else{
-                $("#hintCopyright").slideUp();
-            }
-        }
-    });
+    $(window).on('unload', function() { $(window).scrollTop(0); });
 
+    //初始化
+    initializeDropdown();
+    toLoadUserInfo();
+    toLoadClassify();
+    toLoadLabel();
+    toloadBlog();
 
 
     //初始化mk编辑器
-    let  testEditor = editormd("iEditormd",{
+    let  iEditormd = editormd("iEditormd",{
 
         width:"100%",
         height:640,
@@ -85,45 +80,37 @@ $(()=>{
 
 
 
-    //初始化
-    toLoadUserInfo();
-    toLoadClassify();
-    toLoadLabel();
-    toloadBlog();
-
 
 // 博客 start  -------------------------
 
 //    删除博客按钮点击事件
     $("body").on("click",".delBlog",function(item){
 
-
-        console.log(item);
-        console.log($("this"));
-        console.log($("this")[0]);
-        console.log($("this").parent());
-
-
         var that = $("this");
 
-
         var blogid = $(this).data("blogid");
-        console.log(blogid);
 
 
         $('#hint').modal({
             closable : false,
             onDeny   : function(){
-                console.log("取消按钮点击事件");
-                // return false;
+
             },
             onApprove: function() {
 
-                console.log("确定按钮点击事件");
+                $.post({
+                    url:"/admin/delBlog",
+                    data:{
+                        blogId:blogid
+                    },
+                    success:(data)=>{
 
-                that.hide();
-
-
+                        if(data){
+                            Toast("删除博客成功");
+                            toloadBlog();
+                        }
+                    }
+                });
             }
         }).modal('show');
 
@@ -198,14 +185,14 @@ $(()=>{
 
             temp += `<tr>
                             <td>
-                                <div class="ui segment">
+                                <div class="ui segment blogItem">
                                     <div class="ui  grid stackable  mobile reversed">
-                                        <div class="ui eleven wide column">
+                                        <div class="ui eleven wide column iRelative">
                                             <h3 class="ui header"><a href="/detail/${blogInfo[i].blog_id}">${blogInfo[i].title}</a></h3>
                                             <p class="iBlogBreviary">
                                               ${blogInfo[i].blog_intro}
                                             </p>
-                                            <div class="ui grid">
+                                            <div class="ui grid iInBottom">
                                                 <div class="eleven wide column">
                                                     <div class="ui mini horizontal link list">
                                                         <div class="item">
@@ -220,7 +207,7 @@ $(()=>{
                                                     </div>
                                                 </div>
                                                 <div class="right aligned five wide column">
-                                                    <a href="detail/tab/${blogInfo[i].classify_id}" target="_blank" class="ui blue basic label">${blogInfo[i].classify_name}</a>
+                                                    <a class="ui blue basic label">${blogInfo[i].classify_name}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,12 +222,12 @@ $(()=>{
                             <td>
                                 <div class="extra content">
                                     <div class="ui two buttons">
-                                        <div class="ui basic green button editBlog" data-blogId="${blogInfo[i].blogid}">
-                                            <i class="icon pencil alternate"></i>
+                                       
+                                        <div class="ui button delBlog" data-blogId="${blogInfo[i].blogid}">
+                                            <i class="ui icon trash alternate outline"></i>
                                         </div>
-                                        <div class="ui basic red button delBlog" data-blogId="${blogInfo[i].blogid}">
-                                            <i class="icon trash alternate "></i>
-                                        </div>
+                                        
+                                     
                                     </div>
                                 </div>
                             </td>
@@ -249,11 +236,41 @@ $(()=>{
         }
 
 
+    // <div class="ui basic green button editBlog" data-blogId="${blogInfo[i].blogid}">
+    //         <i class="icon pencil alternate"></i>
+    //         </div>
+
+
         $("#blogListBody").empty().append(temp);
 
 
     }
 
+
+
+
+
+    /*
+     * @Description 初始化下拉菜单
+     * @Author 284668461@qq.com
+     * @Date 21:15 2020/5/17
+     * @Param
+     * @return
+     **/
+    function initializeDropdown(){
+        $(".ui.dropdown").dropdown();
+        $("#titleDropDown").dropdown({
+            onChange:function(item){
+                console.log(item);
+                if(item !== "原创"){
+                    $("#hintCopyright").slideDown();
+                }else{
+                    $("#hintCopyright").slideUp();
+                }
+            }
+        });
+
+    }
 
 
     /*
@@ -276,7 +293,7 @@ $(()=>{
 
 
     /*
-     * @Description 加载标签到界面
+     * @Description 渲染分类到界面
      * @Author 284668461@qq.com
      * @Date 15:55 2020/4/26
      * @Param
@@ -289,12 +306,11 @@ $(()=>{
 
         for(var i=0;i<info.length;i++){
 
-
             htmlTemp += `<div class=\"item\" data-id=" ${info[i].id}"> ${info[i].name}  </div>`
-
         }
 
         $(".classify").empty().append(htmlTemp);
+
 
     }
 
@@ -345,7 +361,7 @@ $(()=>{
         $("#publishLabel").empty().append(blogListLabelHtmlTemp);
 
 
-        $('#publishLabel').dropdown();
+        initializeDropdown();
 
 
     }
@@ -379,9 +395,6 @@ $(()=>{
 
 
 
-
-
-
     //注销按钮点击事件
     $("#loginOut").click(function() {
 
@@ -407,12 +420,10 @@ $(()=>{
         if( (title.val()<1)&&(typeof(tagId) === 'undefined')&&(typeof(classifyId) === 'undefined')){
 
             Toast("请输入关键字，或选择标签，分类");
-
             return ;
         }
 
         toLoadBlogByMixtureQuery(tagId,classifyId,title.val());
-
 
     });
 
@@ -420,26 +431,19 @@ $(()=>{
     //新增分类点击事件
     $("#addClassify").on("click",()=>{
 
-
         $('#hint_addClassify').modal({
             closable : false,
             onDeny   : function(){
-                console.log("取消按钮点击事件");
-                // return false;
             },
             onApprove: function() {
 
-
                 var input = $("#addClassifyInput");
-                console.log(input.val());
 
 
                 if(input.val().length<1){
                     Toast("请输入分类名称");
                     return false;
                 }
-
-
 
 
                 $.post({
@@ -457,6 +461,8 @@ $(()=>{
                                     if(data){
                                         Toast("新增分类成功");
                                         toLoadClassify();
+
+                                        input.val("");
                                     }else{
                                         Toast("新增分类失败，请稍后重试");
                                     }
@@ -468,7 +474,6 @@ $(()=>{
                         }
                     }
                 });
-
             }
         }).modal('show');
 
@@ -481,14 +486,12 @@ $(()=>{
         $('#hint_addTag').modal({
             closable : false,
             onDeny   : function(){
-                console.log("取消按钮点击事件");
-                // return false;
+
             },
             onApprove: function() {
 
 
                 var input = $("#addTagInput");
-                console.log(input.val());
 
 
                 if(input.val().length<1){
@@ -503,15 +506,14 @@ $(()=>{
                     success:(data)=>{
 
                         if(data){
-
                             $.post({
                                 url:"/admin/insertTag",
                                 data:{Tag:input.val()},
                                 success:(data)=>{
-
                                     if(data){
                                         Toast("新增标签成功");
                                         toLoadLabel();
+                                        input.val("");
                                     }else{
                                         Toast("新增标签失败，请稍后重试");
                                     }
@@ -639,16 +641,9 @@ $(()=>{
                 }
             }
         });
-
-
     })
 
 
-
 // 发布 end  ---------------------------
-
-
-
-
 
 });

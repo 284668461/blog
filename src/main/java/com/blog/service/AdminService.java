@@ -111,4 +111,6 @@ public interface AdminService {
      * @return int
      **/
     int insertCopyright(int blogId,String copyrightFlag,String author,String path);
+
+
 }

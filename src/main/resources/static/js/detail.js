@@ -1,5 +1,7 @@
 $(()=>{
 
+    $(window).on('unload', function() { $(window).scrollTop(0); });
+
     $("#sidebar").on("click",()=>{
 
         $('.m-item').toggleClass("m-mobile-hide");
@@ -17,7 +19,9 @@ $(()=>{
             comment:[], //评论列表
             copyright:{},   //版权信息
             admireFlag:false, //赞赏状态
+            admireInfoFlag:false, //赞赏信息
             defaultCommentBody:"请输入评论信息...",    //评论框默认提示
+            commentFlag:true,
             commentBody:"", // 评论内容
             commentNickName:"", //评论昵称
             replyCommentId : 0 // 回复评论id
@@ -29,7 +33,6 @@ $(()=>{
         methods: {
             //获得url传递参数
             getBlogId: function (name="id") {
-                console.log("GetRequest");
 
                 var query = window.location.search.substring(1);
                 var vars = query.split("&");
@@ -69,6 +72,13 @@ $(()=>{
                         this.blogInfo = info["blogDetail"];
                         this.comment = info["comment"];
                         this.copyright = info["copyright"];
+
+                        if(info["blogDetail"]["Comment_flag"] === 1){
+                            this.commentFlag = true;
+                        }else{
+                            this.commentFlag = false;}
+
+
                     }
 
                 });
@@ -83,29 +93,19 @@ $(()=>{
                     },
                     success: (data) => {
                         var info = JSON.parse(data);
-
                         this.comment = info;
                     }
 
                 });
             },
-            //渲染博文信息到界面
-            loadBlogDetail: function () {
-
-            },
 
             //赞赏按钮点击事件
             admireClick:function(){
-                this.admireFlag = !this.admireFlag;
+                this.admireInfoFlag = !this.admireInfoFlag;
             },
 
             //发布评论按钮点击事件
             commentAddClick:function(){
-
-
-                console.log(this.commentBody);
-                console.log(this.commentNickName);
-
 
                 if(this.commentBody === ""){
                     return Toast("请输入评论");

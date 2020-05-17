@@ -8,8 +8,9 @@ body {
     width: 100%;
     min-width: 320px;
 
-    /*background: url("../img/bg.jpg") no-repeat center top;*/
+    background: url("../img/5136.png") ;
     /*background-size: 100%;*/
+
 
 }
 
@@ -54,7 +55,7 @@ nav .menu{
 
 
 .iOpacity{
-    opacity: .8;
+    opacity: .9;
 }
 
 
@@ -114,15 +115,50 @@ nav .menu{
     letter-spacing: 1px !important;
     line-height: 1.8;
 
-    height: 75px;
+    height: 70px;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
-@media screen and (max-width: 768px){
+.iBlogShortInfo{
+    width: 100% !important;
+    min-width: 275px !important;
+    overflow: hidden;
 
+}
+
+
+.iRelative{
+    position: relative;
+}
+
+
+.iInBottom{
+    position:absolute;
+    bottom:0;
+}
+
+
+
+.blogItem .ui.header{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.blogItem  div.iInBottom{
+    line-height: 30px;
+    margin-bottom: 2px;
+}
+
+
+
+@media screen and (max-width: 768px){
 
 
     #sidebar{
@@ -157,5 +193,11 @@ nav .menu{
 
 
 
+    .iBlogShortInfo{
+        width: 100% !important;
+        min-width: 300px !important;
+        overflow: hidden;
+
+    }
 
 }

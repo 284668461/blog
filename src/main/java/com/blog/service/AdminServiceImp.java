@@ -113,9 +113,7 @@ public class AdminServiceImp implements AdminService {
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
-        int delNum = m.delBlog(blogId);
-
-        return delNum;
+        return  m.delBlog(blogId);
     }
 
 

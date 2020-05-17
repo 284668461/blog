@@ -1,5 +1,8 @@
 $(()=>{
 
+    // 解决浏览器记录刷新前滚动位置并跳转到滚动位置
+    $(window).on('unload', function() { $(window).scrollTop(0); });
+
     //导航条 start---------------------------
     $("#sidebar").on("click",()=>{
         $('.m-item').toggleClass("m-mobile-hide");
@@ -31,6 +34,95 @@ $(()=>{
                 break;
         }
 
+    });
+
+
+    let loginContainer = new Vue({
+        el:"#loginContainer",
+        data:{
+            userName:"",
+            userIcon:"",
+            loginFlag:false
+        },
+        created:function(){
+            this.queryLoginState();
+        },
+        methods:{
+            //查询登录状态
+            queryLoginState:function(){
+
+                $.post({
+                    url:"/user/queryLoginState",
+                    success:(data)=>{
+
+                        if(data){
+                            this.loginFlag = true;
+                            this.toLoadUserInfo();
+                        }else{
+                            this.loginFlag = false;
+                            this.cookieLogin();
+                        }
+                    }
+                });
+
+            },
+            //cookie自动登录
+            cookieLogin:function(){
+
+                $.post({
+                    url:"/user/cookieLogin",
+                    success:(data)=>{
+
+                        if(data){
+                            this.loginFlag = true;
+                            this.toLoadUserInfo();
+                        }else{
+                            this.loginFlag = false;
+                        }
+                    }
+                });
+
+            },
+            //加载用户信息
+            toLoadUserInfo:function (){
+
+                $.post({
+                    url:"/user/getLoginInfo",
+                    success:(data)=>{
+
+                        if(data.length>1){
+                            var info = JSON.parse(data);
+                            this.userName = info["name"];
+                            this.userIcon = info["user_icon"];
+
+
+                            //初始化 下拉
+                            $(".ui.dropdown").dropdown();
+
+                        }else{
+                            this.loginFlag = false;
+                        }
+                    }
+                });
+            },
+            //退出登录
+            loginOut:function(){
+
+
+                $.post({
+                    url: "user/loginOut",
+                    success:(data)=> {
+                        if (data) {
+                            this.loginFlag = false;
+                        }
+                    }
+                });
+
+
+            }
+
+
+        }
     });
 
 //导航条 end---------------------------
@@ -69,8 +161,12 @@ $(()=>{
                     })
                     .then((res)=>{
 
+
                         if(res.data){
-                            window.location.href = "admin.html";
+                            // window.location.href = "admin.html";
+                            $('#login').modal('hide');
+                            loginContainer.loginFlag = true;
+                            loginContainer.toLoadUserInfo();
                         }else{
                             Toast("登录失败，账户或密码错误");
                         }
@@ -84,8 +180,6 @@ $(()=>{
 
 
 //登录 end   ---------------------------
-
-
 
 
 
@@ -110,6 +204,7 @@ $(()=>{
             this.loadHomeBlog();
             this.loadHomeHot();
             this.loadTagCloud();
+
         },
         methods:{
             //加载首页博文列表函数
@@ -139,6 +234,7 @@ $(()=>{
 
                         this.homeBlogList =blogList;
                         this.blogPage = pageInfo["blogPage"];
+                        this.initializePage();
                     }
                 });
             },
@@ -186,11 +282,14 @@ $(()=>{
                         var canvas = document.getElementById("tabCloudCanvas");
                         var options = eval({
                             "list": wordTemp,
+                            "gridSize": 25, // 密集程度 数字越小越密集
                             "fontWeight": 'normal',
                             "fontFamily": 'Times, serif',
-                            "color": 'random-dark',
+                            "color": 'random-light',
                             "backgroundColor": 'white',
-                            "rotateRatio": 0.2
+                            "maxFontSize": 15,
+                            "minFontSize": 6,
+                            "rotateRatio": 0.1
                         });
 
                         //生成词云
@@ -234,6 +333,15 @@ $(()=>{
 
 
                 this.loadHomeBlog(this.thisPage);
+            },
+            //初始化页码
+            initializePage:function(){
+
+
+                if((this.thisPage === (this.blogPage-1)) && (this.blogPage !==0)){
+                    this.nextPageBtn = 'disabled';
+                }
+
             }
 
         }
@@ -396,7 +504,7 @@ $(()=>{
                         });
 
                         this.tabBlog = info;
-                        console.log( this.tabBlog );
+
                     }
                 });
 

@@ -153,15 +153,13 @@
 
                     </div>
                 </div>
-
-
             </div>
 
             <!--<div class="ui attached segment center aligned" id="PlayTour">-->
-            <div class="ui attached segment center aligned ">
+            <div class="ui attached segment center aligned " v-show="!admireFlag">
 
 
-                <div  class=" payShow ui label flowing transition backInDown iMarginBottom"  id="PlayTourBody" v-show="admireFlag">
+                <div  class=" payShow ui label flowing transition backInDown iMarginBottom"  id="PlayTourBody" v-show="admireInfoFlag">
                     <div class="ui images">
 
                         <div class="image">
@@ -190,7 +188,7 @@
     <div class="ui four wide column stackable right">
         &nbsp;
     </div>
-    <div class="ui twelve wide column stackable right">
+    <div class="ui twelve wide column stackable right" >
 
 
         <div class="ui bottom attached segment">
@@ -237,48 +235,54 @@
                     </div>
                 </div>
 
+            </div>
+                <div id="comment-form" class="ui form" v-show="!commentFlag">
 
-
-
-            </div></div>
-            <div id="comment-form" class="ui form">
-
-                <div class="field">
+                    <div class="field">
                     <textarea name="content" :placeholder="defaultCommentBody" v-model="commentBody">
                         {{ commentBody }}
                     </textarea>
-                </div>
-                <div class="fields">
-                    <div class="m-margin-bottom-small m-mobile-wide  field">
-                        <div class="ui m-margin-bottom-small m-mobile-wide left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" name="name" placeholder="昵称"  v-model="commentNickName">
+                    </div>
+                    <div class="fields">
+                        <div class="m-margin-bottom-small m-mobile-wide  field">
+                            <div class="ui m-margin-bottom-small m-mobile-wide left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="name" placeholder="昵称"  v-model="commentNickName">
+                            </div>
+                        </div>
+
+                        <div class=" m-margin-bottom-small m-mobile-wide  filed">
+                            <button type="button" id="commentpost-btn"
+                                    class="ui m-margin-bottom-small m-mobile-wide  teal button"
+                                    @click="commentAddClick()">
+                                <i class="edit icon"></i>发布
+                            </button>
+                            <button type="button" id="clear-btn"
+                                    class="ui m-margin-bottom-small m-mobile-wide grey button"
+                                    @click="commentClearClick()">
+
+                                <i class="edit icon"></i>清除
+                            </button>
                         </div>
                     </div>
-
-                    <div class=" m-margin-bottom-small m-mobile-wide  filed">
-                        <button type="button" id="commentpost-btn"
-                                class="ui m-margin-bottom-small m-mobile-wide  teal button"
-                                @click="commentAddClick()">
-                            <i class="edit icon"></i>发布
-                        </button>
-                        <button type="button" id="clear-btn"
-                                class="ui m-margin-bottom-small m-mobile-wide grey button"
-                                @click="commentClearClick()">
-
-                            <i class="edit icon"></i>清除
-                        </button>
-                    </div>
                 </div>
+
+                <div class="ui" v-show="commentFlag">
+
+                    <span> 本文禁止评论 </span>
+
+                </div>
+
             </div>
+
         </div>
 
+
+
+
+
+
     </div>
-
-
-
-
-</div>
 
 
 
