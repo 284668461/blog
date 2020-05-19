@@ -17,16 +17,11 @@
 
     <packaging>jar</packaging>
 
-
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
-
-
-
 
         <dependency>
             <groupId>com.atlassian.commonmark</groupId>
@@ -36,14 +31,19 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -51,7 +51,10 @@
             <scope>test</scope>
         </dependency>
 
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -64,9 +67,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
-
         </dependency>
-
 
 
         <dependency>
@@ -78,35 +79,6 @@
 
 
 
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-
-        <dependency> <!-- 引入log4j2依赖 -->
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
-        </dependency>
 
 
         <dependency>
@@ -130,7 +102,6 @@
             <version>1.2.41</version>
         </dependency>
 
-
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
@@ -138,6 +109,41 @@
         </dependency>
 
 
+        <!--使用sf4j作为日志门面-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.29</version>
+        </dependency>
+
+        <!--使用Log4j2的适配器进行绑定 log4j2 日志门面 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.12.1</version>
+        </dependency>
+
+
+        <!--导入 log4j2  日志门面-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+        <!--log4j2 日志实现-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.12.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.conversantmedia</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>1.2.15</version>
+        </dependency>
 
 
         <dependency>
@@ -145,16 +151,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
 
-            <exclusions>
-                <!--&lt;!&ndash;移除tomcat插件，将项目部署到本地tomcat&ndash;&gt;-->
-                <!--<exclusion>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-                <!--</exclusion>-->
-            </exclusions>
-
         </dependency>
-
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -168,11 +165,7 @@
         <scope>compile</scope>
     </dependency>
 
-
     </dependencies>
-
-
-
 
 
     <build>
@@ -180,20 +173,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--war包-执行程序入口 -->
+                <!--jar -执行程序入口 -->
                 <configuration>
                     <mainClass>com.blog.BlogApplication</mainClass>
                 </configuration>
             </plugin>
-
-
-
         </plugins>
-
-
-
-
     </build>
-
 
 </project>

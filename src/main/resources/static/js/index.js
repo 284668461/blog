@@ -1,7 +1,6 @@
 $(()=>{
 
 
-
     setTimeout(()=>{
         $("#loading").hide();
     },1200);

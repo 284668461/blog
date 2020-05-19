@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- log4j2配置文件与log4j(1.x版本)有很大不同 -->
+<!-- status 日志级别, TRACE < DEBUG < INFO < WARN < ERROR < FATAL -->
+<!-- monitorInterval 每隔5秒重新读取配置文件, 可以不重启应用的情况下修改配置 -->
+<Configuration status="info" monitorInterval="5">
+
+    <!--集中配置属性进行管理-->
+    <!--使用时 通过  ${name} -->
+    <Properties>
+        <property name="LOG_PATH">C:/appRoot/logs</property>
+        <Property name="LOG_LAYOUT">%-5p [%d{yyyy-MM-dd HH:mm:ss}] %t [%c:%L] - %m%n</Property>
+    </Properties>
+
+
+    <!--日志处理-->
+    <Appenders>
+        <!-- 控制台 -->
+        <!--<Console name="console" target="SYSTEM_OUT">-->
+            <!--<encoder>-->
+                <!--&lt;!&ndash;字符编码&ndash;&gt;-->
+                <!--<charset>UTF-8</charset>&lt;!&ndash;此处设置字符集&ndash;&gt;-->
+            <!--</encoder>-->
+            <!--&lt;!&ndash;设置控制台输出格式&ndash;&gt;-->
+            <!--<PatternLayout pattern="${LOG_LAYOUT}" />-->
+        <!--</Console>-->
+
+        <!--日志文件输出-->
+        <File name="file" fileName="${LOG_PATH}/blog.log">
+            <PatternLayout pattern="${LOG_LAYOUT}" />
+        </File>
+
+        <Async name="Async">
+            <AppenderRef ref="file"/>
+        </Async>
+
+        <!--使用随机读写流日志文件输出 append ,提高性能-->
+        <RandomAccessFile name="accessFile" fileName="${LOG_PATH}/blog.log">
+        <PatternLayout pattern="${LOG_LAYOUT}" />
+        </RandomAccessFile>
+
+
+        <!--日志文件拆分规则-->
+        <RollingFile name="rollingFile"
+                     filePattern="${LOG_PATH}/$${date:yyyy-MM-dd}/blog-%d{yyyy-MM-dd}-%i.log">
+
+            <!--日志消息格式-->
+            <PatternLayout>
+                <Pattern>${LOG_LAYOUT}</Pattern>
+            </PatternLayout>
+
+            <!--日志拆分规则-->
+            <Policies>
+                <!--在系统启动时,出发拆分规则,生产一个新的日志文件 -->
+                <OnStartupTriggeringPolicy />
+
+                <!--按照文件大小拆分,10MB-->
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+
+                <!--按照时间节点拆分,规则根据 filePattern定义的 -->
+                <TimeBasedTriggeringPolicy />
+
+            </Policies>
+
+            <!--指定同一目录下 ，文件个数限定 ，超过则进行覆盖-->
+            <DefaultRolloverStrategy max="10" />
+
+        </RollingFile>
+
+    </Appenders>
+
+    <!-- Loggers 定义-->
+    <Loggers>
+        <!--定义日志级别-->
+        <Root level="info">
+
+            <!--
+            指定日志使用的处理器
+            includelocation  关闭日志的行号信息
+            additivity=" false"不在继承 rootlogger对象
+             -->
+            <!--<AppenderRef ref="file" includelocation="false" />-->
+            <AppenderRef ref="Async" includelocation="false" />
+            <!--<AppenderRef ref="console" />-->
+        </Root>
+    </Loggers>
+</Configuration>
