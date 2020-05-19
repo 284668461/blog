@@ -325,7 +325,7 @@ public class BlogServiceImp implements BlogService {
         Map m = new HashMap();
 
         //获得博文详情,并将博文内容转换为 html
-        Map blogDetail = (Map)bm.getBlogDetail(blogId).get(0);
+        Map blogDetail = bm.getBlogDetail(blogId);
         blogDetail.put("blog_body",tool.markDownStrTohtml( (String)blogDetail.get("blog_body") ));
 
         m.put("blogDetail",blogDetail);

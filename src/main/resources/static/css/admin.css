@@ -9,6 +9,7 @@ nav{
     z-index: 99 !important;
 }
 
+
 #icon{
     display: block;
     width: 100px;
@@ -54,7 +55,7 @@ nav{
 
 
 #iEditormd{
-    z-index: 2 !important;
+    z-index: 100 !important;
 }
 
 #upImg{

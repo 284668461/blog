@@ -25,6 +25,7 @@
 
     <link href="lib/animate.min.css" rel="stylesheet">
 
+    <link href="css/izmir.min.css" rel="stylesheet" >
     <link href="css/common.css" rel="stylesheet" >
 
 
@@ -51,7 +52,7 @@
             <a class=" teal item m-item  m-mobile-hide " data-section="timeline"><i class=" hourglass end icon"></i>时光轴</a>
 
             <div class="right m-item item m-mobile-hide" id="loginContainer">
-                <a id="loginBtn" v-show="!loginFlag"> <i class="icon user outline"></i> 登录 </a>
+                <a id="loginBtn" v-show="!loginFlag" @click="loginBtn()"> <i class="icon user outline"></i> 登录 </a>
 
 
                 <div class="item ui inline dropdown " v-show="loginFlag">
@@ -131,7 +132,7 @@
                                             <div class="item">
                                                 <img :src=" item.user_icon "  alt="" class="ui avatar image">
 
-                                                <div class="content"><a href="#" class="header black">{{item.name}}</a></div>
+                                                <div class="content"><a class="header black">{{item.name}}</a></div>
                                             </div>
 
                                             <div class="item">
@@ -158,7 +159,12 @@
 
                             <div class="ui five wide column">
                                 <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
-                                    <img :src="item.cover_img_path" alt="" class="ui rounded image ">
+                                    <figure class="c4-izmir c4-border-center">
+                                        <img :src="item.cover_img_path" alt="" class="ui rounded image ">
+
+                                        <figcaption>
+                                        </figcaption>
+                                    </figure>
                                 </a>
                             </div>
 
@@ -346,7 +352,14 @@
 
                     <div class="ui five wide column">
                         <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
-                            <img :src="item.cover_img_path" alt="" class="ui rounded image">
+
+                            <figure class="c4-izmir c4-border-center">
+                                 <img :src="item.cover_img_path" alt="" class="ui rounded image">
+
+                                <figcaption>
+                                </figcaption>
+                            </figure>
+
                         </a>
                     </div>
 
@@ -440,7 +453,16 @@
 
                     <div class="ui five wide column">
                         <a :href="'detail.html?id='+item.blogid" target="_blank" class="blogItemImgContainer">
+
+                            <figure class="c4-izmir c4-border-center">
+
                             <img :src="item.cover_img_path" alt="" class=" iBolgListImg ui rounded image">
+
+                                <figcaption>
+                                </figcaption>
+
+                            </figure>
+
                         </a>
                     </div>
 
@@ -562,6 +584,13 @@
 
 <!-- 登录模态框end -->
 
+
+
+
+
+<div id="loading">
+    <div class="loader"></div>
+</div>
 
 
 

@@ -1,6 +1,11 @@
 $(()=>{
 
-    // 解决浏览器记录刷新前滚动位置并跳转到滚动位置
+
+
+    setTimeout(()=>{
+        $("#loading").hide();
+    },1200);
+    // 解决浏览器记录刷新前滚动位置并跳转到滚动位置的不优雅操作
     $(window).on('unload', function() { $(window).scrollTop(0); });
 
     //导航条 start---------------------------
@@ -17,23 +22,6 @@ $(()=>{
         $(this).addClass("active").siblings().removeClass("active");
 
         $(`section.${thisLabel}`).show(300).siblings().hide(300);
-
-
-        switch (thisLabel) {
-
-            case "index":
-                break;
-            case "classify":
-                classify.toLoadClassify();
-                break;
-            case "label":
-                tag.toLoadTag();
-                break;
-            case "timeline":
-                timeLine.toLoadTimeLine();
-                break;
-        }
-
     });
 
 
@@ -105,10 +93,13 @@ $(()=>{
                     }
                 });
             },
+            //登录按钮点击事件
+            loginBtn:function(){
+
+                $('#login').modal('show');
+            },
             //退出登录
             loginOut:function(){
-
-
                 $.post({
                     url: "user/loginOut",
                     success:(data)=> {
@@ -120,21 +111,9 @@ $(()=>{
 
 
             }
-
-
         }
     });
 
-//导航条 end---------------------------
-
-
-//登录 start ---------------------------
-
-    $("#loginBtn").on("click",()=>{
-
-        $('#login').modal('show');
-
-    });
 
     let login = new Vue({
         el:"#login",
@@ -152,6 +131,10 @@ $(()=>{
                     return;
                 }
 
+
+
+                $("#loading").show();
+
                 axios.post(
                     '/user/login',
                     {
@@ -160,6 +143,10 @@ $(()=>{
                         rememberPassFlag: this.rememberPassFlag,
                     })
                     .then((res)=>{
+
+
+
+                        $("#loading").hide();
 
 
                         if(res.data){
@@ -179,8 +166,7 @@ $(()=>{
     });
 
 
-//登录 end   ---------------------------
-
+//导航条 end---------------------------
 
 
 
@@ -361,6 +347,11 @@ $(()=>{
             classifyOption:[],
             classifyBlog:[]
         },
+        created:function(){
+
+            this.toLoadClassify();
+
+        },
         methods:{
             //加载分类
             toLoadClassify:function(){
@@ -465,6 +456,9 @@ $(()=>{
             tabOption:[],
             tabBlog:[],
         },
+        created:function(){
+            this.toLoadTag();
+        },
         methods:{
             //加载标签
             toLoadTag:function(){
@@ -472,7 +466,6 @@ $(()=>{
                 $.post({
                     url:"/blog/getTag",
                     success:(data)=>{
-
                         this.tabOption = JSON.parse(data);
                         this.switchTagOption();
                     }
@@ -480,7 +473,6 @@ $(()=>{
             },
             //按标签加载博文
             toLoadTagBlog:function(tagId){
-
 
                 $.post({
                     url:"/blog/getBlogByTag",
@@ -491,7 +483,7 @@ $(()=>{
 
                         var info = JSON.parse(data);
 
-                        info.map((item,index,arr)=>{
+                        info.map((item)=>{
 
                             //若评论数和查看人数为空则替换为0
                             if(item.comment_num === null){
@@ -502,16 +494,12 @@ $(()=>{
                             }
 
                         });
-
                         this.tabBlog = info;
-
                     }
                 });
-
             },
             //切换标签
             switchTagOption:function(id=this.tabOption[0].id){
-
 
                 var info = this.tabOption;
                 info.map((item)=>{
@@ -523,7 +511,6 @@ $(()=>{
                     }else{
                         item.isSelected = "black";
                     }
-
                 });
 
                 this.tagOption = info;
@@ -548,20 +535,20 @@ $(()=>{
         data:{
             timeLineInfo:[]
         },
+        created:function(){
+            this.toLoadTimeLine();
+        },
         methods:{
             toLoadTimeLine:function(){
-
                 $.post({
                     url:"/blog/getTimeLine",
                     success:(data)=>{
-
                         this.timeLineInfo = JSON.parse(data);
                     }
                 });
             }
         }
     });
-
 
 //timeLine     end     ---------------------------
 

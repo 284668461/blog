@@ -1,5 +1,10 @@
 $(()=>{
 
+
+    setTimeout(()=>{
+        $("#loading").hide();
+    },1200);
+
     $(window).on('unload', function() { $(window).scrollTop(0); });
 
     $("#sidebar").on("click",()=>{

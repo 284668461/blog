@@ -247,7 +247,7 @@ public interface BlogMapper {
          "and b.id = #{blogId}\n" +
          "ORDER BY\n" +
          "b.publish_date DESC")
- List<Map> getBlogDetail(int blogId);
+ Map getBlogDetail(int blogId);
 
 
  /*
