@@ -73,6 +73,14 @@ $(()=>{
                         }
 
 
+                        if((info["copyright"]["copyrightAuthor"] === "")&&(info["copyright"]["copyrightFlag"] !== "转载")){
+
+                            info["copyright"]["copyrightAuthor"] = info["blogDetail"]["NAME"];
+
+                        }
+
+
+
                         this.blogTag = info["blogTag"];
                         this.blogInfo = info["blogDetail"];
                         this.comment = info["comment"];

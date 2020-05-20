@@ -27,7 +27,7 @@ public class upFile {
 
     public String upImg(MultipartFile file){
 
-        String path = "src/main/resources/static/files/";
+        String path = "C:/appRoot/blog/upFile/";
         String showPath = "/Path/img/";
 
 

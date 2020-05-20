@@ -308,6 +308,8 @@ $(()=>{
         }
 
 
+        $("#loading").show();
+
         formData.append('classify',  classifyTemp );
         formData.append('tagArr',  tagArr );
         formData.append('body',  publishBody.val() );
@@ -328,12 +330,13 @@ $(()=>{
             success:(data)=>{
 
                 if(data){
+                    $("#loading").hide();
                     Toast("发布博客成功");
                     location.replace(document.referrer);
                 }
             }
         });
-    })
+    });
 
 
 

@@ -333,8 +333,6 @@ section.index{
 
 
 
-
-
     #hot a.item{
         display: block;
         width: 100%;
@@ -343,6 +341,43 @@ section.index{
         text-align: left;
 
     }
+}
+
+
+
+
+@media screen and (max-width: 450px){
+
+    #center{
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    section{
+        width: 100% !important;
+        margin: 0 auto !important;
+        margin-top: 10px !important;
+
+        padding: 0 !important;
+    }
+
+
+    #home >.ui.grid>* {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+    }
+
+    .iLabel{
+        display: none !important;
+    }
+
+    .blogItem div.iInBottom{
+        width: 100% !important;
+    }
+
+
 }
 
 

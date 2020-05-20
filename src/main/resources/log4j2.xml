@@ -7,7 +7,7 @@
     <!--集中配置属性进行管理-->
     <!--使用时 通过  ${name} -->
     <Properties>
-        <property name="LOG_PATH">C:/appRoot/logs</property>
+        <property name="LOG_PATH">C:/appRoot/blog/logs</property>
         <Property name="LOG_LAYOUT">%-5p [%d{yyyy-MM-dd HH:mm:ss}] %t [%c:%L] - %m%n</Property>
     </Properties>
 
@@ -15,14 +15,14 @@
     <!--日志处理-->
     <Appenders>
         <!-- 控制台 -->
-        <!--<Console name="console" target="SYSTEM_OUT">-->
-            <!--<encoder>-->
-                <!--&lt;!&ndash;字符编码&ndash;&gt;-->
-                <!--<charset>UTF-8</charset>&lt;!&ndash;此处设置字符集&ndash;&gt;-->
-            <!--</encoder>-->
-            <!--&lt;!&ndash;设置控制台输出格式&ndash;&gt;-->
-            <!--<PatternLayout pattern="${LOG_LAYOUT}" />-->
-        <!--</Console>-->
+        <Console name="console" target="SYSTEM_OUT">
+            <encoder>
+                <!--字符编码-->
+                <charset>UTF-8</charset><!--此处设置字符集-->
+            </encoder>
+            <!--设置控制台输出格式-->
+            <PatternLayout pattern="${LOG_LAYOUT}" />
+        </Console>
 
         <!--日志文件输出-->
         <File name="file" fileName="${LOG_PATH}/blog.log">
@@ -80,7 +80,7 @@
              -->
             <!--<AppenderRef ref="file" includelocation="false" />-->
             <AppenderRef ref="Async" includelocation="false" />
-            <!--<AppenderRef ref="console" />-->
+            <AppenderRef ref="console" />
         </Root>
     </Loggers>
 </Configuration>

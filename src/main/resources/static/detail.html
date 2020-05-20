@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+
     <title>博客详情页</title>
 
     <script src="js/jquery.min.js"></script>
@@ -136,14 +138,13 @@
             <div class="ui attached segment center aligned">
 
 
-
                 <div class="ui attached positive message">
                     <div class="ui middle aligned grid">
                         <div class="eleven wide column">
                             <ul class="list">
-                                <li>作者：<span>{{blogInfo.NAME}}</span>
+                                <li>作者：<span>{{copyright.copyrightAuthor}}</span>
                                 </li>
-                                <li>发表时间：<span>{{blogInfo.publish_date}}</span>
+                                <li>时间：<span>{{blogInfo.publish_date}}</span>
                                 </li>
                                 <li>版权声明：{{copyright.copyrightInfo}}
                                     <br>
@@ -245,7 +246,7 @@
                     </div>
                     <div class="fields">
                         <div class="m-margin-bottom-small m-mobile-wide  field">
-                            <div class="ui m-margin-bottom-small m-mobile-wide left icon input">
+                            <div class="ui m-margin-bottom-small m-mobile-wide left icon input iMarginBottom">
                                 <i class="user icon"></i>
                                 <input type="text" name="name" placeholder="昵称"  v-model="commentNickName">
                             </div>

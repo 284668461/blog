@@ -90,9 +90,7 @@ public class Tool {
             try {
                 tempMap = (Map)copyrightInfo.get(0);
 
-
                 int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
-
 
                 if(copyrightFlag == 0){
                     m.put("copyrightFlag","原创");
@@ -100,15 +98,13 @@ public class Tool {
                 }else if(copyrightFlag == 1){
                     m.put("copyrightFlag","转载");
                     m.put("copyrightInfo","本文为博主的转载文章，转载请附上原文出处链接。");
-                    m.put("copyrightAuthor",tempMap.get("authorauthor"));
+                    m.put("copyrightAuthor",tempMap.get("author"));
                 }else{
                     m.put("copyrightFlag","翻译");
                     m.put("copyrightInfo","本文为博主的翻译文章，转载请附上原文出处链接及本声明。");
                 }
 
                 m.put("path",tempMap.get("path"));
-
-
 
             } catch (Exception e) {
                 m.put("copyrightFlag","原创");

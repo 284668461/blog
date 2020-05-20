@@ -25,7 +25,7 @@ public class MyWebAppConfiguration extends WebMvcConfigurerAdapter {
          *便可以直接引用图片
          *这是图片的物理路径  "file:/+本地图片的地址"
          */
-        registry.addResourceHandler("/Path/img/**").addResourceLocations("file:/D:/javaProject/blog/src/main/resources/static/files/");
+        registry.addResourceHandler("/Path/img/**").addResourceLocations("file:C:/appRoot/blog/upFile/");
 
         super.addResourceHandlers(registry);
     }
