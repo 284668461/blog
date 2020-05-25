@@ -1,12 +1,10 @@
 
-
-nav{
+nav {
     z-index: 99 !important;
 }
 
 
-
-#icon{
+#icon {
     display: block;
     width: 100px;
     height: 100px;
@@ -17,10 +15,8 @@ nav{
 }
 
 
-
-
-#hot a.item{
-    display:inline-block ;
+#hot a.item {
+    display: inline-block;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 10px;
@@ -28,12 +24,13 @@ nav{
 }
 
 
-section{
+section {
     display: none;
     height: 100%;
     min-height: 550px;
 }
-section.index{
+
+section.index {
     display: block;
 }
 
@@ -44,17 +41,18 @@ section.index{
     max-width: 850px !important;
     margin: 0 auto !important;
 }
-#loginFun{
+
+#loginFun {
     min-width: 320px;
     margin-bottom: 10px;
 }
 
-#otherLogin :first-child{
+#otherLogin :first-child {
     margin-left: 25px;
 }
 
 
-#loginContainer .ui.dropdown .menu a{
+#loginContainer .ui.dropdown .menu a {
 
     display: block;
     width: 100%;
@@ -62,53 +60,48 @@ section.index{
 }
 
 
-.iClassifyLabel{
+.iClassifyLabel {
 
     width: 72px !important;
 }
 
 
-
-
 /*index section 开始*/
 
-#tabCloudCanvas{
+#tabCloudCanvas {
     width: 100%;
     height: 100%;
     min-height: 200px;
 }
 
 
-
-
-
-.hotItem{
+.hotItem {
     display: block !important;
     text-align: left !important;
     height: 25px;
     line-height: 25px;
 }
-#info .item{
+
+#info .item {
     margin: 0;
 }
 
 
-
-
-#hot .hotItem>span{
+#hot .hotItem > span {
     display: inline-block;
     width: 65%;
 
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
 }
 
-#logFrom{
+#logFrom {
     width: 300px !important;
     margin: 0 auto !important;
 }
+
 /*index section 结束*/
 
 
@@ -132,6 +125,7 @@ section.index{
     padding: 60px 0;
 
 }
+
 .timeline::before {
     content: "";
     position: absolute;
@@ -146,14 +140,17 @@ section.index{
     margin-bottom: 25px;
     position: relative;
 }
-.timelineItem::after{
+
+.timelineItem::after {
     content: "";
     clear: both;
     display: table;
 }
+
 .timelineItem:nth-child(2n) .timelineItemContent {
     float: right;
 }
+
 .timelineItem:nth-child(2n) .timelineItemContent::before {
     content: '';
     right: 40%;
@@ -162,41 +159,53 @@ section.index{
 .timelineItem:nth-child(2n) .timelineItemContentDate {
     background-color: #b292c5;
 }
+
 .timelineItem:nth-child(2n) .timelineItemContentDescription {
     color: #b292c5;
 }
+
 .timelineItem:last-child {
     margin-bottom: 0;
 }
+
 .timelineItem-bg {
     -webkit-transition: all 1s ease-out;
     transition: all 1s ease-out;
     color: #fff;
 }
+
 .timelineItem-bg:nth-child(2n) .timelineItemStation {
     background-color: #b292c5;
 }
+
 .timelineItem-bg:nth-child(2n) .timelineItemContent {
     background-color: #b292c5;
 }
+
 .timelineItem-bg:nth-child(2n) .timelineItemContent::before {
     background-color: #b292c5;
 }
+
 .timelineItem-bg:nth-child(2n) .timelineItemContentDescription {
     color: #fff;
 }
+
 .timelineItem-bg .timelineItemStation {
     background-color: #65adb7;
 }
+
 .timelineItem-bg .timelineItemContent {
     background-color: #65adb7;
 }
+
 .timelineItem-bg .timelineItemContent::before {
     background-color: #65adb7;
 }
+
 .timelineItem-bg .timelineItemContentDescription {
     color: #fff;
 }
+
 .timelineItemStation {
     background-color: #9aa0b9;
     width: 40px;
@@ -247,6 +256,7 @@ section.index{
     border-radius: 4px;
     border: 2px solid #fff;
 }
+
 .timelineItemContentDescription {
     margin: 0;
     padding: 0;
@@ -257,31 +267,29 @@ section.index{
 }
 
 
+@media (min-width: 800px) {
 
 
-@media (min-width: 800px){
-
-
-    .blogItemImgContainer{
+    .blogItemImgContainer {
         width: 100% !important;
     }
 
-    .blogItemImgContainer>img{
+    .blogItemImgContainer > img {
         display: block !important;
         width: 100% !important;
     }
 
-    #hot .hotItem>span{
+    #hot .hotItem > span {
         width: 65%;
     }
 
 
-    .timelineItemContentDescription{
+    .timelineItemContentDescription {
         font-size: 19px;
         line-height: 28px;
     }
 
-    .timelineItemStation{
+    .timelineItemStation {
         left: 50%;
         margin-left: -30px;
         width: 60px;
@@ -290,7 +298,7 @@ section.index{
         border-width: 6px;
     }
 
-    .timelineItemContent::before{
+    .timelineItemContent::before {
         left: 40%;
         top: 30px;
         height: 4px;
@@ -302,38 +310,27 @@ section.index{
         float: inherit;
         padding: 30px 40px;
     }
-    .timelineItem:nth-child(2n) .timelineItemContent::before{
+
+    .timelineItem:nth-child(2n) .timelineItemContent::before {
         left: inherit;
     }
 
-    .timeline::before{
+    .timeline::before {
         left: 50%;
         margin-left: -2px;
     }
 
 
-
 }
-
 
 
 /*timeline section 结束*/
 
 
+@media screen and (max-width: 768px) {
 
 
-
-
-
-
-
-
-
-@media screen and (max-width: 768px){
-
-
-
-    #hot a.item{
+    #hot a.item {
         display: block;
         width: 100%;
         height: 20px;
@@ -344,17 +341,15 @@ section.index{
 }
 
 
+@media screen and (max-width: 450px) {
 
-
-@media screen and (max-width: 450px){
-
-    #center{
+    #center {
         width: 100% !important;
         margin: 0 auto !important;
         padding: 0 !important;
     }
 
-    section{
+    section {
         width: 100% !important;
         margin: 0 auto !important;
         margin-top: 10px !important;
@@ -363,17 +358,17 @@ section.index{
     }
 
 
-    #home >.ui.grid>* {
+    #home > .ui.grid > * {
         padding-left: 10px !important;
         padding-right: 10px !important;
         width: 100% !important;
     }
 
-    .iLabel{
+    .iLabel {
         display: none !important;
     }
 
-    .blogItem div.iInBottom{
+    .blogItem div.iInBottom {
         width: 100% !important;
     }
 

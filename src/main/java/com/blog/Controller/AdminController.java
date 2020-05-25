@@ -42,17 +42,17 @@ public class AdminController {
     @RequestMapping("/uploadImg")
     @ResponseBody
     //接收图片的参数名需要为"editormd-image-file"
-    public JSONObject uploadImage(@RequestParam("editormd-image-file") MultipartFile file, HttpServletRequest request){
+    public JSONObject uploadImage(@RequestParam("editormd-image-file") MultipartFile file, HttpServletRequest request) {
 
         JSONObject jsonObject = new JSONObject();
 
         String flag = uf.upImg(file);
 
-        if(flag.equals("false")){
+        if (flag.equals("false")) {
 
             jsonObject.put("success", 0);//图片上传失败的信息码
             jsonObject.put("message", "upload error!");//信息
-        }else{
+        } else {
 
             jsonObject.put("url", flag);//图片回显地址，即文件存放地址，应为虚拟路径
             jsonObject.put("success", 1);//图片上传成功的信息码
@@ -61,7 +61,6 @@ public class AdminController {
 
         return jsonObject;
     }
-
 
 
     /*
@@ -75,7 +74,7 @@ public class AdminController {
     @ResponseBody
     public Boolean insertBlog(HttpServletRequest req,
                               HttpServletResponse res,
-                              MultipartFile file){
+                              MultipartFile file) {
 
 
         String title = req.getParameter("title");
@@ -83,27 +82,26 @@ public class AdminController {
         String classify = req.getParameter("classify");
         String tagStr = req.getParameter("tagArr");
         String body = req.getParameter("body");
-        Boolean blogIsDraft = Boolean.parseBoolean( req.getParameter("blogIsDraft") );
-        Boolean blogIsComment = Boolean.parseBoolean( req.getParameter("blogIsComment"));
-        Boolean blogIsAdmire = Boolean.parseBoolean( req.getParameter("blogIsAdmire"));
+        Boolean blogIsDraft = Boolean.parseBoolean(req.getParameter("blogIsDraft"));
+        Boolean blogIsComment = Boolean.parseBoolean(req.getParameter("blogIsComment"));
+        Boolean blogIsAdmire = Boolean.parseBoolean(req.getParameter("blogIsAdmire"));
 
         String author = req.getParameter("author");
         String path = req.getParameter("path");
         String blogIntro = req.getParameter("blogIntro");
 
 
-        String flag ="";
+        String flag = "";
 
-        if(file!=null){
+        if (file != null) {
             //保存上传的首图
             flag = uf.upImg(file);
         }
 
 
-
         // 将分割标签id字符串，并转换为int型数组
-        String [] tagArrStr = tagStr.split(",");
-        int [] tagArrInt = new int[tagArrStr.length];
+        String[] tagArrStr = tagStr.split(",");
+        int[] tagArrInt = new int[tagArrStr.length];
 
         for (int i = 0; i < tagArrStr.length; i++) {
             tagArrInt[i] = Integer.valueOf(tool.wipeOffStr(tagArrStr[i])).intValue();
@@ -112,16 +110,16 @@ public class AdminController {
 
         Map m = new HashMap();
 
-        m.put("title",title);
-        m.put("coverPath",flag);
-        m.put("classify",classify);
-        m.put("auther",1);
-        m.put("original",original);
-        m.put("body",body);
-        m.put("blogIsDraft",blogIsDraft);
-        m.put("blogIsComment",blogIsComment);
-        m.put("blogIsAdmire",blogIsAdmire);
-        m.put("blogIntro",blogIntro);
+        m.put("title", title);
+        m.put("coverPath", flag);
+        m.put("classify", classify);
+        m.put("auther", 1);
+        m.put("original", original);
+        m.put("body", body);
+        m.put("blogIsDraft", blogIsDraft);
+        m.put("blogIsComment", blogIsComment);
+        m.put("blogIsAdmire", blogIsAdmire);
+        m.put("blogIntro", blogIntro);
 
 //        插入博客
         int insertBolgResNum = ad.insertBolg(m);
@@ -130,23 +128,20 @@ public class AdminController {
         int blodId = ad.selectBolgId(m);
 
 //        新增博客分类
-        int insertBlogClassifyResNum = ad.insertBlogClassify(blodId,classify);
+        int insertBlogClassifyResNum = ad.insertBlogClassify(blodId, classify);
 
         //新增博客标签
-        if(tagArrInt.length>0){
-            ad.insertBlogTag(blodId,tagArrInt);
+        if (tagArrInt.length > 0) {
+            ad.insertBlogTag(blodId, tagArrInt);
         }
 
 
         //新增博客版权信息
-        ad.insertCopyright(blodId,original,author,path);
+        ad.insertCopyright(blodId, original, author, path);
 
 
         return true;
     }
-
-
-
 
 
     /*
@@ -158,16 +153,15 @@ public class AdminController {
      **/
     @PostMapping("queryTag")
     @ResponseBody
-    public Boolean queryTag(String Tag){
+    public Boolean queryTag(String Tag) {
 
-        if(ad.queryTag(tool.wipeOffStr(Tag))>0){
+        if (ad.queryTag(tool.wipeOffStr(Tag)) > 0) {
             return false;
-        }else{
-            return  true;
+        } else {
+            return true;
         }
 
     }
-
 
 
     /*
@@ -179,16 +173,15 @@ public class AdminController {
      **/
     @PostMapping("insertTag")
     @ResponseBody
-    public Boolean insertTag(String Tag){
+    public Boolean insertTag(String Tag) {
 
-        if(ad.insertTag(Tag)>0){
+        if (ad.insertTag(Tag) > 0) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
 
     }
-
 
 
     /*
@@ -200,12 +193,12 @@ public class AdminController {
      **/
     @PostMapping("queryClassify")
     @ResponseBody
-    public Boolean queryClassify(String classify){
+    public Boolean queryClassify(String classify) {
 
-        if(ad.queryClassify(tool.wipeOffStr(classify))>0){
+        if (ad.queryClassify(tool.wipeOffStr(classify)) > 0) {
             return false;
-        }else{
-            return  true;
+        } else {
+            return true;
         }
 
     }
@@ -220,18 +213,15 @@ public class AdminController {
      **/
     @PostMapping("insertClassify")
     @ResponseBody
-    public Boolean insertClassify(String classify){
+    public Boolean insertClassify(String classify) {
 
-        if(ad.insertClassify(tool.wipeOffStr(classify))>0){
+        if (ad.insertClassify(tool.wipeOffStr(classify)) > 0) {
             return true;
-        }else{
-            return  false;
+        } else {
+            return false;
         }
 
     }
-
-
-
 
 
     /*
@@ -243,15 +233,14 @@ public class AdminController {
      **/
     @PostMapping("delBlog")
     @ResponseBody
-    public boolean delBlog(int blogId){
+    public boolean delBlog(int blogId) {
 
-        if(ad.delBlog(blogId)>0){
-            return  true;
-        }else{
-            return  false;
+        if (ad.delBlog(blogId) > 0) {
+            return true;
+        } else {
+            return false;
         }
     }
-
 
 
 }

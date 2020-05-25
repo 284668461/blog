@@ -11,8 +11,6 @@ import java.util.Map;
 public interface BlogService {
 
 
-
-
     /*
      * @Description 获得所有博文
      * @Author 284668461@qq.com
@@ -39,7 +37,7 @@ public interface BlogService {
      * @Param [tag]
      * @return java.util.List
      **/
-    List  getBlogByTag(int tagId);
+    List getBlogByTag(int tagId);
 
 
     /*
@@ -49,10 +47,7 @@ public interface BlogService {
      * @Param [tag]
      * @return java.util.List
      **/
-    List  getBlogByClassify(int classifyid);
-
-
-
+    List getBlogByClassify(int classifyid);
 
 
     /*
@@ -62,9 +57,7 @@ public interface BlogService {
      * @Param []
      * @return java.util.List
      **/
-    List  getBlogByHot();
-
-
+    List getBlogByHot();
 
 
     /*
@@ -84,7 +77,7 @@ public interface BlogService {
      * @Param []
      * @return java.util.List
      **/
-    List  getClassify();
+    List getClassify();
 
 
     /*
@@ -97,18 +90,6 @@ public interface BlogService {
     int delBlog(int id);
 
 
-
-    /*
-     * @Description 查询博客
-     * @Author 284668461@qq.com
-     * @Date 10:18 2020/5/4
-     * @Param [title]
-     * @return java.util.List
-     **/
-    List getBlogByQuery(String title);
-
-
-
     /*
      * @Description 混合查询博文
      * @Author 284668461@qq.com
@@ -116,9 +97,7 @@ public interface BlogService {
      * @Param [tagId, classifyId, title]
      * @return java.util.List
      **/
-    List getBlogByMixtureQuery(int tagId,int classifyId,String title);
-
-
+    List getBlogByMixtureQuery(int tagId, int classifyId, String title);
 
 
     /*
@@ -129,8 +108,6 @@ public interface BlogService {
      * @return java.util.List
      **/
     List getTimeLine();
-
-
 
 
     /*
@@ -172,8 +149,6 @@ public interface BlogService {
     List getBlogCopyright(int blogId);
 
 
-
-
     /*
      * @Description 插入博客评论
      * @Author 284668461@qq.com
@@ -181,8 +156,7 @@ public interface BlogService {
      * @Param [map]
      * @return boolean
      **/
-    boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, String ip);
-
+    boolean insertBlogComment(String nickName, String commentBody, int blogId, int replyCommentId, String ip);
 
 
     /*

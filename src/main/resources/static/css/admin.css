@@ -1,16 +1,16 @@
 
-html,body{
+html, body {
     width: 100%;
     min-width: 950px;
 }
 
 
-nav{
+nav {
     z-index: 99 !important;
 }
 
 
-#icon{
+#icon {
     display: block;
     width: 100px;
     height: 100px;
@@ -21,17 +21,15 @@ nav{
 }
 
 
-
-#info>.item{
+#info > .item {
 
     margin-top: 10px;
     text-align: center;
 }
 
 
-
-#hot a.item{
-    display:inline-block ;
+#hot a.item {
+    display: inline-block;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 10px;
@@ -39,30 +37,27 @@ nav{
 }
 
 
-
-
-
-.ui.dropdown .item{
+.ui.dropdown .item {
     width: 100%;
     margin-top: 10px;
 
 }
 
 
-#search{
+#search {
     padding-left: 15%;
 }
 
 
-#iEditormd{
+#iEditormd {
     z-index: 100 !important;
 }
 
-#upImg{
+#upImg {
     margin-left: 50px;
 }
 
-#wrapper img{
+#wrapper img {
     display: block;
     text-align: center;
     margin: 0 auto;
@@ -70,82 +65,79 @@ nav{
 }
 
 
-#fileUpload{
+#fileUpload {
     display: none;
 }
 
 
-#hintCopyright{
+#hintCopyright {
     display: none;
 }
 
-.ui.table{
+.ui.table {
     width: 100% !important;
-    table-layout:fixed!important;
+    table-layout: fixed !important;
 }
 
-#blogListBody{
+#blogListBody {
     width: 100% !important;
 }
 
-#blogListBody tr{
+#blogListBody tr {
     width: 90% !important;
     border: none !important;
 }
 
-#blogListBody tr td{
+#blogListBody tr td {
     padding: 0 !important;
 }
 
-#blogListBody tr td:first-child{
+#blogListBody tr td:first-child {
     width: 85%;
 }
 
 
-#blogListBody tr td .ui.segment{
+#blogListBody tr td .ui.segment {
     border: none !important;
 }
 
 
-
-
-.ui.container{
+.ui.container {
     width: 85% !important;
-    position:relative
+    position: relative
     /*min-width: 850px !important;*/
 }
 
 
-
-#blogListTab{
+#blogListTab {
     border-top: none;
-    position:absolute;
-    left:0;
-    top:29px;
+    position: absolute;
+    left: 0;
+    top: 29px;
 }
 
-#publishTab{
-    position:absolute;
-    left:0;
-    top:43px;
+#publishTab {
+    position: absolute;
+    left: 0;
+    top: 43px;
     margin-top: 0px !important;
     border-top: none;
 
 }
 
 
-.ihide{
-    z-index:-99999;
-    opacity:0;
+.ihide {
+    z-index: -99999;
+    opacity: 0;
     height: 1310px !important;
 }
 
 
-.iInBottom>div:last-child{
+.iInBottom > div:last-child {
     width: 200px;
 }
 
 
-.iInBottom{
+.iInBottom {
     width: 350px;
 }

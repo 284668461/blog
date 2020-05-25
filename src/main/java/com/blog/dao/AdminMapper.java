@@ -11,8 +11,6 @@ import java.util.Map;
 public interface AdminMapper {
 
 
-
-
     /*
      * @Description 新增博客
      * @Author 284668461@qq.com
@@ -33,7 +31,7 @@ public interface AdminMapper {
      **/
     @Insert("insert into blog_classify(blog_id,type_id,time) " +
             " values(${blogId},(select id from b_classify where name=#{classify}), now() )")
-    int insertBlogClassify(int blogId,String classify);
+    int insertBlogClassify(int blogId, String classify);
 
 
     /*
@@ -48,9 +46,9 @@ public interface AdminMapper {
             "values" +
             "<foreach collection='arr'  item='i' separator=','  >" +
             "(#{blogId}, #{i}, now())" +
-            "</foreach>"+
+            "</foreach>" +
             "</script>")
-    int insertBlogTag(int blogId,int[] arr);
+    int insertBlogTag(int blogId, int[] arr);
 
 
     /*
@@ -73,8 +71,6 @@ public interface AdminMapper {
      **/
     @Delete("update blog set del_flag = true where id = #{blogId}")
     int delBlog(int blogId);
-
-
 
 
     /*
@@ -129,5 +125,5 @@ public interface AdminMapper {
     @Insert("insert into blog_copyright " +
             "(blog_id,copyright_flag,author,path,time) " +
             "values(#{blogId},#{copyrightFlag},#{author},#{path},now()) ")
-    int insertCopyright(int blogId,int copyrightFlag,String author,String path);
+    int insertCopyright(int blogId, int copyrightFlag, String author, String path);
 }

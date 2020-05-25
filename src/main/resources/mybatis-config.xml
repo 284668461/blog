@@ -3,7 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 
-
 <!--mybatis 主配置文件-->
 <configuration>
 
@@ -20,17 +19,18 @@
 
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"></property>
-                <property name="url" value="jdbc:mysql://localhost:3306/blog?useTimezone=true&amp;serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"></property>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/blog?useTimezone=true&amp;serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"></property>
                 <property name="username" value="root"></property>
-                <property name="password" value="a2546520"></property>
-                <!--<property name="password" value="2546"></property>-->
+<!--                <property name="password" value="a2546520"></property>-->
+                <property name="password" value="2546"></property>
 
 
                 <!--数据库连接池配置-->
                 <property name="poolMaximumIdleConnections" value="0"/>
                 <property name="poolMaximumActiveConnections" value="50"/>
-                <property name="poolPingQuery" value="SELECT 1 FROM DUAL" />
-                <property name="poolPingEnabled" value="true" />
+                <property name="poolPingQuery" value="SELECT 1 FROM DUAL"/>
+                <property name="poolPingEnabled" value="true"/>
 
             </dataSource>
 

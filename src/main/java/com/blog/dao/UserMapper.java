@@ -13,7 +13,6 @@ import java.util.Map;
 public interface UserMapper {
 
 
-
     /*
      * @Description 登录
      * @Author 284668461@qq.com
@@ -23,7 +22,6 @@ public interface UserMapper {
      **/
     @Select("select * from b_user where user = #{user} and pass = #{pass}")
     Map Login(String user, String pass);
-
 
 
     @Select("select id,user,name,user_icon from b_user where user = #{user}")

@@ -37,27 +37,24 @@ public class BlogController {
      **/
     @PostMapping("getAllBlog")
     @ResponseBody
-    public String getAllBlog(){
+    public String getAllBlog() {
 
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
-        return JSON.toJSONString(blogService.getAllBlog(), SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(blogService.getAllBlog(), SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
 
 
     @PostMapping("getBlogByPage")
     @ResponseBody
-    public String getBlogByPage(int page){
+    public String getBlogByPage(int page) {
 
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
-        return JSON.toJSONString(blogService.getBlogByPage(page), SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(blogService.getBlogByPage(page), SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
-
 
 
     /*
@@ -69,17 +66,16 @@ public class BlogController {
      **/
     @GetMapping("getBlogDetail")
     @ResponseBody
-    public String getBlogDetail(int id,HttpServletRequest req){
+    public String getBlogDetail(int id, HttpServletRequest req) {
 
 
-        Map m = blogService.getBlogDetail(id,req);
+        Map m = blogService.getBlogDetail(id, req);
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
-        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
 
     }
-
 
 
     /*
@@ -91,14 +87,12 @@ public class BlogController {
      **/
     @PostMapping("getBlogByTag")
     @ResponseBody
-    public String getBlogByTag(int tagId){
+    public String getBlogByTag(int tagId) {
 
-        List m =  blogService.getBlogByTag(tagId);
+        List m = blogService.getBlogByTag(tagId);
 
-        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
-
 
 
     /*
@@ -110,15 +104,12 @@ public class BlogController {
      **/
     @PostMapping("getBlogByClassify")
     @ResponseBody
-    public String getBlogByClassify(int classifyid){
+    public String getBlogByClassify(int classifyid) {
 
-        List m =  blogService.getBlogByClassify(classifyid);
+        List m = blogService.getBlogByClassify(classifyid);
 
-        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
-
-
 
 
     /*
@@ -132,11 +123,10 @@ public class BlogController {
     @ResponseBody
     public String getBlogByHot() {
 
-        List m =  blogService.getBlogByHot();
+        List m = blogService.getBlogByHot();
 
-        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
 
 
     /*
@@ -148,13 +138,12 @@ public class BlogController {
      **/
     @PostMapping("getTag")
     @ResponseBody
-    public String getTag(){
+    public String getTag() {
 
-        List m =  blogService.getTag();
+        List m = blogService.getTag();
 
         return JSON.toJSONString(m);
     }
-
 
 
     /*
@@ -166,16 +155,12 @@ public class BlogController {
      **/
     @PostMapping("getClassify")
     @ResponseBody
-    public String getClassify(){
+    public String getClassify() {
 
-        List ls =  blogService.getClassify();
+        List ls = blogService.getClassify();
 
         return JSONObject.toJSONString(ls, SerializerFeature.WriteMapNullValue);
     }
-
-
-
-
 
 
     /*
@@ -187,34 +172,14 @@ public class BlogController {
      **/
     @PostMapping("delBlog")
     @ResponseBody
-    public Boolean delBlog(int id){
+    public Boolean delBlog(int id) {
 
-        if( blogService.delBlog(id)>0){
-            return  true;
-        }else{
-            return  false;
+        if (blogService.delBlog(id) > 0) {
+            return true;
+        } else {
+            return false;
         }
 
-    }
-
-
-    /*
-     * @Description 查询博客
-     * @Author 284668461@qq.com
-     * @Date 10:17 2020/5/4
-     * @Param [title]
-     * @return java.lang.String
-     **/
-    @PostMapping("getBlogByQuery")
-    @ResponseBody
-    public String getBlogByQuery(String title){
-
-
-        List ls =  blogService.getBlogByQuery(title);
-
-        JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
-
-        return JSON.toJSONString(ls, SerializerFeature.WriteDateUseDateFormat);
     }
 
 
@@ -228,18 +193,15 @@ public class BlogController {
      **/
     @PostMapping("getBlogByMixtureQuery")
     @ResponseBody
-    public String getBlogByMixtureQuery(int tagId,int classifyId,String title){
+    public String getBlogByMixtureQuery(int tagId, int classifyId, String title) {
 
 
-
-
-        List ls =  blogService.getBlogByMixtureQuery(tagId,classifyId,tool.wipeOffStr(title));
+        List ls = blogService.getBlogByMixtureQuery(tagId, classifyId, tool.wipeOffStr(title));
 
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
 
         return JSON.toJSONString(ls, SerializerFeature.WriteDateUseDateFormat);
     }
-
 
 
     /*
@@ -253,14 +215,10 @@ public class BlogController {
     @ResponseBody
     public String getTimeLine() {
 
-        List m =  blogService.getTimeLine();
+        List m = blogService.getTimeLine();
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
-        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
-
-
-
 
 
     /*
@@ -272,13 +230,11 @@ public class BlogController {
      **/
     @PostMapping("getBlogComment")
     @ResponseBody
-    public String getBlogComment(int blogId){
-        List m =  blogService.getBlogComment(blogId);
+    public String getBlogComment(int blogId) {
+        List m = blogService.getBlogComment(blogId);
         JSON.DEFFAULT_DATE_FORMAT = "yyyy-MM-dd";
-        return JSON.toJSONString(m,SerializerFeature.WriteDateUseDateFormat,SerializerFeature.WriteNullStringAsEmpty,SerializerFeature.WriteNullNumberAsZero);
+        return JSON.toJSONString(m, SerializerFeature.WriteDateUseDateFormat, SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullNumberAsZero);
     }
-
-
 
 
     /*
@@ -290,14 +246,14 @@ public class BlogController {
      **/
     @PostMapping("insertBlogComment")
     @ResponseBody
-    public Boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, HttpServletRequest req){
+    public Boolean insertBlogComment(String nickName, String commentBody, int blogId, int replyCommentId, HttpServletRequest req) {
 
 
-       if(blogService.insertBlogComment(nickName,commentBody,blogId,replyCommentId,tool.getIRealIPAddr(req))){
-           return true;
-       }else{
-           return false;
-       }
+        if (blogService.insertBlogComment(nickName, commentBody, blogId, replyCommentId, tool.getIRealIPAddr(req))) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 

@@ -9,8 +9,6 @@ import java.util.Map;
 public interface AdminService {
 
 
-
-
     /*
      * @Description 新增博客
      * @Author 284668461@qq.com
@@ -27,7 +25,7 @@ public interface AdminService {
      * @Param [blogId, classify]
      * @return int
      **/
-    int insertBlogClassify(int blogId,String classify);
+    int insertBlogClassify(int blogId, String classify);
 
 
     /*
@@ -37,8 +35,7 @@ public interface AdminService {
      * @Param [blogId, Tag]
      * @return int
      **/
-    int insertBlogTag(int blogId,int[] arr);
-
+    int insertBlogTag(int blogId, int[] arr);
 
 
     /*
@@ -59,8 +56,6 @@ public interface AdminService {
      * @return int
      **/
     int delBlog(int blogId);
-
-
 
 
     /*
@@ -101,8 +96,6 @@ public interface AdminService {
     int queryClassify(String classify);
 
 
-
-
     /*
      * @Description 插入博客版权信息
      * @Author 284668461@qq.com
@@ -110,7 +103,7 @@ public interface AdminService {
      * @Param [blogId, copyrightFlag, author, path]
      * @return int
      **/
-    int insertCopyright(int blogId,String copyrightFlag,String author,String path);
+    int insertCopyright(int blogId, String copyrightFlag, String author, String path);
 
 
 }

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Reader;
 
 /*
@@ -16,31 +17,27 @@ import java.io.Reader;
 public class MyBatisUtil {
 
 
-    private static SqlSessionFactory sessionFactory = null;
+    private static SqlSessionFactory sqlSessionFactory;
 
-    // 创建sessionFactory对象，因为整个应用程序只需要一个实例对象，故用静态代码块
+    //    加载资源
     static {
+
         try {
-            Reader reader = Resources.getResourceAsReader("mybatis-config.xml");
-            sessionFactory = new SqlSessionFactoryBuilder().build(reader);
-            reader.close();
+
+            String resource = "mybatis-config.xml";
+            InputStream in = Resources.getResourceAsStream(resource);
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(in);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
-   /*
-    * @Description  返回sessionFactory对象 工厂对象
-    * @Author 284668461@qq.com
-    * @Date 16:15 2020/4/21
-    * @Param []
-    * @return org.apache.ibatis.session.SqlSession
-    **/
-    public static SqlSession  getSessionFactory() {
-
-        return sessionFactory.openSession(true);
+    //    创建执行sql 对象
+    //    SqlSession 包含了执行sql命令的所有操作方法
+    public static SqlSession getSessionFactory() {
+        return sqlSessionFactory.openSession(true);
     }
-
-
 
 }

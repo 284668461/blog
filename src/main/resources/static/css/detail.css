@@ -1,5 +1,5 @@
 
-#icon{
+#icon {
     display: block;
     width: 100px;
     height: 100px;
@@ -9,15 +9,15 @@
 
 }
 
-#info>.item{
+#info > .item {
 
     margin-top: 10px;
     text-align: center;
 }
 
 
-#hot a.item{
-    display:inline-block ;
+#hot a.item {
+    display: inline-block;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 10px;
@@ -25,7 +25,7 @@
 }
 
 
-#sidebar{
+#sidebar {
     position: absolute;
     top: 0;
     right: 0;
@@ -33,9 +33,7 @@
 }
 
 
-
-
-.original{
+.original {
     font-size: 12px;
     display: inline-block;
     line-height: 20px;
@@ -47,34 +45,32 @@
 }
 
 
-
-#PlayTourBody  img{
+#PlayTourBody img {
     display: block;
     width: 120px;
 }
 
 
-.coverImg img{
+.coverImg img {
     width: 100% !important;
     margin: 0 auto;
 }
 
 
-
-#commentList{
+#commentList {
 
     width: 100% !important;
     max-width: 100% !important;
 }
 
 
-#commentList .comment>.avatar{
+#commentList .comment > .avatar {
     width: 75px !important;
 
 }
 
 
-#commentList .comment{
+#commentList .comment {
     width: 100% !important;
     min-height: 80px !important;
     padding: 0px 5px 2px 5px !important;
@@ -82,50 +78,46 @@
 }
 
 
-
-#commentList .text{
+#commentList .text {
     margin-top: 5px !important;
     margin-bottom: 5px !important;
 }
 
 
-
-#commentList .comment:hover{
+#commentList .comment:hover {
     border: 1px solid gray !important;
 }
 
 
-@media screen and (max-width: 768px){
-    #sidebar{
+@media screen and (max-width: 768px) {
+    #sidebar {
         display: block !important;
     }
 
-    .m-mobile-hide{
+    .m-mobile-hide {
         display: none !important;
     }
 
 
-    #comment-form > div.fields > div.m-margin-bottom-small.m-mobile-wide.filed{
+    #comment-form > div.fields > div.m-margin-bottom-small.m-mobile-wide.filed {
         padding-left: .5em !important;
     }
 }
 
 
+@media screen and (max-width: 450px) {
 
-
-@media screen and (max-width: 450px){
-
-    #commentList .comment{
+    #commentList .comment {
         height: 100% !important;
         min-height: 50px !important;
     }
 
-    #commentList .comment>.avata{
+    #commentList .comment > .avata {
         display: block !important;
         width: 60px !important;
     }
 
-    .ui.comments .comment .avatar img{
+    .ui.comments .comment .avatar img {
         display: block !important;
         width: 100% !important;
         max-width: 66px !important;

@@ -12,17 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-@Aspect    //定义切面
+@Aspect
 @Component
 public class LogAspect {
 
-    private Logger logger =  LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Pointcut("execution(* com.blog.Controller.*.*(..))")
-    public void log(){}
+    public void log() {
+    }
 
     @Before("log()")
-    public void doBefore(JoinPoint joinPoint){
+    public void doBefore(JoinPoint joinPoint) {
 
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
@@ -36,18 +37,17 @@ public class LogAspect {
 
         Map m = new HashMap();
 
-        m.put("url",url);
-        m.put("ip",ip);
-        m.put("classMethod",classMethod);
-        m.put("args",args);
+        m.put("url", url);
+        m.put("ip", ip);
+        m.put("classMethod", classMethod);
+        m.put("args", args);
 
         logger.info("Request: {}", m);
     }
 
 
-
     @AfterReturning(returning = "result", pointcut = "log()")
-    public void doAfterReturn(Object result){
+    public void doAfterReturn(Object result) {
 
         logger.info("Result: {}", result);
     }

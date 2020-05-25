@@ -6,19 +6,19 @@ import com.blog.other.Tool;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@Configuration
+
+@Service
 public class BlogServiceImp implements BlogService {
 
     @Autowired
     private Tool tool;
-
-
 
 
     /*
@@ -44,16 +44,13 @@ public class BlogServiceImp implements BlogService {
 
         for (int i = 0; i < ls.size(); i++) {
 
-            Map tempM = (Map)ls.get(i);
-            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
-            tempLs.add( tempM );
+            Map tempM = (Map) ls.get(i);
+            tempM.put("blog_body", tool.markDownStrTohtml((String) tempM.get("blog_body")));
+            tempLs.add(tempM);
         }
 
 
-
         return tempLs;
-
-
 
 
     }
@@ -73,8 +70,8 @@ public class BlogServiceImp implements BlogService {
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
 
-        if(page !=0){
-            page*=10;
+        if (page != 0) {
+            page *= 10;
         }
 
 
@@ -86,37 +83,33 @@ public class BlogServiceImp implements BlogService {
 
         for (int i = 0; i < ls.size(); i++) {
 
-            Map tempM = (Map)ls.get(i);
-            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            Map tempM = (Map) ls.get(i);
+            tempM.put("blog_body", tool.markDownStrTohtml((String) tempM.get("blog_body")));
             tempLs.add(tempM);
         }
 
         //获得博客总数量
-       int blogNum = bm.getBlogNum();
+        int blogNum = bm.getBlogNum();
 
         //计算博客页数
-        int blogPage = (int)Math.ceil((float)blogNum/10);
+        int blogPage = (int) Math.ceil((float) blogNum / 10);
 
 
         Map pageM = new HashMap();
-        pageM.put("blogTotal",blogNum);
-        pageM.put("blogPage",blogPage);
+        pageM.put("blogTotal", blogNum);
+        pageM.put("blogPage", blogPage);
 
 
         Map resM = new HashMap();
 
-        resM.put("blogList",tempLs);
-        resM.put("pageInfo",pageM);
+        resM.put("blogList", tempLs);
+        resM.put("pageInfo", pageM);
 
 
         return resM;
 
 
-
-
     }
-
-
 
 
     /*
@@ -135,7 +128,6 @@ public class BlogServiceImp implements BlogService {
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
 
-
         // 将博客 内容格式化为 html
         List ls = bm.getBlogByTag(tagId);
 
@@ -143,14 +135,13 @@ public class BlogServiceImp implements BlogService {
 
         for (int i = 0; i < ls.size(); i++) {
 
-            Map tempM = (Map)ls.get(i);
-            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            Map tempM = (Map) ls.get(i);
+            tempM.put("blog_body", tool.markDownStrTohtml((String) tempM.get("blog_body")));
             tempLs.add(tempM);
         }
 
 
         return tempLs;
-
 
 
     }
@@ -171,7 +162,6 @@ public class BlogServiceImp implements BlogService {
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
 
-
         // 将博客 内容格式化为 html
         List ls = bm.getBlogByClassify(classifyid);
 
@@ -179,8 +169,8 @@ public class BlogServiceImp implements BlogService {
 
         for (int i = 0; i < ls.size(); i++) {
 
-            Map tempM = (Map)ls.get(i);
-            tempM.put("blog_body",tool.markDownStrTohtml((String)tempM.get("blog_body")));
+            Map tempM = (Map) ls.get(i);
+            tempM.put("blog_body", tool.markDownStrTohtml((String) tempM.get("blog_body")));
             tempLs.add(tempM);
         }
 
@@ -218,7 +208,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getTag();
+        return bm.getTag();
     }
 
 
@@ -253,25 +243,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.delBlog(id);
-    }
-
-
-    /*
-     * @Description 查询博客
-     * @Author 284668461@qq.com
-     * @Date 10:26 2020/5/4
-     * @Param [title]
-     * @return java.util.List
-     **/
-    @Override
-    public List getBlogByQuery(String title) {
-
-        SqlSession session = MyBatisUtil.getSessionFactory();
-
-        BlogMapper bm = session.getMapper(BlogMapper.class);
-
-        return  bm.getBlogByQuery(title);
+        return bm.delBlog(id);
     }
 
     /*
@@ -288,7 +260,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getBlogByMixtureQuery(tagId,classifyId,title);
+        return bm.getBlogByMixtureQuery(tagId, classifyId, title);
     }
 
     /*
@@ -304,9 +276,8 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getTimeLine();
+        return bm.getTimeLine();
     }
-
 
 
     /*
@@ -317,7 +288,7 @@ public class BlogServiceImp implements BlogService {
      * @return java.util.List
      **/
     @Override
-    public Map getBlogDetail(int blogId,HttpServletRequest req) {
+    public Map getBlogDetail(int blogId, HttpServletRequest req) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
         BlogMapper bm = session.getMapper(BlogMapper.class);
@@ -326,20 +297,19 @@ public class BlogServiceImp implements BlogService {
 
         //获得博文详情,并将博文内容转换为 html
         Map blogDetail = bm.getBlogDetail(blogId);
-        blogDetail.put("blog_body",tool.markDownStrTohtml( (String)blogDetail.get("blog_body") ));
+        blogDetail.put("blog_body", tool.markDownStrTohtml((String) blogDetail.get("blog_body")));
 
-        m.put("blogDetail",blogDetail);
+        m.put("blogDetail", blogDetail);
         //获得博文标签
-        m.put("blogTag",bm.getBlogTag(blogId));
+        m.put("blogTag", bm.getBlogTag(blogId));
         //获得博文评论
-        m.put("comment",bm.getBlogComment(blogId));
+        m.put("comment", bm.getBlogComment(blogId));
         // 获得并生成版权信息
-        m.put("copyright",tool.generateCopyright(bm.getBlogCopyright(blogId)));
-
+        m.put("copyright", tool.generateCopyright(bm.getBlogCopyright(blogId)));
 
 
         //保存博客访问记录
-        bm.insertBlogVisitor(blogId,tool.getIRealIPAddr(req));
+        bm.insertBlogVisitor(blogId, tool.getIRealIPAddr(req));
 
 
         return m;
@@ -358,7 +328,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getBlogTag(blogId);
+        return bm.getBlogTag(blogId);
     }
 
     /*
@@ -374,7 +344,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getBlogComment(blogId);
+        return bm.getBlogComment(blogId);
     }
 
     /*
@@ -390,7 +360,7 @@ public class BlogServiceImp implements BlogService {
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getBlogCopyright(blogId);
+        return bm.getBlogCopyright(blogId);
     }
 
 
@@ -402,7 +372,7 @@ public class BlogServiceImp implements BlogService {
      * @return boolean
      **/
     @Override
-    public boolean insertBlogComment(String nickName, String commentBody, int blogId,int replyCommentId, String ip){
+    public boolean insertBlogComment(String nickName, String commentBody, int blogId, int replyCommentId, String ip) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
@@ -410,41 +380,39 @@ public class BlogServiceImp implements BlogService {
 
         Map m = new HashMap();
 
-        m.put("blogId",blogId);
-        m.put("nickName",nickName);
-        m.put("commentBody",commentBody);
-        m.put("replyCommentId",replyCommentId);
-        m.put("ip",ip);
+        m.put("blogId", blogId);
+        m.put("nickName", nickName);
+        m.put("commentBody", commentBody);
+        m.put("replyCommentId", replyCommentId);
+        m.put("ip", ip);
 
 
 //       若该用户是匿名
-        if((nickName == null)|| (nickName == "")){
-            m.put("nickName","匿名");
-            m.put("iconPath","img/icon/anonymity.png");
-        }else{
+        if ((nickName == null) || (nickName == "")) {
+            m.put("nickName", "匿名");
+            m.put("iconPath", "img/icon/anonymity.png");
+        } else {
 
 //       判断该用户是否已在本条博客评论过
 
-            if(bm.queryCommentByBlog(blogId,ip).size()>0){
+            if (bm.queryCommentByBlog(blogId, ip).size() > 0) {
                 //博客评论过，使用以前生成的头像
-                m.put("iconPath",bm.getCommentBlogIcon(blogId,ip));
+                m.put("iconPath", bm.getCommentBlogIcon(blogId, ip));
 
-            }else{
+            } else {
                 //没评论过,则生成头像
-                m.put("iconPath",tool.getIcon());
+                m.put("iconPath", tool.getIcon());
             }
 
         }
 
 
-        if(bm.insertBlogComment(m)>0){
+        if (bm.insertBlogComment(m) > 0) {
             return true;
         }
 
         return false;
     }
-
-
 
 
     /*
@@ -454,12 +422,14 @@ public class BlogServiceImp implements BlogService {
      * @Param []
      * @return int
      **/
-    public int getBlogNum(){
+    public int getBlogNum() {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         BlogMapper bm = session.getMapper(BlogMapper.class);
 
-        return  bm.getBlogNum();
-    };
+        return bm.getBlogNum();
+    }
+
+    ;
 }

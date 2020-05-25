@@ -20,11 +20,9 @@ import java.util.*;
 public class Tool {
 
 
-
-    private  final String KEY_MD5 = "MD5";
-    private  final String[] strDigits = {"0", "1", "2", "3", "4", "5",
+    private final String KEY_MD5 = "MD5";
+    private final String[] strDigits = {"0", "1", "2", "3", "4", "5",
             "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
-
 
 
     /*
@@ -34,16 +32,15 @@ public class Tool {
      * @Param [str]
      * @return java.lang.String
      **/
-    public String wipeOffStr(String str){
+    public String wipeOffStr(String str) {
 
-        String temp = str.replaceAll(" ","")
-                .replaceAll("\n","")
+        String temp = str.replaceAll(" ", "")
+                .replaceAll("\n", "")
                 .trim();
 
         return temp;
 
     }
-
 
 
     /*
@@ -53,21 +50,20 @@ public class Tool {
      * @Param [arr]
      * @return java.lang.String[]
      **/
-    public String[] removeArrayNull(String[] arr){
+    public String[] removeArrayNull(String[] arr) {
 
-        List<String> strList= Arrays.asList(arr);
-        List<String> newArr=new ArrayList<String>();
-        for (int i = 0; i <strList.size(); i++) {
-            if (strList.get(i)!=null&&!strList.get(i).equals("")){
-                newArr.add(  wipeOffStr(strList.get(i) ) );
+        List<String> strList = Arrays.asList(arr);
+        List<String> newArr = new ArrayList<String>();
+        for (int i = 0; i < strList.size(); i++) {
+            if (strList.get(i) != null && !strList.get(i).equals("")) {
+                newArr.add(wipeOffStr(strList.get(i)));
             }
         }
         String[] strNewArray = newArr.toArray(new String[newArr.size()]);
-        return   strNewArray;
+        return strNewArray;
 
 
     }
-
 
 
     /*
@@ -77,45 +73,45 @@ public class Tool {
      * @Param [copyrightInfo]
      * @return java.util.Map
      **/
-    public Map generateCopyright(List copyrightInfo){
+    public Map generateCopyright(List copyrightInfo) {
 
         Map m = new HashMap();
 
         System.out.println("copyrightInfotoList");
 
 
-        if(copyrightInfo!=null){
+        if (copyrightInfo != null) {
 
             Map tempMap = null;
             try {
-                tempMap = (Map)copyrightInfo.get(0);
+                tempMap = (Map) copyrightInfo.get(0);
 
-                int copyrightFlag = Integer.parseInt((String)tempMap.get("copyright_flag"));
+                int copyrightFlag = Integer.parseInt((String) tempMap.get("copyright_flag"));
 
-                if(copyrightFlag == 0){
-                    m.put("copyrightFlag","原创");
-                    m.put("copyrightInfo","本文为博主的原创文章，转载请附上原文出处链接及本声明。");
-                }else if(copyrightFlag == 1){
-                    m.put("copyrightFlag","转载");
-                    m.put("copyrightInfo","本文为博主的转载文章，转载请附上原文出处链接。");
-                    m.put("copyrightAuthor",tempMap.get("author"));
-                }else{
-                    m.put("copyrightFlag","翻译");
-                    m.put("copyrightInfo","本文为博主的翻译文章，转载请附上原文出处链接及本声明。");
+                if (copyrightFlag == 0) {
+                    m.put("copyrightFlag", "原创");
+                    m.put("copyrightInfo", "本文为博主的原创文章，转载请附上原文出处链接及本声明。");
+                } else if (copyrightFlag == 1) {
+                    m.put("copyrightFlag", "转载");
+                    m.put("copyrightInfo", "本文为博主的转载文章，转载请附上原文出处链接。");
+                    m.put("copyrightAuthor", tempMap.get("author"));
+                } else {
+                    m.put("copyrightFlag", "翻译");
+                    m.put("copyrightInfo", "本文为博主的翻译文章，转载请附上原文出处链接及本声明。");
                 }
 
-                m.put("path",tempMap.get("path"));
+                m.put("path", tempMap.get("path"));
 
             } catch (Exception e) {
-                m.put("copyrightFlag","原创");
-                m.put("copyrightInfo","本文为博主的原创文章，转载请附上原文出处链接及本声明。");
+                m.put("copyrightFlag", "原创");
+                m.put("copyrightInfo", "本文为博主的原创文章，转载请附上原文出处链接及本声明。");
             }
 
 
-        }else{
+        } else {
 
-            m.put("copyrightFlag","原创");
-            m.put("copyrightInfo","本文为博主的原创文章，转载请附上原文出处链接及本声明。");
+            m.put("copyrightFlag", "原创");
+            m.put("copyrightInfo", "本文为博主的原创文章，转载请附上原文出处链接及本声明。");
         }
 
 
@@ -132,7 +128,7 @@ public class Tool {
      * @Param [str]
      * @return java.lang.String
      **/
-    public String markDownStrTohtml(String str){
+    public String markDownStrTohtml(String str) {
 
         //  标题# 后面需要有空格才会正确渲染标题
         Parser parser = Parser.builder().build();
@@ -142,10 +138,6 @@ public class Tool {
         return renderer.render(document);
 
     }
-
-
-
-
 
 
     /*
@@ -160,8 +152,6 @@ public class Tool {
     }
 
 
-
-
     /*
      * @Description 随机获得一张头像
      * @Author 284668461@qq.com
@@ -169,18 +159,12 @@ public class Tool {
      * @Param []
      * @return java.lang.String
      **/
-    public String getIcon(){
+    public String getIcon() {
 
         return "img/icon/icon_"
                 + new Random().nextInt(20)
-                +".jpg";
+                + ".jpg";
     }
-
-
-
-
-
-
 
 
     /*
@@ -190,7 +174,7 @@ public class Tool {
      * @Param [bByte]
      * @return java.lang.String
      **/
-    private  String byteToArrayString(byte bByte) {
+    private String byteToArrayString(byte bByte) {
         int iRet = bByte;
         if (iRet < 0) {
             iRet += 256;
@@ -207,7 +191,7 @@ public class Tool {
      * @Param [bByte]
      * @return java.lang.String
      **/
-    private  String byteToString(byte[] bByte) {
+    private String byteToString(byte[] bByte) {
         StringBuffer sBuffer = new StringBuffer();
         for (int i = 0; i < bByte.length; i++) {
             sBuffer.append(byteToArrayString(bByte[i]));
@@ -222,11 +206,10 @@ public class Tool {
      * @Param [strObj]
      * @return java.lang.String
      **/
-    public  String getMD5Code(String strObj) throws Exception {
+    public String getMD5Code(String strObj) throws Exception {
         MessageDigest md = MessageDigest.getInstance(KEY_MD5);
         return byteToString(md.digest(strObj.getBytes()));
     }
-
 
 
 }

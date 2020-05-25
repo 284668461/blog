@@ -1,5 +1,3 @@
-
-
 /*
  * @Description 仿android toast 提示
  * @Author 284668461@qq.com
@@ -7,13 +5,13 @@
  * @Param
  * @return
  **/
-function Toast(msg,time){
+function Toast(msg, time) {
 
-    time = time===null? 2000:isNaN(time)?2000:time;
+    time = time === null ? 2000 : isNaN(time) ? 2000 : time;
 
     var m = document.createElement('div');
     m.innerHTML = msg;
-    m.style.cssText="width: 60%;" +
+    m.style.cssText = "width: 60%;" +
         "min-width: 150px;" +
         "opacity: 0.8;" +
         "height: 40px;" +
@@ -29,11 +27,13 @@ function Toast(msg,time){
         "pointer-events: none;" +
         "font-size: 2vm;";
     document.body.appendChild(m);
-    setTimeout(function() {
+    setTimeout(function () {
         var d = 0.5;
         m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
         m.style.opacity = '0';
-        setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+        setTimeout(function () {
+            document.body.removeChild(m)
+        }, d * 1000);
     }, time);
 }
 

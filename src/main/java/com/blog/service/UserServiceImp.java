@@ -4,6 +4,7 @@ import com.blog.MyBatisUtil;
 import com.blog.dao.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -12,8 +13,8 @@ import java.util.Map;
  * @Author 284668461@qq.com
  * @Date 15:22 2020/4/21
  **/
-@Configuration
-public class UserServiceImp implements UserService{
+@Service
+public class UserServiceImp implements UserService {
 
 
     /*
@@ -26,14 +27,14 @@ public class UserServiceImp implements UserService{
     @Override
     public Boolean login(String user, String pass) {
 
-        SqlSession session =  MyBatisUtil.getSessionFactory();
+        SqlSession session = MyBatisUtil.getSessionFactory();
 
         UserMapper um = session.getMapper(UserMapper.class);
 
-        Map m =  um.Login(user,pass);
+        Map m = um.Login(user, pass);
 
-        if((m != null)&&(m.size()>0)){
-            return  true;
+        if ((m != null) && (m.size() > 0)) {
+            return true;
         }
 
         return false;
@@ -41,7 +42,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public Map getUserInfo(String user) {
-        SqlSession session =  MyBatisUtil.getSessionFactory();
+        SqlSession session = MyBatisUtil.getSessionFactory();
 
         UserMapper um = session.getMapper(UserMapper.class);
 

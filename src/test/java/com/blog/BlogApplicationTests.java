@@ -41,7 +41,6 @@ class BlogApplicationTests {
         System.out.println(us.getUserInfo("2546"));
 
 
-
     }
 
 }

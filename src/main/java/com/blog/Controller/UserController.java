@@ -141,7 +141,6 @@ public class UserController {
     }
 
 
-
     /*
      * @Description 查询登录状态
      * @Author 284668461@qq.com
@@ -153,16 +152,15 @@ public class UserController {
     @ResponseBody
     public Boolean queryLoginState(HttpSession session) {
 
-        String user = (String)session.getAttribute("user");
+        String user = (String) session.getAttribute("user");
 
-        if(user!=null){
-            return  true;
-        }else{
+        if (user != null) {
+            return true;
+        } else {
             return false;
         }
 
     }
-
 
 
     /*

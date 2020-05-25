@@ -6,14 +6,16 @@ import com.blog.other.Tool;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-@Configuration
+@Service
 public class AdminServiceImp implements AdminService {
 
     @Autowired
     private Tool tool;
+
     /*
      * @Description 新增博客
      * @Author 284668461@qq.com
@@ -29,7 +31,7 @@ public class AdminServiceImp implements AdminService {
         AdminMapper m = session.getMapper(AdminMapper.class);
 
         int resNum = m.insertBlog(hm);
-        
+
 
         return resNum;
     }
@@ -49,9 +51,9 @@ public class AdminServiceImp implements AdminService {
 
         AdminMapper m = session.getMapper(AdminMapper.class);
 
-        int resNum = m.insertBlogClassify(blogId,tool.wipeOffStr(classify));
+        int resNum = m.insertBlogClassify(blogId, tool.wipeOffStr(classify));
 
-        
+
         return resNum;
     }
 
@@ -64,20 +66,18 @@ public class AdminServiceImp implements AdminService {
      * @return int
      **/
     @Override
-    public int insertBlogTag(int blogId,int[] arr) {
+    public int insertBlogTag(int blogId, int[] arr) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
 
-        int resNum = m.insertBlogTag(blogId,arr);
-
+        int resNum = m.insertBlogTag(blogId, arr);
 
 
         return resNum;
 
     }
-
 
 
     /*
@@ -113,9 +113,8 @@ public class AdminServiceImp implements AdminService {
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
-        return  m.delBlog(blogId);
+        return m.delBlog(blogId);
     }
-
 
 
     /*
@@ -130,10 +129,9 @@ public class AdminServiceImp implements AdminService {
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
-        return  m.queryTag(Tag);
+        return m.queryTag(Tag);
 
     }
-
 
 
     /*
@@ -186,9 +184,8 @@ public class AdminServiceImp implements AdminService {
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
-        return  m.queryClassify(classify);
+        return m.queryClassify(classify);
     }
-
 
 
     /*
@@ -198,24 +195,24 @@ public class AdminServiceImp implements AdminService {
      * @Param [blogId, copyrightFlag, author, path]
      * @return int
      **/
-    public int insertCopyright(int blogId,String copyrightFlag,String author,String path){
+    public int insertCopyright(int blogId, String copyrightFlag, String author, String path) {
 
         SqlSession session = MyBatisUtil.getSessionFactory();
 
         AdminMapper m = session.getMapper(AdminMapper.class);
 
-        int dataNum ;
-        if(copyrightFlag.equals("原创")){
+        int dataNum;
+        if (copyrightFlag.equals("原创")) {
 
-             dataNum =  m.insertCopyright(blogId,0,author,path);
+            dataNum = m.insertCopyright(blogId, 0, author, path);
 
-        }else if(copyrightFlag.equals("转载")){
+        } else if (copyrightFlag.equals("转载")) {
 
-            dataNum = m.insertCopyright(blogId,1,author,path);
+            dataNum = m.insertCopyright(blogId, 1, author, path);
 
-        }else{
+        } else {
 
-            dataNum =  m.insertCopyright(blogId,2,author,path);
+            dataNum = m.insertCopyright(blogId, 2, author, path);
 
         }
 

@@ -1,11 +1,6 @@
 package com.blog.dao;
 
-public interface OtherMapper{
-
-
-
-
-
+public interface OtherMapper {
 
 
     /*
@@ -15,8 +10,7 @@ public interface OtherMapper{
      * @Param []
      * @return int
      **/
-    int updateVisitor ();
-
+    int updateVisitor();
 
 
     /*
@@ -26,9 +20,7 @@ public interface OtherMapper{
      * @Param []
      * @return int
      **/
-    int updateBlogVisitor ();
-
-
+    int updateBlogVisitor();
 
 
     /*
@@ -38,7 +30,7 @@ public interface OtherMapper{
      * @Param []
      * @return int
      **/
-    int  insertComment();
+    int insertComment();
 
 
 }

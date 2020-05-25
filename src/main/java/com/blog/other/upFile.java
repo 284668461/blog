@@ -21,11 +21,11 @@ public class upFile {
      * @Description 上传图片
      * @Author 284668461@qq.com
      * @Date 22:18 2020/4/26
-     * @Param [file, path, showPath]
+     * @Param [file]
      * @return java.lang.String
      **/
 
-    public String upImg(MultipartFile file){
+    public String upImg(MultipartFile file) {
 
         String path = "C:/appRoot/blog/upFile/";
         String showPath = "/Path/img/";
@@ -38,28 +38,28 @@ public class upFile {
         String prefix = fileName.substring(fileName.lastIndexOf('.') + 1);
 
         //得到当前时间戳
-        Long  time = Calendar.getInstance().getTimeInMillis();
+        Long time = Calendar.getInstance().getTimeInMillis();
 
 
-        String imgName= time+"."+prefix;
-        String filePath = path+ imgName;
+        String imgName = time + "." + prefix;
+        String filePath = path + imgName;
 
 
         File targetFile = new File(path);
-        if(!targetFile.exists()){
+        if (!targetFile.exists()) {
             targetFile.mkdirs();
         }
         FileOutputStream out = null;
 
         try {
-            out = new FileOutputStream(filePath );
+            out = new FileOutputStream(filePath);
             out.write(file.getBytes());
             out.flush();
             out.close();
 
 
 //          前端显示路径
-            String  resPath = "/Path/img/"+imgName;
+            String resPath = "/Path/img/" + imgName;
             return resPath;
 
         } catch (Exception e) {

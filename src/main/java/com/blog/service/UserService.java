@@ -23,7 +23,6 @@ public interface UserService {
     Boolean login(String user, String pass);
 
 
-
     /*
      * @Description 获得用户信息
      * @Author 284668461@qq.com
@@ -32,7 +31,6 @@ public interface UserService {
      * @return java.util.Map
      **/
     Map getUserInfo(String user);
-
 
 
 }

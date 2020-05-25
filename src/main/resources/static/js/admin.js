@@ -1,13 +1,13 @@
-$(()=>{
+$(() => {
 
-    window.onunload = function() {
-        window.scrollTo(0,0);
+    window.onunload = function () {
+        window.scrollTo(0, 0);
     };
 
 
-    setTimeout(()=>{
+    setTimeout(() => {
         $("#loading").hide();
-    },1200);
+    }, 1200);
 
 
     //初始化
@@ -19,48 +19,42 @@ $(()=>{
 
 
     //初始化mk编辑器
-    let  iEditormd = editormd("iEditormd",{
+    let iEditormd = editormd("iEditormd", {
 
-        width:"100%",
-        height:640,
+        width: "100%",
+        height: 640,
         syncScrolling: "single",
-        path:"lib/editor/lib/",
-        saveHTMLToTextarea : true,
-        autoFocus:false,
+        path: "lib/editor/lib/",
+        saveHTMLToTextarea: true,
+        autoFocus: false,
 
         /**上传图片相关配置如下*/
-        imageUpload : true,
-        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-        imageUploadURL : "/admin/uploadImg",//注意你后端的上传图片服务地址
+        imageUpload: true,
+        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+        imageUploadURL: "/admin/uploadImg",//注意你后端的上传图片服务地址
 
     });
 
 
-
-
     //tab
-    $("#tab>a.item").on("click",function(){
+    $("#tab>a.item").on("click", function () {
 
 
         var clickTab = $(this).attr("data-tab");
 
         $(this).addClass("active").siblings().removeClass("active");
 
-        $("#"+clickTab).removeClass("ihide").siblings("section").addClass("ihide");
+        $("#" + clickTab).removeClass("ihide").siblings("section").addClass("ihide");
 
     });
 
 
-
-
-
-
     //注销按钮点击事件
-    $("#loginOut").click(function() {
+    $("#loginOut").click(function () {
 
         $.post({
             url: "user/loginOut",
-            success:(data)=> {
+            success: (data) => {
                 if (data) {
                     location.replace("index.html");
                 }
@@ -69,72 +63,70 @@ $(()=>{
     });
 
     //搜索博客点击事件
-    $("#searchBlog").on("click",()=>{
+    $("#searchBlog").on("click", () => {
 
 
-        var title  = $("#searchInput");
-        var tagId  = $($("#blogListLabel>div.active")[0]).data("id");
-        var classifyId  = $($("#searchClassify>div.active")[0]).data("id");
+        var title = $("#searchInput");
+        var tagId = $($("#blogListLabel>div.active")[0]).data("id");
+        var classifyId = $($("#searchClassify>div.active")[0]).data("id");
 
 
-        if( (title.val()<1)&&(typeof(tagId) === 'undefined')&&(typeof(classifyId) === 'undefined')){
+        if ((title.val() < 1) && (typeof (tagId) === 'undefined') && (typeof (classifyId) === 'undefined')) {
 
             Toast("请输入关键字，或选择标签，分类");
-            return ;
+            return;
         }
-
-
 
 
         $("#loading").show();
 
 
-        toLoadBlogByMixtureQuery(tagId,classifyId,title.val());
+        toLoadBlogByMixtureQuery(tagId, classifyId, title.val());
 
     });
 
 
     //新增分类点击事件
-    $("#addClassify").on("click",()=>{
+    $("#addClassify").on("click", () => {
 
         $('#hint_addClassify').modal({
-            closable : false,
-            onDeny   : function(){
+            closable: false,
+            onDeny: function () {
             },
-            onApprove: function() {
+            onApprove: function () {
 
                 var input = $("#addClassifyInput");
 
 
-                if(input.val().length<1){
+                if (input.val().length < 1) {
                     Toast("请输入分类名称");
                     return false;
                 }
 
 
                 $.post({
-                    url:"/admin/queryClassify",
-                    data:{classify:input.val()},
-                    success:(data)=>{
+                    url: "/admin/queryClassify",
+                    data: {classify: input.val()},
+                    success: (data) => {
 
-                        if(data){
+                        if (data) {
 
                             $.post({
-                                url:"/admin/insertClassify",
-                                data:{classify:input.val()},
-                                success:(data)=>{
+                                url: "/admin/insertClassify",
+                                data: {classify: input.val()},
+                                success: (data) => {
 
-                                    if(data){
+                                    if (data) {
                                         Toast("新增分类成功");
                                         toLoadClassify();
 
                                         input.val("");
-                                    }else{
+                                    } else {
                                         Toast("新增分类失败，请稍后重试");
                                     }
                                 }
                             });
-                        }else{
+                        } else {
                             Toast("该分类已存在");
                             return false;
                         }
@@ -147,45 +139,45 @@ $(()=>{
 
 
     //新增标签点击事件
-    $("#addTag").on("click",()=>{
+    $("#addTag").on("click", () => {
 
         $('#hint_addTag').modal({
-            closable : false,
-            onDeny   : function(){
+            closable: false,
+            onDeny: function () {
 
             },
-            onApprove: function() {
+            onApprove: function () {
 
 
                 var input = $("#addTagInput");
 
 
-                if(input.val().length<1){
+                if (input.val().length < 1) {
                     Toast("请输入标签名称");
                     return false;
                 }
 
 
                 $.post({
-                    url:"/admin/queryTag",
-                    data:{Tag:input.val()},
-                    success:(data)=>{
+                    url: "/admin/queryTag",
+                    data: {Tag: input.val()},
+                    success: (data) => {
 
-                        if(data){
+                        if (data) {
                             $.post({
-                                url:"/admin/insertTag",
-                                data:{Tag:input.val()},
-                                success:(data)=>{
-                                    if(data){
+                                url: "/admin/insertTag",
+                                data: {Tag: input.val()},
+                                success: (data) => {
+                                    if (data) {
                                         Toast("新增标签成功");
                                         toLoadLabel();
                                         input.val("");
-                                    }else{
+                                    } else {
                                         Toast("新增标签失败，请稍后重试");
                                     }
                                 }
                             });
-                        }else{
+                        } else {
                             Toast("该标签已存在");
                             return false;
                         }
@@ -198,10 +190,8 @@ $(()=>{
     });
 
 
-
-
     //封面上传预览
-    $("#upImg").on('click', ()=>{
+    $("#upImg").on('click', () => {
         $("#fileUpload").click();
     });
 
@@ -225,7 +215,7 @@ $(()=>{
     });
 
     //发布按钮点击事件
-    $("#publishConfirm").on("click",()=>{
+    $("#publishConfirm").on("click", () => {
 
         //    获得输入信息
         var title = $("#blogTitle");
@@ -246,24 +236,23 @@ $(()=>{
         var blogIsAdmire = $("#blogIsAdmire").is(':checked');
 
 
-
         //将选中的标签保存到数组
         var tagArr = new Array();
         for (let i = 0; i < tag.length; i++) {
-            tagArr.push( $(tag[i]).attr("data-id")  )
+            tagArr.push($(tag[i]).attr("data-id"))
         }
 
 
         //    验证信息完整性
-        if((original.val()!="原创") && (original.val()!= undefined)){
+        if ((original.val() != "原创") && (original.val() != undefined)) {
 
 
-            if(author.val().length<1){
+            if (author.val().length < 1) {
                 Toast("请输入原作者名称");
                 return;
             }
 
-            if(path.val().length<1){
+            if (path.val().length < 1) {
                 Toast("请输入原文地址");
                 return;
             }
@@ -271,65 +260,61 @@ $(()=>{
         }
 
 
-
-
-        if(title.val().length<=0){
+        if (title.val().length <= 0) {
 
             Toast("请输入标题");
             return;
         }
 
-        if(blogIntro.val().length<=0){
+        if (blogIntro.val().length <= 0) {
 
             Toast("请输入简介");
             return;
         }
 
 
-
-
         //    发送请求
         var formData = new FormData();
-        formData.append('file',  $(coverImg).prop('files')[0] );
-        formData.append('title',  title.val() );
+        formData.append('file', $(coverImg).prop('files')[0]);
+        formData.append('title', title.val());
 
-        if( $( original[0] ).attr("data-value") != undefined){
+        if ($(original[0]).attr("data-value") != undefined) {
 
-            formData.append('original',  $( original[0] ).attr("data-value") );
-        }else{
+            formData.append('original', $(original[0]).attr("data-value"));
+        } else {
 
-            formData.append('original',  "原创" );
+            formData.append('original', "原创");
         }
 
-        var classifyTemp = $( classify[0] ).text();
+        var classifyTemp = $(classify[0]).text();
 
-        if(classifyTemp.length<1){
+        if (classifyTemp.length < 1) {
             classifyTemp = "技术文章"
         }
 
 
         $("#loading").show();
 
-        formData.append('classify',  classifyTemp );
-        formData.append('tagArr',  tagArr );
-        formData.append('body',  publishBody.val() );
-        formData.append('blogIsDraft',  blogIsDraft );
-        formData.append('blogIsComment',  blogIsComment );
-        formData.append('blogIsAdmire',  blogIsAdmire );
-        formData.append('author',  author.val() );
-        formData.append('path',  path.val() );
-        formData.append("blogIntro",  blogIntro.val() );
+        formData.append('classify', classifyTemp);
+        formData.append('tagArr', tagArr);
+        formData.append('body', publishBody.val());
+        formData.append('blogIsDraft', blogIsDraft);
+        formData.append('blogIsComment', blogIsComment);
+        formData.append('blogIsAdmire', blogIsAdmire);
+        formData.append('author', author.val());
+        formData.append('path', path.val());
+        formData.append("blogIntro", blogIntro.val());
 
 
         $.post({
-            url:"/admin/insertBlog",
+            url: "/admin/insertBlog",
             data: formData,
             processData: false,
             contentType: false,
 
-            success:(data)=>{
+            success: (data) => {
 
-                if(data){
+                if (data) {
                     $("#loading").hide();
                     Toast("发布博客成功");
                     location.replace(document.referrer);
@@ -339,10 +324,8 @@ $(()=>{
     });
 
 
-
-
     //删除博客按钮点击事件
-    $("body").on("click",".delBlog",function(item){
+    $("body").on("click", ".delBlog", function (item) {
 
         var that = $("this");
 
@@ -350,20 +333,20 @@ $(()=>{
 
 
         $('#hint').modal({
-            closable : false,
-            onDeny   : function(){
+            closable: false,
+            onDeny: function () {
 
             },
-            onApprove: function() {
+            onApprove: function () {
 
                 $.post({
-                    url:"/admin/delBlog",
-                    data:{
-                        blogId:blogid
+                    url: "/admin/delBlog",
+                    data: {
+                        blogId: blogid
                     },
-                    success:(data)=>{
+                    success: (data) => {
 
-                        if(data){
+                        if (data) {
                             Toast("删除博客成功");
                             toloadBlog();
                         }
@@ -375,22 +358,18 @@ $(()=>{
     });
 
 
-
-
-
-
     //加载用户信息
-    function toLoadUserInfo(){
+    function toLoadUserInfo() {
         $.post({
-            url:"/user/getLoginInfo",
-            success:(data)=>{
+            url: "/user/getLoginInfo",
+            success: (data) => {
 
-                if(data.length<1){
+                if (data.length < 1) {
                     location.replace("index.html");
-                }else{
+                } else {
                     var info = JSON.parse(data);
 
-                    $("#userIcon").attr("src",info["user_icon"]);
+                    $("#userIcon").attr("src", info["user_icon"]);
                     $("#userName").text(info["name"]);
                 }
             }
@@ -399,20 +378,20 @@ $(()=>{
 
 
     //加载博客
-    function toloadBlog(){
+    function toloadBlog() {
         $.post({
-            url:"/blog/getAllBlog",
-            success:(data)=>{
+            url: "/blog/getAllBlog",
+            success: (data) => {
 
                 var info = JSON.parse(data);
 
-                info.map((item,index,arr)=>{
+                info.map((item, index, arr) => {
 
                     //若评论数和查看人数为空则替换为0
-                    if(item.comment_num === null){
+                    if (item.comment_num === null) {
                         item.comment_num = 0;
                     }
-                    if(item.visitor_num === null){
+                    if (item.visitor_num === null) {
                         item.visitor_num = 0;
                     }
                 });
@@ -426,10 +405,10 @@ $(()=>{
 
 
     //渲染博客信息
-    function loadBlog(blogInfo){
+    function loadBlog(blogInfo) {
 
         var temp = "";
-        for(var i=0;i<blogInfo.length;i++){
+        for (var i = 0; i < blogInfo.length; i++) {
 
             temp += `<tr>
                             <td>
@@ -509,14 +488,14 @@ $(()=>{
      * @Param
      * @return
      **/
-    function initializeDropdown(){
+    function initializeDropdown() {
         $(".ui.dropdown").dropdown();
         $("#titleDropDown").dropdown({
-            onChange:function(item){
+            onChange: function (item) {
                 console.log(item);
-                if(item !== "原创"){
+                if (item !== "原创") {
                     $("#hintCopyright").slideDown();
-                }else{
+                } else {
                     $("#hintCopyright").slideUp();
                 }
             }
@@ -532,11 +511,11 @@ $(()=>{
      * @Param
      * @return
      **/
-    function toLoadClassify(){
+    function toLoadClassify() {
 
         $.post({
-            url:"/blog/getClassify",
-            success:(data)=>{
+            url: "/blog/getClassify",
+            success: (data) => {
 
                 loadClassify(JSON.parse(data));
             }
@@ -551,12 +530,12 @@ $(()=>{
      * @Param
      * @return
      **/
-    function loadClassify(info){
+    function loadClassify(info) {
 
         var htmlTemp = ``;
 
 
-        for(var i=0;i<info.length;i++){
+        for (var i = 0; i < info.length; i++) {
 
             htmlTemp += `<div class=\"item\" data-id=" ${info[i].id}"> ${info[i].name}  </div>`
         }
@@ -567,8 +546,6 @@ $(()=>{
     }
 
 
-
-
     /*
      * @Description 加载标签
      * @Author 284668461@qq.com
@@ -576,10 +553,10 @@ $(()=>{
      * @Param
      * @return
      **/
-    function toLoadLabel(){
+    function toLoadLabel() {
         $.post({
-            url:"/blog/getTag",
-            success:(data)=>{
+            url: "/blog/getTag",
+            success: (data) => {
 
                 LoadLabel(JSON.parse(data));
             }
@@ -594,14 +571,14 @@ $(()=>{
      * @Param
      * @return
      **/
-    function LoadLabel(info){
+    function LoadLabel(info) {
 
         var blogListLabelHtmlTemp = ``;
-        var publishLabelHtmlTemp="";
+        var publishLabelHtmlTemp = "";
         LabelHtmlTemp = ``;
 
 
-        for(var i=0;i<info.length;i++){
+        for (var i = 0; i < info.length; i++) {
 
             blogListLabelHtmlTemp += `<div class="item" data-value=" ${info[i].name}" data-id=" ${info[i].id}"> ${info[i].name}  </div>`;
             // publishLabelHtmlTemp += ` <option value="${info[i].name}">${info[i].name}</option>`;
@@ -616,8 +593,6 @@ $(()=>{
     }
 
 
-
-
     /*
      * @Description 搜索博客
      * @Author 284668461@qq.com
@@ -625,22 +600,22 @@ $(()=>{
      * @Param
      * @return
      **/
-    function toLoadBlogByMixtureQuery(tagId = 0,classifyId = 0,title){
+    function toLoadBlogByMixtureQuery(tagId = 0, classifyId = 0, title) {
 
         $.post({
-            url:"/blog/getBlogByMixtureQuery",
-            data:{
-                tagId:tagId,
-                classifyId:classifyId,
-                title:title
+            url: "/blog/getBlogByMixtureQuery",
+            data: {
+                tagId: tagId,
+                classifyId: classifyId,
+                title: title
             },
-            success:(data)=>{
+            success: (data) => {
 
                 loadBlog(JSON.parse(data));
 
-                setTimeout(()=>{
+                setTimeout(() => {
                     $("#loading").hide();
-                },500);
+                }, 500);
             }
         });
     }

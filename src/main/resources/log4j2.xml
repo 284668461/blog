@@ -21,12 +21,12 @@
                 <charset>UTF-8</charset><!--此处设置字符集-->
             </encoder>
             <!--设置控制台输出格式-->
-            <PatternLayout pattern="${LOG_LAYOUT}" />
+            <PatternLayout pattern="${LOG_LAYOUT}"/>
         </Console>
 
         <!--日志文件输出-->
         <File name="file" fileName="${LOG_PATH}/blog.log">
-            <PatternLayout pattern="${LOG_LAYOUT}" />
+            <PatternLayout pattern="${LOG_LAYOUT}"/>
         </File>
 
         <Async name="Async">
@@ -35,7 +35,7 @@
 
         <!--使用随机读写流日志文件输出 append ,提高性能-->
         <RandomAccessFile name="accessFile" fileName="${LOG_PATH}/blog.log">
-        <PatternLayout pattern="${LOG_LAYOUT}" />
+            <PatternLayout pattern="${LOG_LAYOUT}"/>
         </RandomAccessFile>
 
 
@@ -51,18 +51,18 @@
             <!--日志拆分规则-->
             <Policies>
                 <!--在系统启动时,出发拆分规则,生产一个新的日志文件 -->
-                <OnStartupTriggeringPolicy />
+                <OnStartupTriggeringPolicy/>
 
                 <!--按照文件大小拆分,10MB-->
                 <SizeBasedTriggeringPolicy size="10 MB"/>
 
                 <!--按照时间节点拆分,规则根据 filePattern定义的 -->
-                <TimeBasedTriggeringPolicy />
+                <TimeBasedTriggeringPolicy/>
 
             </Policies>
 
             <!--指定同一目录下 ，文件个数限定 ，超过则进行覆盖-->
-            <DefaultRolloverStrategy max="10" />
+            <DefaultRolloverStrategy max="10"/>
 
         </RollingFile>
 
@@ -70,6 +70,7 @@
 
     <!-- Loggers 定义-->
     <Loggers>
+
         <!--定义日志级别-->
         <Root level="info">
 
@@ -79,8 +80,8 @@
             additivity=" false"不在继承 rootlogger对象
              -->
             <!--<AppenderRef ref="file" includelocation="false" />-->
-            <AppenderRef ref="Async" includelocation="false" />
-            <AppenderRef ref="console" />
+            <AppenderRef ref="Async" includelocation="false"/>
+            <AppenderRef ref="console"/>
         </Root>
     </Loggers>
 </Configuration>

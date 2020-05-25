@@ -11,8 +11,6 @@
     <link href="Semantic/semantic.min.css" rel="stylesheet">
 
 
-
-
     <link href="lib/typo/typo.css" rel="stylesheet">
 
 
@@ -26,7 +24,7 @@
     <link href="css/common.css" rel="stylesheet">
 
     <script src="js/vue.js"></script>
-    <script src="js/tool.js" ></script>
+    <script src="js/tool.js"></script>
     <script src="js/detail.js"></script>
     <link href="css/detail.css" rel="stylesheet">
 
@@ -34,12 +32,12 @@
 </head>
 <body>
 
-<div  class="ui attached segment animated slideInDown">
+<div class="ui attached segment animated slideInDown">
 
 
     <div class="ui breadcrumb black">
         <a href="index.html">blog</a>
-        <div class="divider" id="temp"> / </div>
+        <div class="divider" id="temp"> /</div>
         <a class="section active">详情</a>
 
     </div>
@@ -83,7 +81,7 @@
             <div class="ui top attached segment center aligned">
                 <div class="ui one column grid stackable">
                     <div class="column">
-                        <h3 class="ui teal header" >{{blogInfo.title}}</h3>
+                        <h3 class="ui teal header">{{blogInfo.title}}</h3>
                     </div>
                 </div>
 
@@ -128,7 +126,7 @@
             <div class="ui attached positive segment left  ">
 
 
-                <a  target="_blank" class="ui blue basic label" v-for="item in blogTag ">
+                <a target="_blank" class="ui blue basic label" v-for="item in blogTag ">
                     <i class=" tags icon left"></i>
                     {{item.name}}
                 </a>
@@ -148,7 +146,8 @@
                                 </li>
                                 <li>版权声明：{{copyright.copyrightInfo}}
                                     <br>
-                                    原文链接：{{copyright.path}}</li>
+                                    原文链接：{{copyright.path}}
+                                </li>
                             </ul>
                         </div>
 
@@ -160,14 +159,17 @@
             <div class="ui attached segment center aligned " v-show="!admireFlag">
 
 
-                <div  class=" payShow ui label flowing transition backInDown iMarginBottom"  id="PlayTourBody" v-show="admireInfoFlag">
+                <div class=" payShow ui label flowing transition backInDown iMarginBottom" id="PlayTourBody"
+                     v-show="admireInfoFlag">
                     <div class="ui images">
 
                         <div class="image">
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" >
+                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg"
+                                 alt="">
                         </div>
                         <div class="image">
-                            <img  src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg" alt="" >
+                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1584886233933&amp;di=984c5adffbeee9133453b53cdfaa912f&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F4ec2d5628535e5dd24d1534b74c6a7efcf1b62a1.jpg"
+                                 alt="">
                         </div>
 
                     </div>
@@ -189,54 +191,54 @@
     <div class="ui four wide column stackable right">
         &nbsp;
     </div>
-    <div class="ui twelve wide column stackable right" >
+    <div class="ui twelve wide column stackable right">
 
 
         <div class="ui bottom attached segment">
-            <div id="comment-container" class="ui teal segment"><div>
-                <h3 class="ui teal header center aligned">评论区</h3>
+            <div id="comment-container" class="ui teal segment">
+                <div>
+                    <h3 class="ui teal header center aligned">评论区</h3>
 
 
-                <div class="ui threaded comments" id="commentList">
-                    <div class="comment" v-for="(item,index) in comment">
-                        <a class="avatar">
-                            <img :src="item.icon_path">
-                        </a>
-                        <div class="content">
-
-
-                            <a class="author">
-                                <span>{{item.nickname}}</span>
+                    <div class="ui threaded comments" id="commentList">
+                        <div class="comment" v-for="(item,index) in comment">
+                            <a class="avatar">
+                                <img :src="item.icon_path">
                             </a>
-                            <div class="metadata">
-                                <span class="date">{{item.time}}</span>
-                            </div>
-                            <div class="text">
-                                <a class="iPaddingBottom" v-show="item.comment_id>0"  >
-                                    回复 {{item.replyCommentName}}
+                            <div class="content">
+
+
+                                <a class="author">
+                                    <span>{{item.nickname}}</span>
                                 </a>
+                                <div class="metadata">
+                                    <span class="date">{{item.time}}</span>
+                                </div>
+                                <div class="text">
+                                    <a class="iPaddingBottom" v-show="item.comment_id>0">
+                                        回复 {{item.replyCommentName}}
+                                    </a>
 
 
+                                    <p class="commentContainer">
+                                        {{item.body}}
+                                    </p>
 
-                                <p class="commentContainer">
-                                    {{item.body}}
-                                </p>
 
-
-                            </div>
-                            <div class="actions">
+                                </div>
+                                <div class="actions">
                                <span class="right">
 
                                    <a class="left "> {{index+1}} 楼</a>
                                    <a class="right iPaddingLeft" @click="replyClick(item.id,item.nickname)"> 回复</a>
                                </span>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-            </div>
+                </div>
                 <div id="comment-form" class="ui form" v-show="!commentFlag">
 
                     <div class="field">
@@ -248,7 +250,7 @@
                         <div class="m-margin-bottom-small m-mobile-wide  field">
                             <div class="ui m-margin-bottom-small m-mobile-wide left icon input iMarginBottom">
                                 <i class="user icon"></i>
-                                <input type="text" name="name" placeholder="昵称"  v-model="commentNickName">
+                                <input type="text" name="name" placeholder="昵称" v-model="commentNickName">
                             </div>
                         </div>
 
@@ -279,16 +281,7 @@
         </div>
 
 
-
-
-
-
     </div>
-
-
-
-
-
 
 
 </div>
@@ -296,12 +289,9 @@
 <!-- 中间end -->
 
 
-
-
 <div id="loading">
     <div class="loader"></div>
 </div>
-
 
 
 </body>

@@ -8,7 +8,7 @@ body {
     width: 100%;
     min-width: 320px;
 
-    background: url("../img/5136.png") ;
+    background: url("../img/5136.png");
     /*background-size: 100%;*/
 
 
@@ -18,99 +18,91 @@ body {
     overflow-y: scroll;
 }
 
-li{
+li {
     list-style: none;
 }
 
 
-
-
-#center{
+#center {
     margin-top: 25px;
     /*min-height:400px;*/
     /*height: 100%;*/
 }
 
 
-nav .menu{
+nav .menu {
     margin-top: -10px;
 }
 
-#sidebar{
+#sidebar {
     position: absolute;
     top: 0;
     right: 0;
-    margin-top:33px;
+    margin-top: 33px;
     display: none !important;
 }
 
 
-#info .item{
+#info .item {
 
     margin-top: 10px;
     text-align: center;
 }
 
 
-
-
-.iOpacity{
+.iOpacity {
     opacity: .9;
 }
 
 
-
-
-.iMarginTop{
+.iMarginTop {
     display: block;
     margin-top: 10px;
 }
 
 
-.iMarginLeft{
+.iMarginLeft {
     display: block;
     margin-left: 10px;
 }
 
-.iMarginRight{
+.iMarginRight {
     display: block;
     margin-Right: 10px;
 
 }
 
-.iMarginBottom{
+.iMarginBottom {
     display: block;
     margin-bottom: 10px !important;
 
 }
 
 
-
-.iPaddingBottom{
+.iPaddingBottom {
     padding-bottom: 25px;
 }
 
-.iPaddingLeft{
+.iPaddingLeft {
     padding-left: 25px;
 }
 
-.iLeft{
+.iLeft {
     float: left;
 }
 
 
-.iBolgListImg{
+.iBolgListImg {
     max-width: 100% !important;
 }
 
-.iLebal a{
+.iLebal a {
     float: left;
 
 }
 
 
-
-.iBlogBreviary{
+.iBlogBreviary {
     font-weight: 300 !important;
     letter-spacing: 1px !important;
     line-height: 1.8;
@@ -123,7 +115,7 @@ nav .menu{
 }
 
 
-.iBlogShortInfo{
+.iBlogShortInfo {
     width: 100% !important;
     min-width: 275px !important;
     overflow: hidden;
@@ -131,19 +123,18 @@ nav .menu{
 }
 
 
-.iRelative{
+.iRelative {
     position: relative;
 }
 
 
-.iInBottom{
-    position:absolute;
-    bottom:0;
+.iInBottom {
+    position: absolute;
+    bottom: 0;
 }
 
 
-
-.blogItem .ui.header{
+.blogItem .ui.header {
     height: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -151,49 +142,47 @@ nav .menu{
 }
 
 
-.blogItem  div.iInBottom{
+.blogItem div.iInBottom {
     line-height: 30px;
     margin-bottom: 2px;
 }
 
 
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 768px){
 
-
-    #sidebar{
+    #sidebar {
         display: block !important;
     }
 
-    .m-mobile-hide{
+    .m-mobile-hide {
 
         display: none !important;
     }
 
 
-    #login div.ui.vertical.divider{
+    #login div.ui.vertical.divider {
 
         display: none;
     }
 
-    #login div.ui.placeholder.segment{
+    #login div.ui.placeholder.segment {
         background: none;
     }
 
-    .iFill{
+    .iFill {
 
         width: calc(100% + 2px);
     }
 
 
-    #info .ui.card{
+    #info .ui.card {
         width: 100%;
         max-width: 768px
     }
 
 
-
-    .iBlogShortInfo{
+    .iBlogShortInfo {
         width: 100% !important;
         min-width: 300px !important;
         overflow: hidden;
@@ -203,11 +192,10 @@ nav .menu{
 }
 
 
-
 /*loading  start*/
 
 
-#loading{
+#loading {
     /*display: none;*/
     position: fixed;
     top: 0 !important;
@@ -217,7 +205,7 @@ nav .menu{
     text-align: center;
     vertical-align: middle;
     padding: 1em;
-    background-color: rgba(0,0,0,.85);
+    background-color: rgba(0, 0, 0, .85);
     opacity: .75;
     line-height: 1;
     -webkit-animation-fill-mode: both;
@@ -244,13 +232,13 @@ nav .menu{
     z-index: 9999;
 }
 
-.loader{
+.loader {
     width: 50px;
     height: 50px;
     margin: 0 auto;
     position: relative;
     top: 35%;
-    opacity:1;
+    opacity: 1;
 
 }
 
@@ -266,9 +254,9 @@ nav .menu{
     animation-fill-mode: both;
 
 
-
 }
-.loader:before{
+
+.loader:before {
     content: "";
     width: 50px;
     height: 5px;
@@ -280,7 +268,8 @@ nav .menu{
     left: 0;
     animation: shadow .5s linear infinite;
 }
-.loader:after{
+
+.loader:after {
     content: "";
     width: 50px;
     height: 50px;
@@ -291,7 +280,8 @@ nav .menu{
     left: 0;
     animation: loading .5s linear infinite;
 }
-@-webkit-keyframes loading{
+
+@-webkit-keyframes loading {
     17% {
         border-bottom-right-radius: 3px;
     }
@@ -309,7 +299,8 @@ nav .menu{
         transform: translateY(0) rotate(90deg);
     }
 }
-@keyframes loading{
+
+@keyframes loading {
     17% {
         border-bottom-right-radius: 3px;
     }
@@ -327,7 +318,8 @@ nav .menu{
         transform: translateY(0) rotate(90deg);
     }
 }
-@-webkit-keyframes shadow{
+
+@-webkit-keyframes shadow {
     0%,
     100% {
         transform: scale(1, 1);
@@ -336,7 +328,8 @@ nav .menu{
         transform: scale(1.2, 1);
     }
 }
-@keyframes shadow{
+
+@keyframes shadow {
     0%,
     100% {
         transform: scale(1, 1);
@@ -350,18 +343,17 @@ nav .menu{
 /*loading  end*/
 
 
-
 /*imgHover start*/
 
 
-
 .c4-izmir {
-    background-color:#A9A9A9;
+    background-color: #A9A9A9;
     background-color: var(--primary-color);
 }
+
 .c4-izmir {
     --text-color: #fff;
-    --primary-color:#A9A9A9;
+    --primary-color: #A9A9A9;
     --secondary-color: #0083B0;
     --padding: 1em;
     --transition-duration: 600ms;

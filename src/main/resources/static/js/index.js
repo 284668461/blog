@@ -1,20 +1,22 @@
-$(()=>{
+$(() => {
 
 
-    setTimeout(()=>{
+    setTimeout(() => {
         $("#loading").hide();
-    },1200);
+    }, 1200);
     // 解决浏览器记录刷新前滚动位置并跳转到滚动位置的不优雅操作
-    $(window).on('unload', function() { $(window).scrollTop(0); });
+    $(window).on('unload', function () {
+        $(window).scrollTop(0);
+    });
 
     //导航条 start---------------------------
-    $("#sidebar").on("click",()=>{
+    $("#sidebar").on("click", () => {
         $('.m-item').toggleClass("m-mobile-hide");
     });
 
 
     //切换 section
-    $("#nav a.item").click(function(){
+    $("#nav a.item").click(function () {
 
         let thisLabel = $(this).attr("data-section");
 
@@ -25,27 +27,27 @@ $(()=>{
 
 
     let loginContainer = new Vue({
-        el:"#loginContainer",
-        data:{
-            userName:"",
-            userIcon:"",
-            loginFlag:false
+        el: "#loginContainer",
+        data: {
+            userName: "",
+            userIcon: "",
+            loginFlag: false
         },
-        created:function(){
+        created: function () {
             this.queryLoginState();
         },
-        methods:{
+        methods: {
             //查询登录状态
-            queryLoginState:function(){
+            queryLoginState: function () {
 
                 $.post({
-                    url:"/user/queryLoginState",
-                    success:(data)=>{
+                    url: "/user/queryLoginState",
+                    success: (data) => {
 
-                        if(data){
+                        if (data) {
                             this.loginFlag = true;
                             this.toLoadUserInfo();
-                        }else{
+                        } else {
                             this.loginFlag = false;
                             this.cookieLogin();
                         }
@@ -54,16 +56,16 @@ $(()=>{
 
             },
             //cookie自动登录
-            cookieLogin:function(){
+            cookieLogin: function () {
 
                 $.post({
-                    url:"/user/cookieLogin",
-                    success:(data)=>{
+                    url: "/user/cookieLogin",
+                    success: (data) => {
 
-                        if(data){
+                        if (data) {
                             this.loginFlag = true;
                             this.toLoadUserInfo();
-                        }else{
+                        } else {
                             this.loginFlag = false;
                         }
                     }
@@ -71,13 +73,13 @@ $(()=>{
 
             },
             //加载用户信息
-            toLoadUserInfo:function (){
+            toLoadUserInfo: function () {
 
                 $.post({
-                    url:"/user/getLoginInfo",
-                    success:(data)=>{
+                    url: "/user/getLoginInfo",
+                    success: (data) => {
 
-                        if(data.length>1){
+                        if (data.length > 1) {
                             var info = JSON.parse(data);
                             this.userName = info["name"];
                             this.userIcon = info["user_icon"];
@@ -86,22 +88,22 @@ $(()=>{
                             //初始化 下拉
                             $(".ui.dropdown").dropdown();
 
-                        }else{
+                        } else {
                             this.loginFlag = false;
                         }
                     }
                 });
             },
             //登录按钮点击事件
-            loginBtn:function(){
+            loginBtn: function () {
 
                 $('#login').modal('show');
             },
             //退出登录
-            loginOut:function(){
+            loginOut: function () {
                 $.post({
                     url: "user/loginOut",
-                    success:(data)=> {
+                    success: (data) => {
                         if (data) {
                             this.loginFlag = false;
                         }
@@ -114,21 +116,20 @@ $(()=>{
 
 
     let login = new Vue({
-        el:"#login",
-        data:{
-            user:"",
-            pass:"",
-            rememberPassFlag:"false"
+        el: "#login",
+        data: {
+            user: "",
+            pass: "",
+            rememberPassFlag: "false"
         },
-        methods:{
+        methods: {
 
-            btnFun:function(){
+            btnFun: function () {
 
-                if((this.user.length<=0)||(this.pass.length<=0)){
+                if ((this.user.length <= 0) || (this.pass.length <= 0)) {
                     Toast("请输入账户或密码");
                     return;
                 }
-
 
 
                 $("#loading").show();
@@ -140,19 +141,18 @@ $(()=>{
                         pass: hex_md5(encodeURIComponent(this.pass)),
                         rememberPassFlag: this.rememberPassFlag,
                     })
-                    .then((res)=>{
-
+                    .then((res) => {
 
 
                         $("#loading").hide();
 
 
-                        if(res.data){
+                        if (res.data) {
                             // window.location.href = "admin.html";
                             $('#login').modal('hide');
                             loginContainer.loginFlag = true;
                             loginContainer.toLoadUserInfo();
-                        }else{
+                        } else {
                             Toast("登录失败，账户或密码错误");
                         }
                     })
@@ -167,100 +167,97 @@ $(()=>{
 //导航条 end---------------------------
 
 
-
-
-
 //home  start   ---------------------------
 
     let home = new Vue({
-        el:"#home",
-        data:{
-            homeBlogList : [],
-            hotBlogList : [],
-            tabCloud:[],
-            blogPage:0,
-            thisPage:0,
-            prePageBtn:'disabled',
-            nextPageBtn:false
+        el: "#home",
+        data: {
+            homeBlogList: [],
+            hotBlogList: [],
+            tabCloud: [],
+            blogPage: 0,
+            thisPage: 0,
+            prePageBtn: 'disabled',
+            nextPageBtn: false
         },
-        created:function(){
+        created: function () {
 
             this.loadHomeBlog();
             this.loadHomeHot();
             this.loadTagCloud();
 
         },
-        methods:{
+        methods: {
             //加载首页博文列表函数
-            loadHomeBlog:function(page=0){
+            loadHomeBlog: function (page = 0) {
 
                 $.post({
-                    url:"/blog/getBlogByPage",
-                    data:{
-                        page:page
+                    url: "/blog/getBlogByPage",
+                    data: {
+                        page: page
                     },
-                    success:(data)=>{
+                    success: (data) => {
 
                         var info = JSON.parse(data);
                         var blogList = info["blogList"];
                         var pageInfo = info["pageInfo"];
 
-                        blogList.map((item,index,arr)=>{
+                        blogList.map((item, index, arr) => {
 
                             //若评论数和查看人数为空则替换为0
-                            if(item.comment_num === null){
+                            if (item.comment_num === null) {
                                 item.comment_num = 0;
                             }
-                            if(item.visitor_num === null){
+                            if (item.visitor_num === null) {
                                 item.visitor_num = 0;
                             }
                         });
 
-                        this.homeBlogList =blogList;
+                        this.homeBlogList = blogList;
                         this.blogPage = pageInfo["blogPage"];
                         this.initializePage();
                     }
                 });
             },
             //加载热文
-            loadHomeHot:function(){
+            loadHomeHot: function () {
 
                 $.post({
-                    url:"/blog/getBlogByHot",
-                    success:(data)=>{
+                    url: "/blog/getBlogByHot",
+                    success: (data) => {
 
                         var info = JSON.parse(data);
 
-                        info.map((item,index,arr)=>{
+                        info.map((item, index, arr) => {
 
                             //若评论数和查看人数为空则替换为0
-                            if(item.comment_num === null){
+                            if (item.comment_num === null) {
                                 item.comment_num = 0;
                             }
-                            if(item.visitor_num === null){
+                            if (item.visitor_num === null) {
                                 item.visitor_num = 0;
                             }
 
                         });
 
-                        this.hotBlogList =info;
+                        this.hotBlogList = info;
                     }
                 });
 
             },
             //加载词云
-            loadTagCloud:function(){
+            loadTagCloud: function () {
 
                 $.post({
-                    url:"/blog/getTag",
-                    success:(data)=>{
+                    url: "/blog/getTag",
+                    success: (data) => {
 
                         var info = JSON.parse(data);
 
                         var wordTemp = [];
 
-                        info.map((item)=>{
-                            wordTemp.push([item.name,parseInt(Math.random()*100)]);
+                        info.map((item) => {
+                            wordTemp.push([item.name, parseInt(Math.random() * 100)]);
                         });
 
                         var canvas = document.getElementById("tabCloudCanvas");
@@ -278,22 +275,22 @@ $(()=>{
 
                         //生成词云
                         WordCloud(canvas, options);
-                        this.tabCloud =info;
+                        this.tabCloud = info;
                     }
                 });
             },
 
             //上一页
-            prePage:function(){
+            prePage: function () {
 
                 this.thisPage--;
 
-                if(this.thisPage<=0){
+                if (this.thisPage <= 0) {
                     this.prePageBtn = 'disabled';
                     this.nextPageBtn = false;
                 }
 
-                if(this.thisPage>0){
+                if (this.thisPage > 0) {
                     this.prePageBtn = false;
                 }
 
@@ -302,16 +299,16 @@ $(()=>{
 
             },
             //下一页
-            nextPage:function(){
+            nextPage: function () {
 
                 this.thisPage++;
 
-                if(this.thisPage>=this.blogPage-1){
+                if (this.thisPage >= this.blogPage - 1) {
                     this.nextPageBtn = 'disabled';
                     this.prePageBtn = false;
                 }
 
-                if(this.thisPage+1>0){
+                if (this.thisPage + 1 > 0) {
                     this.prePageBtn = false;
                 }
 
@@ -319,10 +316,10 @@ $(()=>{
                 this.loadHomeBlog(this.thisPage);
             },
             //初始化页码
-            initializePage:function(){
+            initializePage: function () {
 
 
-                if((this.thisPage === (this.blogPage-1)) && (this.blogPage !==0)){
+                if ((this.thisPage === (this.blogPage - 1)) && (this.blogPage !== 0)) {
                     this.nextPageBtn = 'disabled';
                 }
 
@@ -336,33 +333,32 @@ $(()=>{
 //home  end     ---------------------------
 
 
-
 //classify   start     -------------------------
 
     let classify = new Vue({
-        el:"#classify",
-        data:{
-            classifyOption:[],
-            classifyBlog:[]
+        el: "#classify",
+        data: {
+            classifyOption: [],
+            classifyBlog: []
         },
-        created:function(){
+        created: function () {
 
             this.toLoadClassify();
 
         },
-        methods:{
+        methods: {
             //加载分类
-            toLoadClassify:function(){
+            toLoadClassify: function () {
 
                 $.post({
-                    url:"/blog/getClassify",
-                    success:(data)=>{
+                    url: "/blog/getClassify",
+                    success: (data) => {
 
                         var info = JSON.parse(data);
                         //若分类数量为空则替换为0
-                        info.map((item)=>{
+                        info.map((item) => {
 
-                            if(item.classifynum === null){
+                            if (item.classifynum === null) {
                                 item.classifynum = 0;
                             }
                         });
@@ -375,24 +371,24 @@ $(()=>{
             },
 
             //按分类加载博文
-            toclassifyBlog:function(classifyId){
+            toclassifyBlog: function (classifyId) {
 
                 $.post({
-                    url:"/blog/getBlogByClassify",
-                    data:{
-                        classifyid:classifyId
+                    url: "/blog/getBlogByClassify",
+                    data: {
+                        classifyid: classifyId
                     },
-                    success:(data)=>{
+                    success: (data) => {
 
                         var info = JSON.parse(data);
 
-                        info.map((item,index,arr)=>{
+                        info.map((item, index, arr) => {
 
                             //若评论数和查看人数为空则替换为0
-                            if(item.comment_num === null){
+                            if (item.comment_num === null) {
                                 item.comment_num = 0;
                             }
-                            if(item.visitor_num === null){
+                            if (item.visitor_num === null) {
                                 item.visitor_num = 0;
                             }
 
@@ -403,22 +399,22 @@ $(()=>{
             },
 
             //切换分类选项
-            switchClassifyOption:function(id=this.classifyOption[0].id){
+            switchClassifyOption: function (id = this.classifyOption[0].id) {
 
                 var info = this.classifyOption;
-                info.map((item)=>{
+                info.map((item) => {
                     //给json 添加一项选中标记
                     // 若循环 id 等于传入的点击id ,则替换为已选中
-                    if(item.id === id){
+                    if (item.id === id) {
                         item.isSelected = "teal";
-                    }else{
+                    } else {
                         item.isSelected = "black";
                     }
 
                     //当 num 为空时 替换为 0
-                    if(item.num === null){
+                    if (item.num === null) {
                         item.num = 0;
-                        return item ;
+                        return item;
                     }
                 });
 
@@ -428,10 +424,10 @@ $(()=>{
             },
 
             //分类点击事件
-            btnClick:function(id,classifynum){
+            btnClick: function (id, classifynum) {
 
 
-                if(classifynum<1){
+                if (classifynum < 1) {
                     Toast("该分类没有博文，请选择其他分类");
                     return;
                 }
@@ -449,45 +445,45 @@ $(()=>{
 //tag   start     ---------------------------
 
     let tag = new Vue({
-        el:"#tag",
-        data:{
-            tabOption:[],
-            tabBlog:[],
+        el: "#tag",
+        data: {
+            tabOption: [],
+            tabBlog: [],
         },
-        created:function(){
+        created: function () {
             this.toLoadTag();
         },
-        methods:{
+        methods: {
             //加载标签
-            toLoadTag:function(){
+            toLoadTag: function () {
 
                 $.post({
-                    url:"/blog/getTag",
-                    success:(data)=>{
+                    url: "/blog/getTag",
+                    success: (data) => {
                         this.tabOption = JSON.parse(data);
                         this.switchTagOption();
                     }
                 });
             },
             //按标签加载博文
-            toLoadTagBlog:function(tagId){
+            toLoadTagBlog: function (tagId) {
 
                 $.post({
-                    url:"/blog/getBlogByTag",
-                    data:{
-                        tagId:tagId
+                    url: "/blog/getBlogByTag",
+                    data: {
+                        tagId: tagId
                     },
-                    success:(data)=>{
+                    success: (data) => {
 
                         var info = JSON.parse(data);
 
-                        info.map((item)=>{
+                        info.map((item) => {
 
                             //若评论数和查看人数为空则替换为0
-                            if(item.comment_num === null){
+                            if (item.comment_num === null) {
                                 item.comment_num = 0;
                             }
-                            if(item.visitor_num === null){
+                            if (item.visitor_num === null) {
                                 item.visitor_num = 0;
                             }
 
@@ -497,16 +493,16 @@ $(()=>{
                 });
             },
             //切换标签
-            switchTagOption:function(id=this.tabOption[0].id){
+            switchTagOption: function (id = this.tabOption[0].id) {
 
                 var info = this.tabOption;
-                info.map((item)=>{
+                info.map((item) => {
 
                     //给json 添加一项选中标记
                     // 若循环 id 等于传入的点击id ,则替换为已选中
-                    if(item.id === id){
+                    if (item.id === id) {
                         item.isSelected = "teal";
-                    }else{
+                    } else {
                         item.isSelected = "black";
                     }
                 });
@@ -515,7 +511,7 @@ $(()=>{
                 this.toLoadTagBlog(id);
             },
             //标签点击事件
-            tabClick: function(id){
+            tabClick: function (id) {
                 this.switchTagOption(id);
                 this.toLoadTagBlog(id);
             }
@@ -524,23 +520,20 @@ $(()=>{
 //tag     end     ---------------------------
 
 
-
-
-
 //timeLine     start   ---------------------------
     let timeLine = new Vue({
-        el:"#timeLine",
-        data:{
-            timeLineInfo:[]
+        el: "#timeLine",
+        data: {
+            timeLineInfo: []
         },
-        created:function(){
+        created: function () {
             this.toLoadTimeLine();
         },
-        methods:{
-            toLoadTimeLine:function(){
+        methods: {
+            toLoadTimeLine: function () {
                 $.post({
-                    url:"/blog/getTimeLine",
-                    success:(data)=>{
+                    url: "/blog/getTimeLine",
+                    success: (data) => {
                         this.timeLineInfo = JSON.parse(data);
                     }
                 });

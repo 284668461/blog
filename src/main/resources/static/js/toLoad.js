@@ -1,9 +1,4 @@
-function getByPageBlog(){
-
-
-
-
-
+function getByPageBlog() {
 
 
 }
